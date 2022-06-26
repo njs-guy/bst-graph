@@ -1,6 +1,6 @@
 <template>
   <!-- Nav bar, probably -->
-  <Graph />
+  <Graph name="Pikablu"/>
   <!-- Footer, probably -->
 </template>
 
