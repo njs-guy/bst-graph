@@ -1,21 +1,25 @@
 <template>
-    <div class="graph place-content-center rounded-md">
+    <div class="graph place-content-center rounded-md" id="output">
         <h1 class="name text-3xl">{{ name }}</h1>
         <div class="grid place-items-center">
             <Bar class="hp-bar" label="HP" :stat=100 color="#F20000" :width=50 />
-            <Bar class="att-bar" label="Attack" :stat=100 color="#FA8128" :width=70 />
+            <Bar class="att-bar" label="Attack" :stat=100 color="#FA8128" :width=100 />
             <Bar class="def-bar" label="Defense" :stat=100 color="#FFC30B" :width=30 />
             <Bar class="spa-bar" label="Sp. Atk" :stat=100 color="#0080FF" :width=42 />
             <Bar class="spd-bar" label="Sp. Def" :stat=100 color="#3CB043" :width=25 />
             <Bar class="spe-bar" label="Speed" :stat=100 color="#F699CD" :width=10 />
-            <Bar class="tot-bar" label="Total" :stat=600 color="white" wi:dth=0 />
+            <Bar class="tot-bar" label="Total" :stat=600 color="white" :width=0 />
         </div>
     </div>
+    <button @click="outputImage">Save</button>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 import Bar from './Bar.vue'
+
+import html2canvas from 'html2canvas';
+import {elementToSVG} from 'dom-to-svg'
 
 export default defineComponent({
     Name: 'Graph',
@@ -24,7 +28,22 @@ export default defineComponent({
     },
     props: {
         name: String,
+    },
+    methods: {
+        outputImage() {
+        let output;
+        let element = document.getElementById("output");
+
+        if (element != null) {
+            output = element;
+        } else {
+            return;
+        }
+
+        let svgOutput = elementToSVG(output);
+        console.log(svgOutput);
     }
+    },
 });
 </script>
 
