@@ -31,18 +31,38 @@ export default defineComponent({
     },
     methods: {
         outputImage() {
-        let output;
-        let element = document.getElementById("output");
+            let output;
+            let element = document.getElementById("output");
 
-        if (element != null) {
-            output = element;
-        } else {
-            return;
+            // Check whether element is null because typescript kept yelling at me about it
+            if (element != null) {
+                output = element;
+            } else {
+                return; // If element is null, do nothing
+            }
+
+            // Convert graph html to svg
+            let svg = elementToSVG(output);
+
+            // Serialize the svg xml to a string
+            let s = new XMLSerializer();
+            let strSVG = s.serializeToString(svg)
+
+            // Save that string as an svg file
+            let file = new Blob([strSVG], { type: "image/svg+xml" });
+            const a = document.createElement("a");
+            const url = URL.createObjectURL(file);
+
+            // Download svg file
+            a.href = url;
+            a.download = "output.svg";
+            document.body.appendChild(a);
+            a.click();
+
+            // Remove created link
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
         }
-
-        let svgOutput = elementToSVG(output);
-        console.log(svgOutput);
-    }
     },
 });
 </script>
