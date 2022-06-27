@@ -20,6 +20,7 @@ export default defineComponent({
 html, body {
   margin: 0;
   padding: 0;
+  background-color: #eeeeee;
 }
 
 #app {
