@@ -1,6 +1,9 @@
 <template>
-    <div class="row flex flex-row">
-        <p class="label basis-1/4">{{ label }}: {{ stat }}</p>
+    <div class="row flex flex-row items-center">
+        <div class="basis-1/4">
+            <p class="label">{{ label }}:</p> 
+            <p class="stat">{{ stat }}</p>
+        </div>
         <div class="bar-container basis-3/4">
             <div class="bar rounded-r" :style="style"></div>
         </div>
@@ -46,6 +49,7 @@ export default defineComponent({
 <style scoped>
     .row {
         width: 100%;
+        margin-bottom: 8px;
     }
 
     .bar {
@@ -53,8 +57,17 @@ export default defineComponent({
     }
 
     .bar-container {
-        height: 20px;
-        margin-bottom: 8px;
-        /* border: 1px solid rgba(0, 0, 0, 0.2); */
+        height: 25px;
+        
+    }
+
+    .label {
+        font-weight: bold;
+        float: left;
+    }
+
+    .stat {
+        float: right;
+        margin-right: 5px;
     }
 </style>
