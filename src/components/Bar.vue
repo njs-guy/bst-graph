@@ -5,7 +5,7 @@
             <p class="stat">{{ stat }}</p>
         </div>
         <div class="bar-container basis-3/4">
-            <div class="bar rounded-r" :style="style"></div>
+            <div class="bar" :style="style"></div>
         </div>
     </div>
 </template>
