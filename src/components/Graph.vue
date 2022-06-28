@@ -11,7 +11,7 @@
             <Bar class="tot-bar" label="Total" :stat=600 color="white" :width=0 />
         </div>
     </div>
-    <button @click="outputImage">Save</button>
+    <button type="button" class="btn" @click="outputImage">Save as SVG</button>
 </template>
 
 <script lang="ts">
@@ -78,5 +78,9 @@ export default defineComponent({
         background-color: white;
         width: 500px;
         padding: 15px;
+    }
+
+    .btn {
+        @apply bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded;
     }
 </style>
