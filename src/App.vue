@@ -4,8 +4,8 @@
     <div class="col-span-2">
       <Graph class="" name="Pikablu"/>
     </div>
-    <button type="button" class="btn col-span-2" @click="outputImage">Save as SVG</button>
-  </div>
+    <button type="button" class="btn bg-indigo-700 col-span-2" @click="outputImage">Save as SVG</button>
+    </div>
   <!-- Footer, probably -->
 </template>
 
@@ -77,6 +77,6 @@ html, body {
 }
 
 .btn {
-  @apply bg-indigo-700 hover:bg-indigo-900 text-white font-bold py-2 px-4 rounded;
+  @apply hover:bg-indigo-900 text-white font-bold py-2 px-4 rounded;
 }
 </style>
