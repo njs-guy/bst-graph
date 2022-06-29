@@ -47,27 +47,27 @@ export default defineComponent({
 </script>
 
 <style scoped>
-    .row {
-        width: 100%;
-        margin-bottom: 8px;
-    }
+.row {
+    width: 100%;
+    margin-bottom: 8px;
+}
 
-    .bar {
-        height: 100%;
-    }
+.bar {
+    height: 100%;
+}
 
-    .bar-container {
-        height: 25px;
-        
-    }
+.bar-container {
+    height: 25px;
+    
+}
 
-    .label {
-        font-weight: bold;
-        float: left;
-    }
+.label {
+    font-weight: bold;
+    float: left;
+}
 
-    .stat {
-        float: right;
-        margin-right: 5px;
-    }
+.stat {
+    float: right;
+    margin-right: 5px;
+}
 </style>

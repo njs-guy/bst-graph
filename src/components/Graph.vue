@@ -11,15 +11,12 @@
             <Bar class="tot-bar" label="Total" :stat=600 color="white" :width=0 />
         </div>
     </div>
-    <button type="button" class="btn" @click="outputImage">Save as SVG</button>
+    
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import Bar from './Bar.vue'
-
-import html2canvas from 'html2canvas';
-import {elementToSVG} from 'dom-to-svg'
+import { defineComponent } from 'vue';
+import Bar from './Bar.vue';
 
 export default defineComponent({
     Name: 'Graph',
@@ -30,39 +27,7 @@ export default defineComponent({
         name: String,
     },
     methods: {
-        outputImage() {
-            let output;
-            let element = document.getElementById("output");
-
-            // Check whether element is null because typescript kept yelling at me about it
-            if (element != null) {
-                output = element;
-            } else {
-                return; // If element is null, do nothing
-            }
-
-            // Convert graph html to svg
-            let svg = elementToSVG(output);
-
-            // Serialize the svg xml to a string
-            let s = new XMLSerializer();
-            let strSVG = s.serializeToString(svg)
-
-            // Save that string as an svg file
-            let file = new Blob([strSVG], { type: "image/svg+xml" });
-            const a = document.createElement("a");
-            const url = URL.createObjectURL(file);
-
-            // Download svg file
-            a.href = url;
-            a.download = "output.svg";
-            document.body.appendChild(a);
-            a.click();
-
-            // Remove created link
-            document.body.removeChild(a);
-            window.URL.revokeObjectURL(url);
-        }
+        
     },
 });
 </script>
@@ -78,9 +43,5 @@ export default defineComponent({
         background-color: white;
         width: 500px;
         padding: 15px;
-    }
-
-    .btn {
-        @apply bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded;
     }
 </style>

@@ -1,17 +1,56 @@
 <template>
   <!-- Nav bar, probably -->
   <Graph name="Pikablu"/>
+  <button type="button" class="btn" @click="outputImage">Save as SVG</button>
   <!-- Footer, probably -->
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import Graph from './components/Graph.vue'
+import Graph from './components/Graph.vue';
+
+import html2canvas from 'html2canvas';
+import {elementToSVG} from 'dom-to-svg';
 
 export default defineComponent({
   name: 'App',
   components: {
     Graph
+  },
+  methods: {
+    outputImage() {
+      let output;
+      let element = document.getElementById("output");
+
+      // Check whether element is null because typescript kept yelling at me about it
+      if (element != null) {
+          output = element;
+      } else {
+          return; // If element is null, do nothing
+      }
+
+      // Convert graph html to svg
+      let svg = elementToSVG(output);
+
+      // Serialize the svg xml to a string
+      let s = new XMLSerializer();
+      let strSVG = s.serializeToString(svg)
+
+      // Save that string as an svg file
+      let file = new Blob([strSVG], { type: "image/svg+xml" });
+      const a = document.createElement("a");
+      const url = URL.createObjectURL(file);
+
+      // Download svg file
+      a.href = url;
+      a.download = "output.svg";
+      document.body.appendChild(a);
+      a.click();
+
+      // Remove created link
+      document.body.removeChild(a);
+      window.URL.revokeObjectURL(url);
+    }
   }
 });
 </script>
@@ -31,5 +70,9 @@ html, body {
   color: black;
   margin-left: 10px;
   margin-right: 10px;
+}
+
+.btn {
+  @apply bg-indigo-700 hover:bg-indigo-900 text-white font-bold py-2 px-4 rounded;
 }
 </style>
