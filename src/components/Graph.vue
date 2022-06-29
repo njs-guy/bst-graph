@@ -1,7 +1,7 @@
 <template>
     <div class="graph rounded-md" id="output">
-        <h1 class="name text-3xl">{{ name }}</h1>
-        <div class="grid place-items-center">
+        <h1 class="name text-3xl leading-normal">{{ name }}</h1>
+        <div class="grid place-items-center gap-2">
             <Bar class="hp-bar" label="HP" :stat=100 color="#F20000" :width=50 />
             <Bar class="att-bar" label="Attack" :stat=100 color="#FA8128" :width=100 />
             <Bar class="def-bar" label="Defense" :stat=100 color="#FFC30B" :width=30 />
@@ -33,11 +33,6 @@ export default defineComponent({
 </script>
 
 <style scoped>
-    .name {
-        margin-top: -3px;
-        margin-bottom: 10px;
-    }
-
     .graph {
         margin-top: 10px;
         background-color: white;

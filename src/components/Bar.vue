@@ -1,5 +1,5 @@
 <template>
-    <div class="row flex flex-row items-center">
+    <div class="row flex flex-row items-center gap-1">
         <div class="basis-1/4">
             <p class="label">{{ label }}:</p> 
             <p class="stat">{{ stat }}</p>
@@ -49,7 +49,6 @@ export default defineComponent({
 <style scoped>
 .row {
     width: 100%;
-    margin-bottom: 8px;
 }
 
 .bar {
@@ -58,7 +57,6 @@ export default defineComponent({
 
 .bar-container {
     height: 25px;
-    
 }
 
 .label {
@@ -68,6 +66,5 @@ export default defineComponent({
 
 .stat {
     float: right;
-    margin-right: 5px;
 }
 </style>
