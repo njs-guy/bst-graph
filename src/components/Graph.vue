@@ -1,5 +1,5 @@
 <template>
-    <div class="graph place-content-center rounded-md" id="output">
+    <div class="graph rounded-md" id="output">
         <h1 class="name text-3xl">{{ name }}</h1>
         <div class="grid place-items-center">
             <Bar class="hp-bar" label="HP" :stat=100 color="#F20000" :width=50 />
