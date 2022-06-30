@@ -1,10 +1,10 @@
 <template>
     <div class="row flex flex-row items-center gap-1">
-        <div class="basis-1/4">
+        <div class="text-container basis-1/3">
             <p class="label">{{ label }}:</p> 
             <p class="stat">{{ stat }}</p>
         </div>
-        <div class="bar-container basis-3/4">
+        <div class="bar-container basis-2/3">
             <div class="bar" :style="style"></div>
         </div>
     </div>
@@ -70,5 +70,14 @@ export default defineComponent({
 
 .label, .stat {
     font-size: 18px;
+}
+
+@media(min-width: 32rem) {
+    .text-container {
+        @apply basis-1/4;
+    }
+    .bar-container {
+        @apply basis-3/4;
+    }
 }
 </style>

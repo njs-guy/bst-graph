@@ -1,9 +1,7 @@
 <template>
   <!-- Nav bar, probably -->
   <div class="main-content grid grid-cols-2 gap-4 place-items-center">
-    <div class="col-span-2">
-      <Graph class="" name="Pikablu"/>
-    </div>
+    <Graph class="col-span-2" name="Pikablu"/>
     <button type="button" class="btn bg-indigo-700 col-span-2" @click="outputImage">Save as SVG</button>
     </div>
   <!-- Footer, probably -->
