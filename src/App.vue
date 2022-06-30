@@ -1,7 +1,8 @@
 <template>
   <!-- Nav bar, probably -->
   <div class="main-content grid grid-cols-2 gap-4 place-items-center">
-    <Graph class="col-span-2" name="Pikablu"/>
+    <Graph class="col-span-2" name="Pikablu" />
+    <LabelInput idName="HP-input" text="HP" />
     <button type="button" class="btn bg-indigo-700 col-span-2" @click="outputImage">Save as SVG</button>
     </div>
   <!-- Footer, probably -->
@@ -10,6 +11,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import Graph from './components/Graph.vue';
+import LabelInput from './components/LabelInput.vue'
 
 import html2canvas from 'html2canvas';
 import {elementToSVG} from 'dom-to-svg';
@@ -17,7 +19,8 @@ import {elementToSVG} from 'dom-to-svg';
 export default defineComponent({
   name: 'App',
   components: {
-    Graph
+    Graph,
+    LabelInput,
   },
   methods: {
     outputImage() {
