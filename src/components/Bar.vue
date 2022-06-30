@@ -56,7 +56,7 @@ export default defineComponent({
 }
 
 .bar-container {
-    height: 25px;
+    height: 1.7em;
 }
 
 .label {
@@ -66,5 +66,9 @@ export default defineComponent({
 
 .stat {
     float: right;
+}
+
+.label, .stat {
+    font-size: 18px;
 }
 </style>
