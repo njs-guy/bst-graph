@@ -1,5 +1,5 @@
 <template>
-    <div class="graph rounded-md px-3 py-1 max-w-lg" id="output">
+    <div class="graph rounded-md px-3 py-1" id="output">
         <h1 class="name text-3xl leading-normal">{{ name }}</h1>
         <div class="grid place-items-center gap-2">
             <Bar class="hp-bar" label="HP" :stat=100 color="#F20000" :width=50 />

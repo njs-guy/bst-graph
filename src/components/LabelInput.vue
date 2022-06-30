@@ -1,6 +1,6 @@
 <template>
-    <label for="{{idName}}">{{text}} :</label>
-    <input type="text" id="{{idName}}" name="{{idName}}">
+    <label for="{{idName}}">{{text}} : </label>
+    <input type="text" class="rounded" id="{{idName}}" name="{{idName}}">
 </template>
 
 <script lang="ts">

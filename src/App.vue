@@ -1,9 +1,9 @@
 <template>
   <!-- Nav bar, probably -->
-  <div class="main-content grid grid-cols-2 gap-4 place-items-center">
-    <Graph class="col-span-2" name="Pikablu" />
-    <LabelInput idName="HP-input" text="HP" />
-    <button type="button" class="btn bg-indigo-700 col-span-2" @click="outputImage">Save as SVG</button>
+    <div class="main-content grid grid-cols-2 gap-4 max-w-lg">
+      <Graph class="col-span-2" name="Pikablu" />
+      <LabelInput idName="HP-input" text="HP" />
+      <button type="button" class="btn bg-indigo-700 col-span-2" @click="outputImage">Save as SVG</button>
     </div>
   <!-- Footer, probably -->
 </template>
