@@ -5,7 +5,7 @@
             <p class="stat">{{ stat }}</p>
         </div>
         <div class="bar-container basis-2/3">
-            <div class="bar" :style="style"></div>
+            <div class="bar" :id="barId" :style="style"></div>
         </div>
     </div>
 </template>
@@ -16,9 +16,13 @@ import { defineComponent } from 'vue'
 export default defineComponent({
     Name: 'Bar',
     props: {
+        barId: {
+            type: String,
+            default: "",
+        },
         label: String,
-        stat: Number,
         color: String,
+        stat: Number,
         width: Number,
     },
     computed: {
