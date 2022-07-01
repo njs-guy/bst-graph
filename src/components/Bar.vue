@@ -1,5 +1,5 @@
 <template>
-    <div class="row flex flex-row items-center gap-1">
+    <div class="row flex flex-row items-center gap-2">
         <div class="text-container basis-1/3">
             <p class="label">{{ label }}:</p> 
             <p class="stat">{{ stat }}</p>
