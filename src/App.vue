@@ -3,16 +3,18 @@
   <div class="mc-margin">
     <div class="main-content grid grid-cols-2 gap-4 max-w-lg">
       <Graph class="col-span-2" name="Pikablu" />
-      <LabelInput idName="name-input" text="Name" />
-      <button type="button" class="btn bg-indigo-700 self-end h-8">Autofill</button>
-      <div class="h-6"></div> <!-- Spacing -->
-      <div class="h-6"></div> <!-- Spacing -->
+      <div class="name-sec rounded-md bg-white col-span-2 p-3 flex flex-row place-content-stretch gap-4">
+        <LabelInput class="basis-1/2" idName="name-input" text="Name" />
+        <button type="button" class="btn bg-indigo-700 self-end h-8 flex-grow basis-1/2">Autofill</button>
+      </div>
+      <div class="name-sec rounded-md bg-white col-span-2 p-3 grid grid-cols-2 place-content-stretch gap-4">
       <LabelInput idName="hp-input" text="HP" />
       <LabelInput idName="att-input" text="Attack" />
       <LabelInput idName="def-input" text="Defense" />
       <LabelInput idName="spa-input" text="Sp. Attack" />
       <LabelInput idName="spd-input" text="Sp. Defense" />
       <LabelInput idName="spe-input" text="Speed" />
+      </div>
       <button type="button" class="btn bg-indigo-700 col-span-2 py-2" @click="outputImage">Save as SVG</button>
     </div>
   </div>
