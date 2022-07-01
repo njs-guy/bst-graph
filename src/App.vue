@@ -82,6 +82,10 @@ html, body {
   margin-right: 10px;
 }
 
+.main-content {
+  margin: 0 auto;
+}
+
 .btn {
   @apply hover:bg-indigo-900 text-white font-bold py-2 px-4 rounded;
 }
