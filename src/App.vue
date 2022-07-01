@@ -1,9 +1,9 @@
 <template>
   <!-- Nav bar, probably -->
-    <div class="main-content grid grid-cols-2 gap-4 max-w-lg">
-      <Graph class="col-span-2" name="Pikablu" />
+    <div class="main-content flex flex-col gap-4 max-w-lg">
+      <Graph class="" name="Pikablu" />
       <LabelInput idName="HP-input" text="HP" />
-      <button type="button" class="btn bg-indigo-700 col-span-2" @click="outputImage">Save as SVG</button>
+      <button type="button" class="btn bg-indigo-700" @click="outputImage">Save as SVG</button>
     </div>
   <!-- Footer, probably -->
 </template>
