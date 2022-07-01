@@ -41,7 +41,6 @@ export default defineComponent({
 
 <style scoped>
     .graph {
-        margin-top: 10px;
         background-color: white;
         width: 100%;
     }

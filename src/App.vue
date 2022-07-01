@@ -1,15 +1,21 @@
 <template>
   <!-- Nav bar, probably -->
+  <div class="mc-margin">
     <div class="main-content grid grid-cols-2 gap-4 max-w-lg">
       <Graph class="col-span-2" name="Pikablu" />
+      <LabelInput idName="name-input" text="Name" />
+      <button type="button" class="btn bg-indigo-700 self-end h-8">Autofill</button>
+      <div class="h-6"></div> <!-- Spacing -->
+      <div class="h-6"></div> <!-- Spacing -->
       <LabelInput idName="hp-input" text="HP" />
       <LabelInput idName="att-input" text="Attack" />
       <LabelInput idName="def-input" text="Defense" />
       <LabelInput idName="spa-input" text="Sp. Attack" />
       <LabelInput idName="spd-input" text="Sp. Defense" />
       <LabelInput idName="spe-input" text="Speed" />
-      <button type="button" class="btn bg-indigo-700 col-span-2" @click="outputImage">Save as SVG</button>
+      <button type="button" class="btn bg-indigo-700 col-span-2 py-2" @click="outputImage">Save as SVG</button>
     </div>
+  </div>
   <!-- Footer, probably -->
 </template>
 
@@ -78,8 +84,10 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: black;
-  margin-left: 10px;
-  margin-right: 10px;
+}
+
+.mc-margin {
+  margin: 10px;
 }
 
 .main-content {
@@ -87,6 +95,6 @@ html, body {
 }
 
 .btn {
-  @apply hover:bg-indigo-900 text-white font-bold py-2 px-4 rounded;
+  @apply hover:bg-indigo-900 text-white font-bold rounded;
 }
 </style>
