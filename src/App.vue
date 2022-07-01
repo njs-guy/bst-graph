@@ -1,14 +1,14 @@
 <template>
   <!-- Nav bar, probably -->
-    <div class="main-content flex flex-col gap-4 max-w-lg">
-      <Graph class="" name="Pikablu" />
+    <div class="main-content grid grid-cols-2 gap-4 max-w-lg">
+      <Graph class="col-span-2" name="Pikablu" />
       <LabelInput idName="hp-input" text="HP" />
       <LabelInput idName="att-input" text="Attack" />
       <LabelInput idName="def-input" text="Defense" />
       <LabelInput idName="spa-input" text="Sp. Attack" />
       <LabelInput idName="spd-input" text="Sp. Defense" />
       <LabelInput idName="spe-input" text="Speed" />
-      <button type="button" class="btn bg-indigo-700" @click="outputImage">Save as SVG</button>
+      <button type="button" class="btn bg-indigo-700 col-span-2" @click="outputImage">Save as SVG</button>
     </div>
   <!-- Footer, probably -->
 </template>

@@ -1,8 +1,7 @@
 <template>
-    <div class="flex flex-row gap-4">
-        <label for="{{idName}}" class="self-center basis-1/4">{{text}} : </label>
-        <input type="number" class="rounded basis-2/4 outline-indigo-700 caret-indigo-500 outline-offset-0 h-8 self-center px-2" id="{{idName}}" name="{{idName}}">
-        <button type="button" class="btn bg-indigo-700 basis-1/4">Default</button>
+    <div class="input-container flex flex-col">
+        <label for="{{idName}}" class="place-self-start font-bold">{{text}}</label>
+        <input type="number" class="rounded outline-indigo-700 caret-indigo-500 outline-offset-0 h-8 px-2" id="{{idName}}" name="{{idName}}">
     </div>
 </template>
 
