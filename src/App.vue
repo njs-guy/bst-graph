@@ -4,7 +4,7 @@
     <div class="main-content grid grid-cols-2 gap-4 max-w-lg">
       <Graph class="col-span-2" name="Pikablu" />
       <form class="name-sec rounded-md bg-white col-span-2 p-3 flex flex-row place-content-stretch gap-4">
-        <LabelInput class="basis-1/2" idName="name-input" text="Name" />
+        <NameInput class="basis-1/2" idName="name-input" />
         <button type="button" class="btn bg-indigo-700 self-end h-8 flex-grow basis-1/2">Autofill</button>
       </form>
       <form class="name-sec rounded-md bg-white col-span-2 p-3 grid grid-cols-2 place-content-stretch gap-4">
@@ -23,8 +23,10 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+
 import Graph from './components/Graph.vue';
 import LabelInput from './components/LabelInput.vue'
+import NameInput from './components/NameInput.vue'
 
 import html2canvas from 'html2canvas';
 import {elementToSVG} from 'dom-to-svg';
@@ -34,6 +36,7 @@ export default defineComponent({
   components: {
     Graph,
     LabelInput,
+    NameInput,
   },
   methods: {
     outputImage() {
