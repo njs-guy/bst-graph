@@ -2,13 +2,15 @@
   <!-- Nav bar, probably -->
   <div class="mc-margin">
     <div class="main-content grid grid-cols-1 gap-4 max-w-lg">
-      <Graph class="" name="Pikablu" />
+      <Graph :nameLabel=name :hpStat=hp :attStat=att :defStat=def
+      :spaStat=spa :spdStat=spd :speStat=spe :totStat=tot />
       <form class="name-sec rounded-md bg-white p-3 flex flex-row place-content-stretch gap-4">
         <NameInput class="basis-1/2" idName="name-input" />
         <button type="button" class="btn bg-indigo-700 self-end h-8 flex-grow basis-1/2">Autofill</button>
       </form>
       <form class="name-sec rounded-md bg-white p-3 grid grid-cols-3 place-content-stretch gap-4">
-        <LabelInput idName="hp-input" text="HP" />
+        <LabelInput idName="hp-input" text="HP"
+        @statChanged="onHpChanged" />
         <LabelInput idName="att-input" text="Attack" />
         <LabelInput idName="def-input" text="Defense" />
         <LabelInput idName="spa-input" text="Sp. Attack" />
@@ -38,7 +40,25 @@ export default defineComponent({
     LabelInput,
     NameInput,
   },
+  props: {
+
+  },
+  data() {
+    return {
+      name: "Name",
+      hp: 1,
+      att: 1,
+      def: 1,
+      spa: 1,
+      spd: 1,
+      spe: 1,
+      tot: 1,
+    }
+  },
   methods: {
+    onHpChanged(value: string) {
+      this.hp = Number(value);
+    },
     outputImage() {
       let output;
       let element = document.getElementById("output");
@@ -71,7 +91,8 @@ export default defineComponent({
       // Remove created link
       document.body.removeChild(a);
       window.URL.revokeObjectURL(url);
-    }
+    },
+    
   }
 });
 </script>
