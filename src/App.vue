@@ -119,7 +119,19 @@ export default defineComponent({
       window.URL.revokeObjectURL(url);
     },
     
-  }
+  },
+  mounted: function() { // On load
+    let defaultName = "Pikablu";
+    let defaultStats = "100";
+
+    this.onNameChanged(defaultName);
+    this.onHpChanged(defaultStats);
+    this.onAttChanged(defaultStats);
+    this.onDefChanged(defaultStats);
+    this.onSpaChanged(defaultStats);
+    this.onSpdChanged(defaultStats);
+    this.onSpeChanged(defaultStats);
+  },
 });
 </script>
 
