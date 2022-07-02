@@ -23,13 +23,42 @@ export default defineComponent({
         label: String,
         color: String,
         stat: Number,
-        width: Number,
+    },
+    methods: {
+        adjustBarWidth() {
+            let bar = document.getElementById(this.barId);
+            let wid = 0;
+
+            // Check whether the stat or bar is null because typescript kept yelling at me about it
+            if (this.stat == null || bar == null) {
+                return;
+            }
+
+            wid = (this.stat / 255) * 100; //convert stat to width percent
+
+            if (wid > 100) {
+                wid == 100; // Width cannot be more than 100%
+            }
+
+            if (wid < 0) {
+                wid == 0; // Width cannot be less than 0%
+            }
+
+            bar.style.width = String(wid) + '%';
+        }
+    },
+    mounted: function() { // On load
+        this.adjustBarWidth();
+    },
+    watch: {
+        stat(value) {
+            this.adjustBarWidth()
+        }
     },
     computed: {
         // Returns style from color and width props
         style() {
             let bgc = "";
-            let wid = "";
 
             if (this.color == undefined){
                 bgc = "background-color: red;";
@@ -37,14 +66,7 @@ export default defineComponent({
                 bgc = "background-color: " + this.color + ";";
             }
 
-            if (this.width == undefined) {
-                wid = "width: 100%;";
-            } else {
-                wid = "width: " + this.width + "%;";
-            }
-
-            let style = bgc + " " + wid;
-            return style;
+            return bgc;
         },
     },
 });
