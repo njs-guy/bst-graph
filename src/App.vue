@@ -57,21 +57,30 @@ export default defineComponent({
   methods: {
     onHpChanged(value: string) {
       this.hp = Number(value);
+      this.updateTotal();
     },
     onAttChanged(value: string) {
       this.att = Number(value);
+      this.updateTotal();
     },
     onDefChanged(value: string) {
       this.def = Number(value);
+      this.updateTotal();
     },
     onSpaChanged(value: string) {
       this.spa = Number(value);
+      this.updateTotal();
     },
     onSpdChanged(value: string) {
       this.spd = Number(value);
+      this.updateTotal();
     },
     onSpeChanged(value: string) {
       this.spe = Number(value);
+      this.updateTotal();
+    },
+    updateTotal(){
+      this.tot = this.hp + this.att + this.def + this.spa + this.spd + this.spe;
     },
     outputImage() {
       let output;
