@@ -18,7 +18,7 @@ export default defineComponent({
         text: String,
     },
     methods: {
-        // Emit number box when changed 
+        // Emit number box value when changed 
         onChange(event: any) {
             let num = event.target.value;
             this.$emit('statChanged', num);

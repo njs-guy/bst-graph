@@ -5,7 +5,7 @@
       <Graph :nameLabel=name :hpStat=hp :attStat=att :defStat=def
       :spaStat=spa :spdStat=spd :speStat=spe :totStat=tot />
       <form class="name-sec rounded-md bg-white p-3 flex flex-row place-content-stretch gap-4">
-        <NameInput class="basis-1/2" idName="name-input" />
+        <NameInput class="basis-1/2" idName="name-input" @nameChanged="onNameChanged" />
         <button type="button" class="btn bg-indigo-700 self-end h-8 flex-grow basis-1/2">Autofill</button>
       </form>
       <form class="name-sec rounded-md bg-white p-3 grid grid-cols-3 place-content-stretch gap-4">
@@ -55,6 +55,9 @@ export default defineComponent({
     }
   },
   methods: {
+    onNameChanged(value: string) {
+      this.name = value;
+    },
     onHpChanged(value: string) {
       this.hp = Number(value);
       this.updateTotal();
