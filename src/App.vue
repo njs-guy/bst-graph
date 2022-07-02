@@ -9,13 +9,12 @@
         <button type="button" class="btn bg-indigo-700 self-end h-8 flex-grow basis-1/2">Autofill</button>
       </form>
       <form class="name-sec rounded-md bg-white p-3 grid grid-cols-3 place-content-stretch gap-4">
-        <LabelInput idName="hp-input" text="HP"
-        @statChanged="onHpChanged" />
-        <LabelInput idName="att-input" text="Attack" />
-        <LabelInput idName="def-input" text="Defense" />
-        <LabelInput idName="spa-input" text="Sp. Attack" />
-        <LabelInput idName="spd-input" text="Sp. Defense" />
-        <LabelInput idName="spe-input" text="Speed" />
+        <LabelInput idName="hp-input" text="HP" @statChanged="onHpChanged" />
+        <LabelInput idName="att-input" text="Attack" @statChanged="onAttChanged" />
+        <LabelInput idName="def-input" text="Defense" @statChanged="onDefChanged" />
+        <LabelInput idName="spa-input" text="Sp. Attack" @statChanged="onSpaChanged" />
+        <LabelInput idName="spd-input" text="Sp. Defense" @statChanged="onSpdChanged" />
+        <LabelInput idName="spe-input" text="Speed" @statChanged="onSpeChanged" />
       </form>
       <button type="button" class="btn bg-indigo-700 py-2" @click="outputImage">Save as SVG</button>
     </div>
@@ -58,6 +57,21 @@ export default defineComponent({
   methods: {
     onHpChanged(value: string) {
       this.hp = Number(value);
+    },
+    onAttChanged(value: string) {
+      this.att = Number(value);
+    },
+    onDefChanged(value: string) {
+      this.def = Number(value);
+    },
+    onSpaChanged(value: string) {
+      this.spa = Number(value);
+    },
+    onSpdChanged(value: string) {
+      this.spd = Number(value);
+    },
+    onSpeChanged(value: string) {
+      this.spe = Number(value);
     },
     outputImage() {
       let output;
