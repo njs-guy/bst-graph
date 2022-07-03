@@ -5,7 +5,7 @@
       <Graph :nameLabel=name :hpStat=hp :attStat=att :defStat=def
       :spaStat=spa :spdStat=spd :speStat=spe :totStat=tot />
       <form class="name-sec rounded-md bg-white p-3 flex flex-row place-content-stretch gap-4">
-        <NameInput class="basis-1/2" idName="name-input" @nameChanged="onNameChanged" />
+        <NameInput class="basis-1/2" :defaultValue=name idName="name-input" @nameChanged="onNameChanged" />
         <button type="button" class="btn bg-indigo-700 self-end h-8 flex-grow basis-1/2">Autofill</button>
       </form>
       <form class="name-sec rounded-md bg-white p-3 grid grid-cols-3 place-content-stretch gap-4">
@@ -85,6 +85,9 @@ export default defineComponent({
     updateTotal(){
       this.tot = this.hp + this.att + this.def + this.spa + this.spd + this.spe;
     },
+    randInt(min: number = 0, max: number = 100) {
+      return Math.floor(Math.random() * max) + min;
+    },
     outputImage() {
       let output;
       let element = document.getElementById("output");
@@ -121,16 +124,25 @@ export default defineComponent({
     
   },
   mounted: function() { // On load
-    let defaultName = "Pikablu";
-    let defaultStats = "100";
+    const NAMES = [
+      "Pikablu", "Missingno", "Agumon", "Jack Frost", "Frodo",
+      "Helix", "Sonic", "Morgana", "Mario", "Mewthree",
+      "Slime", "Moogle", "Mega Bidoof", "Cthulu", "Chopper"
+    ];
+
+    const defaultStatMin = 5;
+    const defaultStatMax = 120;
+
+    let nameIndex = this.randInt(0, NAMES.length)
+    let defaultName = NAMES[nameIndex];
 
     this.onNameChanged(defaultName);
-    this.onHpChanged(defaultStats);
-    this.onAttChanged(defaultStats);
-    this.onDefChanged(defaultStats);
-    this.onSpaChanged(defaultStats);
-    this.onSpdChanged(defaultStats);
-    this.onSpeChanged(defaultStats);
+    this.onHpChanged(String(this.randInt(defaultStatMin, defaultStatMax)));
+    this.onAttChanged(String(this.randInt(defaultStatMin, defaultStatMax)));
+    this.onDefChanged(String(this.randInt(defaultStatMin, defaultStatMax)));
+    this.onSpaChanged(String(this.randInt(defaultStatMin, defaultStatMax)));
+    this.onSpdChanged(String(this.randInt(defaultStatMin, defaultStatMax)));
+    this.onSpeChanged(String(this.randInt(defaultStatMin, defaultStatMax)));
   },
 });
 </script>
