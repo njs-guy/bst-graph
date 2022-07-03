@@ -34,7 +34,6 @@ import Graph from './components/Graph.vue';
 import LabelInput from './components/LabelInput.vue'
 import NameInput from './components/NameInput.vue'
 
-import html2canvas from 'html2canvas';
 import {elementToSVG} from 'dom-to-svg';
 
 export default defineComponent({
