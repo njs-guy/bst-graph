@@ -7,7 +7,7 @@
       <form class="name-sec rounded-md bg-white p-3 flex flex-row place-content-stretch gap-4">
         <NameInput class="basis-1/2" :default=name idName="name-input" @nameChanged="onNameChanged" />
         <button type="button" class="btn bg-indigo-700 self-end h-8 flex-grow basis-1/2"
-        @click="autofillGraph()">Autofill</button>
+        @click="autofillGraph(name)">Autofill</button>
       </form>
       <form class="name-sec rounded-md bg-white p-3 grid grid-cols-3 place-content-stretch gap-4">
         <LabelInput idName="hp-input" text="HP" :default="String(hp)" @statChanged="onHpChanged" />
@@ -37,6 +37,7 @@ import NameInput from './components/NameInput.vue'
 
 import { elementToSVG } from 'dom-to-svg';
 import { PokemonClient } from 'pokenode-ts';
+import { stat } from 'fs';
 
 export default defineComponent({
   name: 'App',
@@ -127,21 +128,29 @@ export default defineComponent({
       document.body.removeChild(a);
       window.URL.revokeObjectURL(url);
     },
-    autofillGraph(name:string = "bidoof") {
+    async autofillGraph(pokName:string = "bidoof") {
       let statArr:any = [];
 
-      (async () => {
-        const api = new PokemonClient({
-          cacheOptions: { maxAge: 5000 },
-        });
+      const api = new PokemonClient({
+        cacheOptions: { maxAge: 5000 },
+      });
 
-        await api
-          .getPokemonByName(name)
-          .then((data) => statArr.push(data.stats))
-          .catch((error) => alert("That Pokemon does not exist. Please check spelling and try again."));
-      })();
+      await api
+        .getPokemonByName(pokName.toLowerCase())
+        .then((data) => {
+          for (let i = 0; i <= data.stats.length; i++) {
+            // Take each stat and push it to statArray
+            let current = data.stats[i].base_stat;
+            statArr.push(current);
+          }
+        
+        }) // Retrieve base stats
+        // .catch((error) => alert("That Pokemon does not exist. Please check spelling and try again."));
+        .catch((error) => console.log(error));
 
-      console.log(statArr);
+        console.log(statArr);
+        // Send data to controls
+        // self.name = pokName;
     },
     
   },
