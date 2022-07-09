@@ -7,7 +7,7 @@
       <form class="name-sec rounded-md bg-white p-3 flex flex-row place-content-stretch gap-4">
         <NameInput class="basis-1/2" :default=name idName="name-input" @nameChanged="onNameChanged" />
         <button type="button" class="btn bg-indigo-700 self-end h-8 flex-grow basis-1/2"
-        @click="autofillGraph(name)">Autofill</button>
+        @click="fetchStats(name)">Autofill</button>
       </form>
       <form class="name-sec rounded-md bg-white p-3 grid grid-cols-3 place-content-stretch gap-4">
         <LabelInput idName="hp-input" text="HP" :default="String(hp)" @statChanged="onHpChanged" />
@@ -37,7 +37,6 @@ import NameInput from './components/NameInput.vue'
 
 import { elementToSVG } from 'dom-to-svg';
 import { PokemonClient } from 'pokenode-ts';
-import { stat } from 'fs';
 
 export default defineComponent({
   name: 'App',
@@ -128,7 +127,7 @@ export default defineComponent({
       document.body.removeChild(a);
       window.URL.revokeObjectURL(url);
     },
-    async autofillGraph(pokName:string = "bidoof") {
+    async fetchStats(pokName:string = "bidoof") {
       let statArr:any = [];
 
       const api = new PokemonClient({
@@ -138,20 +137,23 @@ export default defineComponent({
       await api
         .getPokemonByName(pokName.toLowerCase())
         .then((data) => {
-          for (let i = 0; i <= data.stats.length; i++) {
+          for (let i = 0; i < data.stats.length; i++) {
             // Take each stat and push it to statArray
             let current = data.stats[i].base_stat;
             statArr.push(current);
           }
-        
+
+          this.fillGraph(statArr); // Send data to controls
         }) // Retrieve base stats
         // .catch((error) => alert("That Pokemon does not exist. Please check spelling and try again."));
-        .catch((error) => console.log(error));
-
-        console.log(statArr);
-        // Send data to controls
-        // self.name = pokName;
+        .catch((error) => console.error(error));
     },
+    fillGraph(stats:Array<Number>)
+    {
+      console.log(stats);
+      this.hp = 20;
+      console.log("Hp= " + this.hp);
+    }
     
   },
   mounted: function() { // On load
