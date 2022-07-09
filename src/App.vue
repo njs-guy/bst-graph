@@ -146,13 +146,19 @@ export default defineComponent({
           this.fillGraph(statArr); // Send data to controls
         }) // Retrieve base stats
         // .catch((error) => alert("That Pokemon does not exist. Please check spelling and try again."));
-        .catch((error) => console.error(error));
+        .catch((error) => alert(error)); // Pokemon does not exist == error 404
     },
-    fillGraph(stats:Array<Number>)
+    fillGraph(stats:Array<number>)
     {
       console.log(stats);
-      this.hp = 20;
-      console.log("Hp= " + this.hp);
+      this.hp = stats[0];
+      this.att = stats[1];
+      this.def = stats[2];
+      this.spa = stats[3];
+      this.spd = stats[4];
+      this.spe = stats[5];
+      this.updateTotal();
+      // console.log("Hp= " + this.hp);
     }
     
   },
