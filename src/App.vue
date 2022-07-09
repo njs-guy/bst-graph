@@ -128,14 +128,20 @@ export default defineComponent({
       window.URL.revokeObjectURL(url);
     },
     autofillGraph(name:string = "bidoof") {
+      let statArr:any = [];
+
       (async () => {
-        const api = new PokemonClient();
+        const api = new PokemonClient({
+          cacheOptions: { maxAge: 5000 },
+        });
 
         await api
           .getPokemonByName(name)
-          .then((data) => console.log(data.name))
-          .catch((error) => console.error(error));
+          .then((data) => statArr.push(data.stats))
+          .catch((error) => alert("That Pokemon does not exist. Please check spelling and try again."));
       })();
+
+      console.log(statArr);
     },
     
   },
