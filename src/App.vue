@@ -6,7 +6,8 @@
       :spaStat=spa :spdStat=spd :speStat=spe :totStat=tot />
       <form class="name-sec rounded-md bg-white p-3 flex flex-row place-content-stretch gap-4">
         <NameInput class="basis-1/2" :default=name idName="name-input" @nameChanged="onNameChanged" />
-        <button type="button" class="btn bg-indigo-700 self-end h-8 flex-grow basis-1/2">Autofill</button>
+        <button type="button" class="btn bg-indigo-700 self-end h-8 flex-grow basis-1/2"
+        @click="autofillGraph()">Autofill</button>
       </form>
       <form class="name-sec rounded-md bg-white p-3 grid grid-cols-3 place-content-stretch gap-4">
         <LabelInput idName="hp-input" text="HP" :default="String(hp)" @statChanged="onHpChanged" />
@@ -34,7 +35,8 @@ import Graph from './components/Graph.vue';
 import LabelInput from './components/LabelInput.vue'
 import NameInput from './components/NameInput.vue'
 
-import {elementToSVG} from 'dom-to-svg';
+import { elementToSVG } from 'dom-to-svg';
+import { PokemonClient } from 'pokenode-ts';
 
 export default defineComponent({
   name: 'App',
@@ -86,7 +88,7 @@ export default defineComponent({
       this.spe = Number(value);
       this.updateTotal();
     },
-    updateTotal(){
+    updateTotal() {
       this.tot = this.hp + this.att + this.def + this.spa + this.spd + this.spe;
     },
     randInt(min: number = 0, max: number = 100) {
@@ -124,6 +126,16 @@ export default defineComponent({
       // Remove created link
       document.body.removeChild(a);
       window.URL.revokeObjectURL(url);
+    },
+    autofillGraph(name:string = "bidoof") {
+      (async () => {
+        const api = new PokemonClient();
+
+        await api
+          .getPokemonByName(name)
+          .then((data) => console.log(data.name))
+          .catch((error) => console.error(error));
+      })();
     },
     
   },
