@@ -1,13 +1,12 @@
 # BST Graph
 
-Generate Pokémon base stat total charts similar to what's seen on Bulbapedia.
+Generate Pokémon base stat total graphs similar to what's seen on Bulbapedia.
 
 # Features
 
 - Can fully edit any stat and use any name.
   - Great for fakémon!
-- Export to SVG.
-  - PNG coming soon!
+- Export to PNG or SVG.
 - Autofill stats from Pokémon name. (Based on Generation 8.)
 - Also works on mobile!
 - Open source under MIT license.
