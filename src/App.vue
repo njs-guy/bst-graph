@@ -6,10 +6,10 @@
       :spaStat=spa :spdStat=spd :speStat=spe :totStat=tot />
       <form class="name-sec rounded-md bg-white p-3 flex flex-row place-content-stretch gap-4">
         <NameInput class="basis-1/2" :default=name idName="name-input" @nameChanged="onNameChanged" />
-        <button type="button" class="btn bg-indigo-700 self-end h-8 flex-grow basis-1/2"
-        @click="fetchStats(name)">Autofill</button>
+        <button type="button" class="btn bg-indigo-700 self-end h-8 basis-1/2"
+        @click="fetchStats(name)">Auto fill</button>
       </form>
-      <form class="name-sec rounded-md bg-white p-3 grid grid-cols-3 place-content-stretch gap-4">
+      <form class="stat-sec rounded-md bg-white p-3 grid grid-cols-3 place-content-stretch gap-4">
         <LabelInput idName="hp-input" text="HP" :default="String(hp)" @statChanged="onHpChanged" />
         <LabelInput idName="att-input" text="Attack" :default="String(att)" 
         @statChanged="onAttChanged" />
@@ -22,10 +22,10 @@
         <LabelInput idName="spe-input" text="Speed" :default="String(spe)" 
         @statChanged="onSpeChanged" />
       </form>
-      <div class="bg-white rounded-md p-3 grid grid-cols-2 place-content-stretch gap-4">
+      <div class="save-sec bg-white rounded-md p-3 grid grid-cols-2 place-content-stretch gap-4">
         <div class="flex flex-col">
-          <label for="quality" class="place-self-start font-bold">Quality</label>
-          <select name="quality" id="quality-select">
+          <label for="quality" class="place-self-start">Quality</label>
+          <select name="quality" id="quality-select" class="rounded p-1 h-8">
             <option value=1>Low</option>
             <option value=3 selected>Medium</option>
             <option value=5>High</option>
@@ -33,8 +33,8 @@
             <option value=10>Ultra</option>
           </select>
         </div>
-        <button type="button" class="btn bg-indigo-700 py-2" @click="outputImage('png')">Save as PNG</button>
-        <button type="button" class="btn bg-indigo-700 py-2 col-span-2" @click="outputImage()">Save as SVG</button>
+        <button type="button" class="btn bg-indigo-700 h-8 self-end" @click="outputImage('png')">Save as PNG</button>
+        <button type="button" class="btn bg-indigo-700 h-8 col-span-2" @click="outputImage()">Save as SVG</button>
       </div>
     </div>
   </div>

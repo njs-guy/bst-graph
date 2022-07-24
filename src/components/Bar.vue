@@ -86,7 +86,6 @@ export default defineComponent({
 }
 
 .label {
-    font-weight: bold;
     float: left;
 }
 
