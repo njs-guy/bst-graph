@@ -22,7 +22,8 @@
         <LabelInput idName="spe-input" text="Speed" :default="String(spe)" 
         @statChanged="onSpeChanged" />
       </form>
-      <button type="button" class="btn bg-indigo-700 py-2" @click="outputImage">Save as SVG</button>
+      <button type="button" class="btn bg-indigo-700 py-2" @click="outputImage()">Save as SVG</button>
+      <button type="button" class="btn bg-indigo-700 py-2" @click="outputImage('png')">Save as PNG</button>
     </div>
   </div>
   <!-- Footer, probably -->
@@ -37,6 +38,11 @@ import NameInput from './components/NameInput.vue'
 
 import { elementToSVG } from 'dom-to-svg';
 import { PokemonClient } from 'pokenode-ts';
+
+const imageType = {
+  PNG: "png",
+  SVG: "svg"
+};
 
 export default defineComponent({
   name: 'App',
@@ -94,7 +100,7 @@ export default defineComponent({
     randInt(min: number = 0, max: number = 100) {
       return Math.floor(Math.random() * max) + min;
     },
-    outputImage() {
+    outputImage(imgType = imageType.SVG) {
       let output;
       let element = document.getElementById("output");
 
@@ -110,22 +116,62 @@ export default defineComponent({
 
       // Serialize the svg xml to a string
       let s = new XMLSerializer();
-      let strSVG = s.serializeToString(svg)
+      let strSVG = s.serializeToString(svg);
 
       // Save that string as an svg file
-      let file = new Blob([strSVG], { type: "image/svg+xml" });
+      let file = new Blob([strSVG], { type: "image/svg+xml;charset=utf-8" });
       const a = document.createElement("a");
       const url = URL.createObjectURL(file);
 
-      // Download svg file
-      a.href = url;
-      a.download = "output.svg";
-      document.body.appendChild(a);
-      a.click();
+      if (imgType == imageType.SVG)
+      {
+        // Download svg file
+        a.href = url;
+        a.download = "output.svg";
+        document.body.appendChild(a);
+        a.click();
 
-      // Remove created link
-      document.body.removeChild(a);
-      window.URL.revokeObjectURL(url);
+        // Remove created link
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+      }
+
+      if(imgType == imageType.PNG)
+      {
+        let canvas = document.createElement('canvas');
+        let size = element.getBoundingClientRect();
+        const w = size.width * 10;
+        const h = size.height * 10;
+        let img = new Image();
+
+        img.onload = () => {
+          canvas.width = w;
+          canvas.height = h;
+
+          canvas.getContext('2d')?.drawImage(img, 0, 0, w, h);
+
+          // download PNG
+          let png = canvas.toDataURL();
+          a.href = png;
+          a.download = "output";
+          document.body.appendChild(a);
+          a.click();
+
+          // Remove created link
+          document.body.removeChild(a);
+          window.URL.revokeObjectURL(png);
+        };
+
+        img.src = url;
+
+        // Get SVG size source:
+        // https://stackoverflow.com/a/24649456
+
+        // Convert SVG to PNG source:
+        // https://levelup.gitconnected.com/draw-an-svg-to-canvas-and-download-it-as-image-in-javascript-f7f7713cf81f
+      }
+
+      
     },
     async fetchStats(pokName:string = "bidoof") {
       let statArr:any = [];
