@@ -22,8 +22,20 @@
         <LabelInput idName="spe-input" text="Speed" :default="String(spe)" 
         @statChanged="onSpeChanged" />
       </form>
-      <button type="button" class="btn bg-indigo-700 py-2" @click="outputImage()">Save as SVG</button>
-      <button type="button" class="btn bg-indigo-700 py-2" @click="outputImage('png')">Save as PNG</button>
+      <div class="bg-white rounded-md p-3 grid grid-cols-2 place-content-stretch gap-4">
+        <div class="flex flex-col">
+          <label for="quality" class="place-self-start font-bold">Quality</label>
+          <select name="quality" id="quality-select">
+            <option value=1>Low</option>
+            <option value=3 selected>Medium</option>
+            <option value=5>High</option>
+            <option value=7>Very High</option>
+            <option value=10>Ultra</option>
+          </select>
+        </div>
+        <button type="button" class="btn bg-indigo-700 py-2" @click="outputImage('png')">Save as PNG</button>
+        <button type="button" class="btn bg-indigo-700 py-2 col-span-2" @click="outputImage()">Save as SVG</button>
+      </div>
     </div>
   </div>
   <!-- Footer, probably -->
@@ -123,8 +135,7 @@ export default defineComponent({
       const a = document.createElement("a");
       const url = URL.createObjectURL(file);
 
-      if (imgType == imageType.SVG)
-      {
+      if (imgType == imageType.SVG) {
         // Download svg file
         a.href = url;
         a.download = "output.svg";
@@ -136,12 +147,23 @@ export default defineComponent({
         window.URL.revokeObjectURL(url);
       }
 
-      if(imgType == imageType.PNG)
-      {
+      if(imgType == imageType.PNG) {
         let canvas = document.createElement('canvas');
         let size = element.getBoundingClientRect();
-        const w = size.width * 10;
-        const h = size.height * 10;
+        const qSel = document.getElementById('quality-select') as HTMLSelectElement;
+        let w:number;
+        let h:number;
+
+        if (qSel != null){
+          let quality = qSel.value; 
+
+          w = size.width * Number(quality);
+          h = size.height * Number(quality);
+          
+        } else {
+          w = size.width;
+          h = size.height;
+        }
         let img = new Image();
 
         img.onload = () => {
