@@ -123,6 +123,8 @@ export default defineComponent({
           return; // If element is null, do nothing
       }
 
+      let fileName = this.name;
+
       // Convert graph html to svg
       let svg = elementToSVG(output);
 
@@ -138,7 +140,7 @@ export default defineComponent({
       if (imgType == imageType.SVG) {
         // Download svg file
         a.href = url;
-        a.download = "output.svg";
+        a.download = fileName + ".svg";
         document.body.appendChild(a);
         a.click();
 
@@ -159,7 +161,7 @@ export default defineComponent({
 
           w = size.width * Number(quality);
           h = size.height * Number(quality);
-          
+
         } else {
           w = size.width;
           h = size.height;
@@ -175,7 +177,7 @@ export default defineComponent({
           // download PNG
           let png = canvas.toDataURL();
           a.href = png;
-          a.download = "output";
+          a.download = fileName;
           document.body.appendChild(a);
           a.click();
 
