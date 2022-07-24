@@ -129,13 +129,14 @@ export default defineComponent({
     },
     async fetchStats(pokName:string = "bidoof") {
       let statArr:any = [];
+      let name = pokName.toLowerCase();
 
       const api = new PokemonClient({
         cacheOptions: { maxAge: 5000 },
       });
 
       await api
-        .getPokemonByName(pokName.toLowerCase())
+        .getPokemonByName(name)
         .then((data) => {
           for (let i = 0; i < data.stats.length; i++) {
             // Take each stat and push it to statArray
@@ -145,8 +146,15 @@ export default defineComponent({
 
           this.fillGraph(statArr); // Send data to controls
         }) // Retrieve base stats
-        // .catch((error) => alert("That Pokemon does not exist. Please check spelling and try again."));
-        .catch((error) => alert(error)); // Pokemon does not exist == error 404
+        .catch((error) => alert("That Pokemon does not exist. Please check spelling and try again."));
+    },
+    checkForForms(pokName:string)
+    {
+      switch (pokName) {
+        case "deoxys":
+          return "deoxys";
+          break;
+      }
     },
     fillGraph(stats:Array<number>)
     {
@@ -158,7 +166,6 @@ export default defineComponent({
       this.spd = stats[4];
       this.spe = stats[5];
       this.updateTotal();
-      // console.log("Hp= " + this.hp);
     }
     
   },
