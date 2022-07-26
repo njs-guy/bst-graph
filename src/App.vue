@@ -6,7 +6,7 @@
       :spaStat=spa :spdStat=spd :speStat=spe :totStat=tot />
       <form class="panel flex flex-row" id="name-sec">
         <NameInput class="basis-1/2" :default=name idName="name-input" @nameChanged="onNameChanged" />
-        <button type="button" class="btn bg-btn-color self-end h-8 basis-1/2"
+        <button type="button" class="btn bg-primary self-end h-8 basis-1/2"
         @click="fetchStats(name)">Auto fill</button>
       </form>
       <form class="panel flex flex-row grid grid-cols-3" id="stat-sec">
@@ -25,7 +25,8 @@
       <div class="panel flex flex-row grid grid-cols-2" id="save-sec">
         <div class="flex flex-col">
           <label for="quality" class="place-self-start">Quality</label>
-          <select name="quality" id="quality-select" class="rounded p-1 h-8">
+          <select name="quality" id="quality-select" 
+          class="rounded p-1 h-8 bg-bg dark:bg-bg-dark">
             <option value=1>Low</option>
             <option value=3 selected>Medium</option>
             <option value=5>High</option>
@@ -33,8 +34,8 @@
             <option value=10>Ultra</option>
           </select>
         </div>
-        <button type="button" class="btn bg-btn-color h-8 self-end" @click="outputImage('png')">Save as PNG</button>
-        <button type="button" class="btn bg-btn-color h-8 col-span-2" @click="outputImage()">Save as SVG</button>
+        <button type="button" class="btn bg-primary h-8 self-end" @click="outputImage('png')">Save as PNG</button>
+        <button type="button" class="btn bg-primary h-8 col-span-2" @click="outputImage()">Save as SVG</button>
       </div>
     </div>
   </div>
@@ -357,7 +358,7 @@ body {
 }
 
 .btn {
-  @apply hover:bg-btn-color-hover text-white font-bold rounded;
+  @apply hover:bg-primary-hover text-white font-bold rounded;
   /* the bg class is on every individual button because applying it here does not work and can't fathom why */
 }
 </style>

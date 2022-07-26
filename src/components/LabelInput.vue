@@ -2,7 +2,8 @@
     <div class="input-container flex flex-col">
         <label :for="idName" class="place-self-start">{{text}}</label>
         <input type="number" :id="idName" :name="idName" 
-        class="rounded outline-indigo-700 caret-indigo-700 outline-offset-0 h-8 px-2 bg-gray-200" 
+        class="rounded outline-primary caret-primary bg-bg dark:bg-bg-dark
+        outline-offset-0 h-8 px-2" 
         min="1" max="999" :value="default"
         @change="onChange($event)">
     </div>

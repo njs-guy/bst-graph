@@ -1,7 +1,10 @@
 <template>
     <div class="input-container flex flex-col">
         <label :for="idName" class="place-self-start">Name</label>
-        <input type="text" class="rounded outline-indigo-700 caret-indigo-700 outline-offset-0 h-8 px-2 bg-gray-200" :value="default" :id="idName" :name="idName"
+        <input type="text" 
+        class="rounded outline-primary caret-primary bg-bg dark:bg-bg-dark
+        outline-offset-0 h-8 px-2" 
+        :value="default" :id="idName" :name="idName"
         @change="onChange($event)">
     </div>
 </template>
