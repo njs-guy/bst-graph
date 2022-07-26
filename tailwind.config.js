@@ -15,7 +15,11 @@ module.exports = {
           'panel': {
             DEFAULT: '#ffffff',
             dark: '#262626'
-          }
+          },
+          'btn-color': {
+            DEFAULT: '#4338cA',
+            hover: '#4C1d95'
+          },
         },
     }
   },

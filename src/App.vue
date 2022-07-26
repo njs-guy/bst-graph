@@ -6,7 +6,7 @@
       :spaStat=spa :spdStat=spd :speStat=spe :totStat=tot />
       <form class="panel flex flex-row" id="name-sec">
         <NameInput class="basis-1/2" :default=name idName="name-input" @nameChanged="onNameChanged" />
-        <button type="button" class="btn bg-indigo-700 self-end h-8 basis-1/2"
+        <button type="button" class="btn bg-btn-color self-end h-8 basis-1/2"
         @click="fetchStats(name)">Auto fill</button>
       </form>
       <form class="panel flex flex-row grid grid-cols-3" id="stat-sec">
@@ -33,8 +33,8 @@
             <option value=10>Ultra</option>
           </select>
         </div>
-        <button type="button" class="btn bg-indigo-700 h-8 self-end" @click="outputImage('png')">Save as PNG</button>
-        <button type="button" class="btn bg-indigo-700 h-8 col-span-2" @click="outputImage()">Save as SVG</button>
+        <button type="button" class="btn bg-btn-color h-8 self-end" @click="outputImage('png')">Save as PNG</button>
+        <button type="button" class="btn bg-btn-color h-8 col-span-2" @click="outputImage()">Save as SVG</button>
       </div>
     </div>
   </div>
@@ -341,7 +341,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  /* color: black; */
   @apply text-black dark:text-white
 }
 
@@ -358,6 +357,7 @@ body {
 }
 
 .btn {
-  @apply hover:bg-indigo-900 text-white font-bold rounded;
+  @apply hover:bg-btn-color-hover text-white font-bold rounded;
+  /* the bg class is on every individual button because applying it here does not work and can't fathom why */
 }
 </style>
