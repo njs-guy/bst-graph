@@ -1,5 +1,5 @@
 <template>
-    <div class="graph rounded-md px-3 py-1" id="output">
+    <div class="graph bg-panel dark:bg-panel-dark rounded-md px-3 py-1" id="output">
         <h1 class="name text-3xl leading-normal">{{ nameLabel }}</h1>
         <div class="grid place-items-center gap-2">
             <Bar class="hp-bar" barId="bar-hp" label="HP" 
@@ -15,7 +15,7 @@
             <Bar class="spe-bar" barId="bar-spe" label="Speed" 
                 :stat=speStat color="#EC4899" />
             <Bar class="tot-bar" label="Total" 
-                :stat=totStat color="white" />
+                :stat=totStat color="rgba(0,0,0,0)" />
         </div>
     </div>
     
