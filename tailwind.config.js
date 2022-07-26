@@ -3,13 +3,16 @@ module.exports = {
     "./index.html",
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
-  purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
-  darkMode: false,
+  darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+        colors:
+        {
+          'bg': {
+            DEFAULT: '#eeeeee',
+            dark: '#202020',
+          },
+        },
+    }
   },
-  variants: {
-    extend: {},
-  },
-  plugins: [],
 }

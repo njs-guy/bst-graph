@@ -327,10 +327,13 @@ export default defineComponent({
 </script>
 
 <style>
-html, body {
+html {
   margin: 0;
   padding: 0;
-  background-color: #eeeeee;
+}
+
+body {
+  @apply bg-bg dark:bg-bg-dark;
 }
 
 #app {
