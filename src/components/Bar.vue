@@ -5,7 +5,7 @@
             <p class="stat">{{ stat }}</p>
         </div>
         <div class="bar-container basis-2/3">
-            <div class="bar" :id="barId" :style="style"></div>
+            <div class="bar" :class="barId" :id="barId" ></div>
         </div>
     </div>
 </template>
@@ -21,7 +21,6 @@ export default defineComponent({
             default: "",
         },
         label: String,
-        color: String,
         stat: Number,
     },
     methods: {
@@ -37,11 +36,11 @@ export default defineComponent({
             wid = (this.stat / 255) * 100; //convert stat to width percent
 
             if (wid > 100) {
-                wid == 100; // Width cannot be more than 100%
+                wid = 100; // Width cannot be more than 100%
             }
 
             if (wid < 0) {
-                wid == 0; // Width cannot be less than 0%
+                wid = 0; // Width cannot be less than 0%
             }
 
             bar.style.width = String(wid) + '%';
@@ -54,20 +53,6 @@ export default defineComponent({
         stat(value) {
             this.adjustBarWidth()
         }
-    },
-    computed: {
-        // Returns style from color and width props
-        style() {
-            let bgc = "";
-
-            if (this.color == undefined){
-                bgc = "background-color: red;";
-            } else {
-                bgc = "background-color: " + this.color + ";";
-            }
-
-            return bgc;
-        },
     },
 });
 </script>

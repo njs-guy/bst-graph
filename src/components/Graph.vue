@@ -3,19 +3,19 @@
         <h1 class="name text-3xl leading-normal">{{ nameLabel }}</h1>
         <div class="grid place-items-center gap-2">
             <Bar class="hp-bar" barId="bar-hp" label="HP" 
-                :stat=hpStat color="#EF4444" />
+                :stat=hpStat />
             <Bar class="att-bar" barId="bar-att" label="Attack" 
-                :stat=attStat color="#F97316" />
+                :stat=attStat />
             <Bar class="def-bar" barId="bar-def" label="Defense" 
-                :stat=defStat color="#EAB308" />
+                :stat=defStat />
             <Bar class="spa-bar" barId="bar-spa" label="Sp. Atk" 
-                :stat=spaStat color="#3B82F6" />
+                :stat=spaStat />
             <Bar class="spd-bar" barId="bar-spd" label="Sp. Def" 
-                :stat=spdStat color="#22C55E" />
+                :stat=spdStat />
             <Bar class="spe-bar" barId="bar-spe" label="Speed" 
-                :stat=speStat color="#EC4899" />
-            <Bar class="tot-bar" label="Total" 
-                :stat=totStat color="rgba(0,0,0,0)" />
+                :stat=speStat />
+            <Bar class="tot-bar" barId="bar-tot" label="Total" 
+                :stat=totStat />
         </div>
     </div>
     

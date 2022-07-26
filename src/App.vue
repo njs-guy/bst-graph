@@ -361,4 +361,32 @@ body {
   @apply hover:bg-primary-hover text-white rounded;
   /* the bg class is on every individual button because applying it here does not work and can't fathom why */
 }
+
+.bar-hp {
+  @apply bg-hp dark:bg-hp-dark;
+}
+
+.bar-att {
+  @apply bg-att dark:bg-att-dark;
+}
+
+.bar-def {
+  @apply bg-def dark:bg-def-dark;
+}
+
+.bar-spa {
+  @apply bg-spa dark:bg-spa-dark;
+}
+
+.bar-spd {
+  @apply bg-spd dark:bg-spd-dark;
+}
+
+.bar-spe {
+  @apply bg-spe dark:bg-spe-dark;
+}
+
+.bar-tot {
+  @apply bg-tot dark:bg-tot-dark;
+}
 </style>
