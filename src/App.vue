@@ -4,12 +4,12 @@
     <div class="main-content grid grid-cols-1 gap-4 max-w-lg">
       <Graph :nameLabel=name :hpStat=hp :attStat=att :defStat=def
       :spaStat=spa :spdStat=spd :speStat=spe :totStat=tot />
-      <form class="name-sec rounded-md bg-white p-3 flex flex-row place-content-stretch gap-4">
+      <form class="panel flex flex-row" id="name-sec">
         <NameInput class="basis-1/2" :default=name idName="name-input" @nameChanged="onNameChanged" />
         <button type="button" class="btn bg-indigo-700 self-end h-8 basis-1/2"
         @click="fetchStats(name)">Auto fill</button>
       </form>
-      <form class="stat-sec rounded-md bg-white p-3 grid grid-cols-3 place-content-stretch gap-4">
+      <form class="panel flex flex-row grid grid-cols-3" id="stat-sec">
         <LabelInput idName="hp-input" text="HP" :default="String(hp)" @statChanged="onHpChanged" />
         <LabelInput idName="att-input" text="Attack" :default="String(att)" 
         @statChanged="onAttChanged" />
@@ -22,7 +22,7 @@
         <LabelInput idName="spe-input" text="Speed" :default="String(spe)" 
         @statChanged="onSpeChanged" />
       </form>
-      <div class="save-sec bg-white rounded-md p-3 grid grid-cols-2 place-content-stretch gap-4">
+      <div class="panel flex flex-row grid grid-cols-2" id="save-sec">
         <div class="flex flex-col">
           <label for="quality" class="place-self-start">Quality</label>
           <select name="quality" id="quality-select" class="rounded p-1 h-8">
@@ -341,7 +341,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: black;
+  /* color: black; */
+  @apply text-black dark:text-white
 }
 
 .mc-margin {
@@ -350,6 +351,10 @@ body {
 
 .main-content {
   margin: 0 auto;
+}
+
+.panel {
+  @apply bg-panel dark:bg-panel-dark rounded-md p-3 place-content-stretch gap-4;
 }
 
 .btn {

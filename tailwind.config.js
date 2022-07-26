@@ -9,9 +9,13 @@ module.exports = {
         colors:
         {
           'bg': {
-            DEFAULT: '#eeeeee',
-            dark: '#202020',
+            DEFAULT: '#e5e5e5',
+            dark: '#121212',
           },
+          'panel': {
+            DEFAULT: '#ffffff',
+            dark: '#262626'
+          }
         },
     }
   },
