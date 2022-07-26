@@ -342,7 +342,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  @apply text-black dark:text-white
+  @apply text-txt dark:text-txt-dark
 }
 
 .mc-margin {
@@ -358,7 +358,7 @@ body {
 }
 
 .btn {
-  @apply hover:bg-primary-hover text-white font-bold rounded;
+  @apply hover:bg-primary-hover text-white rounded;
   /* the bg class is on every individual button because applying it here does not work and can't fathom why */
 }
 </style>
