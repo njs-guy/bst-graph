@@ -43,14 +43,19 @@
 </template>
 
 <script lang="ts">
+// Vue
 import { defineComponent } from 'vue';
 
+// Components
 import Graph from './components/Graph.vue';
 import LabelInput from './components/LabelInput.vue';
 import NameInput from './components/NameInput.vue';
 
+// Modules
 import { checkForForms } from './modules/checkForForms';
+import { randInt } from './modules/randInt';
 
+// Packages
 import { elementToSVG } from 'dom-to-svg';
 import { PokemonClient } from 'pokenode-ts';
 
@@ -112,9 +117,9 @@ export default defineComponent({
     updateTotal() {
       this.tot = this.hp + this.att + this.def + this.spa + this.spd + this.spe;
     },
-    randInt(min: number = 0, max: number = 100) {
-      return Math.floor(Math.random() * max) + min;
-    },
+    // randInt(min: number = 0, max: number = 100) {
+    //   return Math.floor(Math.random() * max) + min;
+    // },
     outputImage(imgType = imageType.SVG) {
       let output;
       let element = document.getElementById("output");
@@ -219,10 +224,6 @@ export default defineComponent({
         }) // Retrieve base stats
         .catch((error) => alert("That Pokemon does not exist. Please check spelling and try again."));
     },
-    // checkForForms(pokName:string)
-    // {
-      
-    // },
     fillGraph(stats:Array<number>)
     {
       console.log(stats);
@@ -246,16 +247,16 @@ export default defineComponent({
     const defaultStatMin = 5;
     const defaultStatMax = 120;
 
-    let nameIndex = this.randInt(0, NAMES.length)
+    let nameIndex = randInt(0, NAMES.length)
     let defaultName = NAMES[nameIndex];
 
     this.onNameChanged(defaultName);
-    this.onHpChanged(String(this.randInt(defaultStatMin, defaultStatMax)));
-    this.onAttChanged(String(this.randInt(defaultStatMin, defaultStatMax)));
-    this.onDefChanged(String(this.randInt(defaultStatMin, defaultStatMax)));
-    this.onSpaChanged(String(this.randInt(defaultStatMin, defaultStatMax)));
-    this.onSpdChanged(String(this.randInt(defaultStatMin, defaultStatMax)));
-    this.onSpeChanged(String(this.randInt(defaultStatMin, defaultStatMax)));
+    this.onHpChanged(String(randInt(defaultStatMin, defaultStatMax)));
+    this.onAttChanged(String(randInt(defaultStatMin, defaultStatMax)));
+    this.onDefChanged(String(randInt(defaultStatMin, defaultStatMax)));
+    this.onSpaChanged(String(randInt(defaultStatMin, defaultStatMax)));
+    this.onSpdChanged(String(randInt(defaultStatMin, defaultStatMax)));
+    this.onSpeChanged(String(randInt(defaultStatMin, defaultStatMax)));
   },
 });
 </script>
