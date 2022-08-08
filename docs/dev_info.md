@@ -12,4 +12,4 @@ All information for developers like build instructions.
 - alt - [GitLab](https://gitlab.com/njshockey/bst-graph)
 
 ## Customizing
-For customization instructions, see customization.md.
+For customization instructions, see [customization.md](customization.md).
