@@ -1,7 +1,14 @@
 {
   "name": "bst-graph",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "description": "Generate Pokémon base stat total charts",
+  "homepage": "https://github.com/njshockey/bst-graph",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/njshockey/bst-graph.git"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build"
