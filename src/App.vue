@@ -46,8 +46,10 @@
 import { defineComponent } from 'vue';
 
 import Graph from './components/Graph.vue';
-import LabelInput from './components/LabelInput.vue'
-import NameInput from './components/NameInput.vue'
+import LabelInput from './components/LabelInput.vue';
+import NameInput from './components/NameInput.vue';
+
+import { checkForForms } from './modules/checkForForms';
 
 import { elementToSVG } from 'dom-to-svg';
 import { PokemonClient } from 'pokenode-ts';
@@ -195,12 +197,10 @@ export default defineComponent({
         // Convert SVG to PNG source:
         // https://levelup.gitconnected.com/draw-an-svg-to-canvas-and-download-it-as-image-in-javascript-f7f7713cf81f
       }
-
-      
-    },
+    }, // End outputImage
     async fetchStats(pokName:string = "bidoof") {
       let statArr:any = [];
-      let name = this.checkForForms(pokName.toLowerCase());
+      let name = checkForForms(pokName.toLowerCase());
 
       const api = new PokemonClient({
         cacheOptions: { maxAge: 5000 },
@@ -219,77 +219,10 @@ export default defineComponent({
         }) // Retrieve base stats
         .catch((error) => alert("That Pokemon does not exist. Please check spelling and try again."));
     },
-    checkForForms(pokName:string)
-    {
-      switch (pokName) {
-        // No response
-        case "deoxys":
-          return "deoxys-normal";
-          break;
-        case "wormadam":
-          return "wormadam-plant";
-          break;
-        case "giratina":
-          return "giratina-altered";
-          break;
-        case "shaymin":
-          return "shaymin-land";
-          break;
-        case "basculin":
-          return "basculin-red-striped";
-          break;
-        case "darmanitan":
-          return "darmanitan-standard";
-          break;
-        case "tornadus":
-          return "tornadus-incarnate";
-          break;
-        case "thundurus":
-          return "thundurus-incarnate";
-          break;
-        case "landorus":
-          return "landorus-incarnate";
-          break;
-        case "keldeo":
-          return "keldeo-ordinary";
-          break;
-        case "meloetta":
-          return "meloetta-aria";
-          break;
-        case "aegislash":
-          return "aegislash-shield";
-          break;
-        case "pumpkaboo":
-          return "pumpkaboo-average";
-          break;
-        case "gourgeist":
-          return "gourgeist-average";
-          break;
-        case "zygarde":
-          return "zygarde-50";
-          break;
-        case "oricorio":
-          return "oricorio-baile";
-          break;
-        case "lycanroc":
-          return "lycanroc-midday";
-          break;
-        case "wishiwashi":
-          return "wishiwashi-school";
-          break;
-        case "minior":
-          return "minior-red-meteor";
-          break;
-        case "eiscue":
-          return "eiscue-ice";
-          break;
-        case "morpeko":
-          return "morpeko-hangry";
-          break;
-        default:
-          return pokName;
-      }
-    },
+    // checkForForms(pokName:string)
+    // {
+      
+    // },
     fillGraph(stats:Array<number>)
     {
       console.log(stats);
