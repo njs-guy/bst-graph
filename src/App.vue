@@ -76,6 +76,7 @@ export default defineComponent({
   },
   data() {
     return {
+      // Stats for use in graph and control inputs
       name: "Name",
       hp: 1,
       att: 1,
@@ -87,6 +88,7 @@ export default defineComponent({
     }
   },
   methods: {
+    // When a stat changes
     onNameChanged(value: string) {
       this.name = value;
     },
@@ -114,24 +116,23 @@ export default defineComponent({
       this.spe = Number(value);
       this.updateTotal();
     },
+    // Updates the total stat
     updateTotal() {
       this.tot = this.hp + this.att + this.def + this.spa + this.spd + this.spe;
     },
-    // randInt(min: number = 0, max: number = 100) {
-    //   return Math.floor(Math.random() * max) + min;
-    // },
+    // Saves the graph as an svg or png image
     outputImage(imgType = imageType.SVG) {
       let output;
       let element = document.getElementById("output");
 
-      // Check whether element is null because typescript kept yelling at me about it
+      // Check whether output element is null because typescript kept yelling at me about it
       if (element != null) {
-          output = element;
+        output = element;
       } else {
-          return; // If element is null, do nothing
+        return; // If element is null, do nothing
       }
 
-      let fileName = this.name;
+      let fileName = this.name; // name of file. not extension.
 
       // Convert graph html to svg
       let svg = elementToSVG(output);
@@ -145,6 +146,7 @@ export default defineComponent({
       const a = document.createElement("a");
       const url = URL.createObjectURL(file);
 
+      // If image should be an svg
       if (imgType == imageType.SVG) {
         // Download svg file
         a.href = url;
@@ -157,6 +159,7 @@ export default defineComponent({
         window.URL.revokeObjectURL(url);
       }
 
+      // if the image should be a png
       if(imgType == imageType.PNG) {
         let canvas = document.createElement('canvas');
         let size = element.getBoundingClientRect();
@@ -165,7 +168,7 @@ export default defineComponent({
         let h:number;
 
         if (qSel != null){
-          let quality = qSel.value; 
+          let quality = qSel.value; // take quality multiplier from qSel
 
           w = size.width * Number(quality);
           h = size.height * Number(quality);
@@ -180,6 +183,7 @@ export default defineComponent({
           canvas.width = w;
           canvas.height = h;
 
+          // Draw image from canvas
           canvas.getContext('2d')?.drawImage(img, 0, 0, w, h);
 
           // download PNG
@@ -203,6 +207,8 @@ export default defineComponent({
         // https://levelup.gitconnected.com/draw-an-svg-to-canvas-and-download-it-as-image-in-javascript-f7f7713cf81f
       }
     }, // End outputImage
+
+    // fetch stat totals from PokeAPI
     async fetchStats(pokName:string = "bidoof") {
       let statArr:any = [];
       let name = checkForForms(pokName.toLowerCase());
@@ -224,9 +230,9 @@ export default defineComponent({
         }) // Retrieve base stats
         .catch((error) => alert("That Pokemon does not exist. Please check spelling and try again."));
     },
+    // Update graph with current stats
     fillGraph(stats:Array<number>)
     {
-      console.log(stats);
       this.hp = stats[0];
       this.att = stats[1];
       this.def = stats[2];
@@ -238,6 +244,8 @@ export default defineComponent({
     
   },
   mounted: function() { // On load
+
+    // Random names to stat with
     const NAMES = [
       "Pikablu", "Missingno", "Agumon", "Jack Frost", "Frodo",
       "Helix", "Sonic", "Morgana", "Mario", "Mewthree",
@@ -247,7 +255,7 @@ export default defineComponent({
     const defaultStatMin = 5;
     const defaultStatMax = 120;
 
-    let nameIndex = randInt(0, NAMES.length)
+    let nameIndex = randInt(0, NAMES.length);
     let defaultName = NAMES[nameIndex];
 
     this.onNameChanged(defaultName);
@@ -293,7 +301,7 @@ body {
 
 .btn {
   @apply hover:bg-primary-hover text-white rounded;
-  /* the bg class is on every individual button because applying it here does not work and can't fathom why */
+  /* the bg class is on every individual button because applying it here does not work and I can't fathom why */
 }
 
 .bar-hp {

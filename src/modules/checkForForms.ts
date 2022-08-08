@@ -1,7 +1,9 @@
+// Checks the input string and returns a valid PokeAPI response
+
 export function checkForForms(pokName: string)
 {
     switch (pokName) {
-        // No response
+        // No response from regular name
         case "deoxys":
             return "deoxys-normal";
             break;
