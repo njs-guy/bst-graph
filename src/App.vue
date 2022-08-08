@@ -9,7 +9,7 @@
         <button type="button" class="btn bg-primary self-end h-8 basis-1/2"
         @click="fetchStats(name)">Auto fill</button>
       </form>
-      <form class="panel flex flex-row grid grid-cols-3" id="stat-sec">
+      <form class="panel flex-row grid grid-cols-3" id="stat-sec">
         <LabelInput idName="hp-input" text="HP" :default="String(hp)" @statChanged="onHpChanged" />
         <LabelInput idName="att-input" text="Attack" :default="String(att)" 
         @statChanged="onAttChanged" />
@@ -22,7 +22,7 @@
         <LabelInput idName="spe-input" text="Speed" :default="String(spe)" 
         @statChanged="onSpeChanged" />
       </form>
-      <div class="panel flex flex-row grid grid-cols-2" id="save-sec">
+      <div class="panel flex-row grid grid-cols-2" id="save-sec">
         <div class="flex flex-col">
           <label for="quality" class="place-self-start">Quality</label>
           <select name="quality" id="quality-select" 
