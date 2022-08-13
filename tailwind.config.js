@@ -63,6 +63,15 @@ module.exports = {
             dark: 'rgba(0,0,0,0)',
           }
         },
+
+        // Fonts
+        fontFamily: {
+          sans: [
+            '"Cabin"',
+            'Arial',
+            'sans-serif',
+          ]
+        },
     }
   },
 }
