@@ -1,5 +1,5 @@
 <template>
-  <!-- Nav bar, probably -->
+  <Header />
   <div class="mc-margin">
     <div class="main-content grid grid-cols-1 gap-4 max-w-lg">
       <Graph :nameLabel=name :hpStat=hp :attStat=att :defStat=def
@@ -48,6 +48,7 @@ import { defineComponent } from 'vue';
 
 // Components
 import Graph from './components/Graph.vue';
+import Header from './components/Header.vue';
 import LabelInput from './components/LabelInput.vue';
 import NameInput from './components/NameInput.vue';
 
@@ -70,7 +71,8 @@ export default defineComponent({
     Graph,
     LabelInput,
     NameInput,
-  },
+    Header
+},
   props: {
 
   },

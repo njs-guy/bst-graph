@@ -70,7 +70,7 @@ module.exports = {
             '"Cabin"',
             'Arial',
             'sans-serif',
-          ]
+          ],
         },
     }
   },
