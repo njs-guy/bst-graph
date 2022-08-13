@@ -1,7 +1,7 @@
 <template>
     <div class="header flex flex-row p-2 bg-panel dark:bg-panel-dark">
         <h1 class="text-2xl mr-auto">BST Graph</h1>
-        <ThemeSwitcher class="float-right" />
+        <ThemeSwitcher @darkMode="onDarkMode" class="float-right" />
     </div>
 </template>
 
@@ -11,8 +11,14 @@ import ThemeSwitcher from './ThemeSwitcher.vue';
 
 export default defineComponent({
     Name: "Header",
-    methods: {},
-    components: { ThemeSwitcher }
+    methods: {
+        onDarkMode(d: Boolean) {
+            this.$emit('darkMode', d);
+        }
+    },
+    components: { 
+        ThemeSwitcher,
+    },
 });
 </script>
 

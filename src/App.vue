@@ -1,5 +1,5 @@
 <template>
-  <Header />
+  <Header @darkMode="changeTheme" />
   <div class="mc-margin">
     <div class="main-content grid grid-cols-1 gap-4 max-w-lg">
       <Graph :nameLabel=name :hpStat=hp :attStat=att :defStat=def
@@ -233,8 +233,7 @@ export default defineComponent({
         .catch((error) => alert("That Pokemon does not exist. Please check spelling and try again."));
     },
     // Update graph with current stats
-    fillGraph(stats:Array<number>)
-    {
+    fillGraph(stats:Array<number>) {
       this.hp = stats[0];
       this.att = stats[1];
       this.def = stats[2];
@@ -242,7 +241,16 @@ export default defineComponent({
       this.spd = stats[4];
       this.spe = stats[5];
       this.updateTotal();
-    }
+    },
+    changeTheme(darkMode: Boolean) {
+      let html = document.getElementsByTagName('html')[0];
+
+      if(darkMode){
+        html.classList.add("dark");
+      } else {
+        html.classList.remove("dark");
+      }
+    },
     
   },
   mounted: function() { // On load
