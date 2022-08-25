@@ -228,10 +228,12 @@ export default defineComponent({
         let h: number;
 
         if (qSel != null) {
-          let quality = qSel.value; // take quality multiplier from qSel
+          let quality = Number(qSel.value); // take quality multiplier from qSel
 
-          w = size.width * Number(quality);
-          h = size.height * Number(quality);
+          this.saveQuality(String(quality));
+
+          w = size.width * quality;
+          h = size.height * quality;
         } else {
           w = size.width;
           h = size.height;
@@ -311,6 +313,34 @@ export default defineComponent({
       } else {
         html.classList.remove("dark");
       }
+
+      this.saveTheme(String(darkMode));
+    },
+    saveQuality(quality: string) {
+      localStorage.setItem("quality", quality);
+    },
+    saveTheme(dark: string) {
+      localStorage.setItem("dark", dark);
+    },
+    loadSettings() {
+      let quality = localStorage.getItem("quality");
+      let dark = localStorage.getItem("dark");
+
+      const qSel = document.getElementById(
+        "quality-select"
+      ) as HTMLSelectElement;
+      const themeSw = document.getElementById("theme") as HTMLInputElement;
+
+      // Check if there's a saved setting for quality
+      if (quality !== null) {
+        qSel.value = quality; // Set the value of the quality selector
+      }
+
+      // Check if dark mode is true
+      if (dark === "true") {
+        this.changeTheme(true); // Change theme
+        themeSw.checked = true; // Check theme checkbox
+      }
     },
   },
   mounted: function () {
@@ -348,6 +378,8 @@ export default defineComponent({
     this.onSpaChanged(String(randInt(defaultStatMin, defaultStatMax)));
     this.onSpdChanged(String(randInt(defaultStatMin, defaultStatMax)));
     this.onSpeChanged(String(randInt(defaultStatMin, defaultStatMax)));
+
+    this.loadSettings();
   },
 });
 </script>
