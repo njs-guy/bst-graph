@@ -2,40 +2,98 @@
   <Header @darkMode="changeTheme" />
   <div class="mc-margin">
     <div class="main-content grid grid-cols-1 gap-4 max-w-lg">
-      <Graph :nameLabel=name :hpStat=hp :attStat=att :defStat=def
-      :spaStat=spa :spdStat=spd :speStat=spe :totStat=tot />
+      <Graph
+        :nameLabel="name"
+        :hpStat="hp"
+        :attStat="att"
+        :defStat="def"
+        :spaStat="spa"
+        :spdStat="spd"
+        :speStat="spe"
+        :totStat="tot"
+      />
       <form class="panel flex flex-row" id="name-sec">
-        <NameInput class="basis-1/2" :default=name idName="name-input" @nameChanged="onNameChanged" />
-        <button type="button" class="btn bg-primary self-end h-8 basis-1/2"
-        @click="fetchStats(name)">Auto fill</button>
+        <NameInput
+          class="basis-1/2"
+          :default="name"
+          idName="name-input"
+          @nameChanged="onNameChanged"
+        />
+        <button
+          type="button"
+          class="btn bg-primary self-end h-8 basis-1/2"
+          @click="fetchStats(name)"
+        >
+          Auto fill
+        </button>
       </form>
       <form class="panel flex-row grid grid-cols-3" id="stat-sec">
-        <LabelInput idName="hp-input" text="HP" :default="String(hp)" @statChanged="onHpChanged" />
-        <LabelInput idName="att-input" text="Attack" :default="String(att)" 
-        @statChanged="onAttChanged" />
-        <LabelInput idName="def-input" text="Defense" :default="String(def)" 
-        @statChanged="onDefChanged" />
-        <LabelInput idName="spa-input" text="Sp. Attack" :default="String(spa)" 
-        @statChanged="onSpaChanged" />
-        <LabelInput idName="spd-input" text="Sp. Defense" :default="String(spd)" 
-        @statChanged="onSpdChanged" />
-        <LabelInput idName="spe-input" text="Speed" :default="String(spe)" 
-        @statChanged="onSpeChanged" />
+        <LabelInput
+          idName="hp-input"
+          text="HP"
+          :default="String(hp)"
+          @statChanged="onHpChanged"
+        />
+        <LabelInput
+          idName="att-input"
+          text="Attack"
+          :default="String(att)"
+          @statChanged="onAttChanged"
+        />
+        <LabelInput
+          idName="def-input"
+          text="Defense"
+          :default="String(def)"
+          @statChanged="onDefChanged"
+        />
+        <LabelInput
+          idName="spa-input"
+          text="Sp. Attack"
+          :default="String(spa)"
+          @statChanged="onSpaChanged"
+        />
+        <LabelInput
+          idName="spd-input"
+          text="Sp. Defense"
+          :default="String(spd)"
+          @statChanged="onSpdChanged"
+        />
+        <LabelInput
+          idName="spe-input"
+          text="Speed"
+          :default="String(spe)"
+          @statChanged="onSpeChanged"
+        />
       </form>
       <div class="panel flex-row grid grid-cols-2" id="save-sec">
         <div class="flex flex-col">
           <label for="quality" class="place-self-start">Quality</label>
-          <select name="quality" id="quality-select" 
-          class="rounded p-1 h-8 bg-bg dark:bg-bg-dark">
-            <option value=1>Low</option>
-            <option value=3 selected>Medium</option>
-            <option value=5>High</option>
-            <option value=7>Very High</option>
-            <option value=10>Ultra</option>
+          <select
+            name="quality"
+            id="quality-select"
+            class="rounded p-1 h-8 bg-bg dark:bg-bg-dark"
+          >
+            <option value="1">Low</option>
+            <option value="3" selected>Medium</option>
+            <option value="5">High</option>
+            <option value="7">Very High</option>
+            <option value="10">Ultra</option>
           </select>
         </div>
-        <button type="button" class="btn bg-primary h-8 self-end" @click="outputImage('png')">Save as PNG</button>
-        <button type="button" class="btn bg-primary h-8 col-span-2" @click="outputImage()">Save as SVG</button>
+        <button
+          type="button"
+          class="btn bg-primary h-8 self-end"
+          @click="outputImage('png')"
+        >
+          Save as PNG
+        </button>
+        <button
+          type="button"
+          class="btn bg-primary h-8 col-span-2"
+          @click="outputImage()"
+        >
+          Save as SVG
+        </button>
       </div>
     </div>
   </div>
@@ -44,38 +102,36 @@
 
 <script lang="ts">
 // Vue
-import { defineComponent } from 'vue';
+import { defineComponent } from "vue";
 
 // Components
-import Graph from './components/Graph.vue';
-import Header from './components/Header.vue';
-import LabelInput from './components/LabelInput.vue';
-import NameInput from './components/NameInput.vue';
+import Graph from "./components/Graph.vue";
+import Header from "./components/Header.vue";
+import LabelInput from "./components/LabelInput.vue";
+import NameInput from "./components/NameInput.vue";
 
 // Modules
-import { checkForForms } from './modules/checkForForms';
-import { randInt } from './modules/randInt';
+import { checkForForms } from "./modules/checkForForms";
+import { randInt } from "./modules/randInt";
 
 // Packages
-import { elementToSVG } from 'dom-to-svg';
-import { PokemonClient } from 'pokenode-ts';
+import { elementToSVG } from "dom-to-svg";
+import { PokemonClient } from "pokenode-ts";
 
 const imageType = {
   PNG: "png",
-  SVG: "svg"
+  SVG: "svg",
 };
 
 export default defineComponent({
-  name: 'App',
+  name: "App",
   components: {
     Graph,
     LabelInput,
     NameInput,
-    Header
-},
-  props: {
-
+    Header,
   },
+  props: {},
   data() {
     return {
       // Stats for use in graph and control inputs
@@ -87,7 +143,7 @@ export default defineComponent({
       spd: 1,
       spe: 1,
       tot: 1,
-    }
+    };
   },
   methods: {
     // When a stat changes
@@ -162,19 +218,20 @@ export default defineComponent({
       }
 
       // if the image should be a png
-      if(imgType == imageType.PNG) {
-        let canvas = document.createElement('canvas');
+      if (imgType == imageType.PNG) {
+        let canvas = document.createElement("canvas");
         let size = element.getBoundingClientRect();
-        const qSel = document.getElementById('quality-select') as HTMLSelectElement;
-        let w:number;
-        let h:number;
+        const qSel = document.getElementById(
+          "quality-select"
+        ) as HTMLSelectElement;
+        let w: number;
+        let h: number;
 
-        if (qSel != null){
+        if (qSel != null) {
           let quality = qSel.value; // take quality multiplier from qSel
 
           w = size.width * Number(quality);
           h = size.height * Number(quality);
-
         } else {
           w = size.width;
           h = size.height;
@@ -186,7 +243,7 @@ export default defineComponent({
           canvas.height = h;
 
           // Draw image from canvas
-          canvas.getContext('2d')?.drawImage(img, 0, 0, w, h);
+          canvas.getContext("2d")?.drawImage(img, 0, 0, w, h);
 
           // download PNG
           let png = canvas.toDataURL();
@@ -211,8 +268,8 @@ export default defineComponent({
     }, // End outputImage
 
     // fetch stat totals from PokeAPI
-    async fetchStats(pokName:string = "bidoof") {
-      let statArr:any = [];
+    async fetchStats(pokName: string = "bidoof") {
+      let statArr: any = [];
       let name = checkForForms(pokName.toLowerCase());
 
       const api = new PokemonClient({
@@ -230,10 +287,14 @@ export default defineComponent({
 
           this.fillGraph(statArr); // Send data to controls
         }) // Retrieve base stats
-        .catch((error) => alert("That Pokemon does not exist. Please check spelling and try again."));
+        .catch((error) =>
+          alert(
+            "That Pokemon does not exist. Please check spelling and try again."
+          )
+        );
     },
     // Update graph with current stats
-    fillGraph(stats:Array<number>) {
+    fillGraph(stats: Array<number>) {
       this.hp = stats[0];
       this.att = stats[1];
       this.def = stats[2];
@@ -243,23 +304,35 @@ export default defineComponent({
       this.updateTotal();
     },
     changeTheme(darkMode: Boolean) {
-      let html = document.getElementsByTagName('html')[0];
+      let html = document.getElementsByTagName("html")[0];
 
-      if(darkMode){
+      if (darkMode) {
         html.classList.add("dark");
       } else {
         html.classList.remove("dark");
       }
     },
-    
   },
-  mounted: function() { // On load
+  mounted: function () {
+    // On load
 
     // Random names to stat with
     const NAMES = [
-      "Pikablu", "Missingno", "Agumon", "Jack Frost", "Frodo",
-      "Helix", "Sonic", "Morgana", "Mario", "Mewthree",
-      "Slime", "Moogle", "Mega Bidoof", "Cthulu", "Chopper"
+      "Pikablu",
+      "Missingno",
+      "Agumon",
+      "Jack Frost",
+      "Frodo",
+      "Helix",
+      "Sonic",
+      "Morgana",
+      "Mario",
+      "Mewthree",
+      "Slime",
+      "Moogle",
+      "Mega Bidoof",
+      "Cthulu",
+      "Chopper",
     ];
 
     const defaultStatMin = 5;
@@ -293,7 +366,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  @apply text-txt dark:text-txt-dark
+  @apply text-txt dark:text-txt-dark;
 }
 
 .mc-margin {
@@ -309,7 +382,7 @@ body {
 }
 
 .btn {
-  @apply hover:bg-primary-hover text-white rounded;
+  @apply dark:bg-primary-dark hover:bg-primary-hover hover:dark:bg-primary-hoverDark text-white rounded;
   /* the bg class is on every individual button because applying it here does not work and I can't fathom why */
 }
 

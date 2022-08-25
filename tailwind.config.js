@@ -8,28 +8,33 @@ module.exports = {
     extend: {
         colors:
         {
+          // DEFAULT = light mode
+          // dark = dark mode
+
           // Page background
           'bg': {
             DEFAULT: '#e5e5e5',
-            dark: '#121212',
+            dark: '#262626',
           },
 
           // Panel color
           'panel': {
             DEFAULT: '#ffffff',
-            dark: '#262626'
+            dark: '#404040'
           },
 
           // Button color
           'primary': {
-            DEFAULT: '#6d28d9',
-            hover: '#4c1d95'
+            DEFAULT: '#1d4ed8',
+            hover: '#1e40af',
+            dark: '#6d28d9',
+            hoverDark: '#5b21b6'
           },
 
           // Text color
           'txt': {
             DEFAULT: '#000000',
-            dark: '#ffffff'
+            dark: '#fafafa'
           },
 
           // Stat colors
