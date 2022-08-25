@@ -1,8 +1,12 @@
 {
   "name": "bst-graph",
   "version": "0.1.0",
-  "private": false,
+  "private": true,
   "description": "Generate Pokémon base stat total charts",
+  "author": {
+    "name": "Nick Shockey",
+    "email": "shockeynj@gmail.com"
+  },
   "homepage": "https://github.com/njshockey/bst-graph",
   "license": "MIT",
   "repository": {
