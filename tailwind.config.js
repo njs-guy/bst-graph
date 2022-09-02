@@ -73,9 +73,10 @@ module.exports = {
         fontFamily: {
           sans: [
             '"Cabin"',
-            'Arial',
+            'Arial', // Fallback fonts
             'sans-serif',
           ],
+          serif: [],
         },
     }
   },

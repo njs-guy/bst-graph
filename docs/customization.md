@@ -2,11 +2,55 @@
 
 BST Graph allows for you to locally change its colors in  code. Now, don't let that intimidate you if you don't know JavaScript. Thanks to [Tailwind CSS](https://tailwindcss.com/), the color values can easily be changed in tailwind.config.js at the root of the directory like you would a config file. For each color, the DEFAULT value is what the color will be in light mode, while the dark value is what the color will be in dark mode.
 
-(This file is currently a WIP.)
+(This doc is currently a WIP.)
 
 # Colors
 
 # Fonts
+
+To change the main font, change the `fontFamily` property. Inside of this are two more properties: `sans` and `serif`. Sans-serif fonts should go under the `sans` property and Serif fonts should go under the `serif` property. As an example:
+
+```
+// tailwind.config.js
+
+// Fonts
+fontFamily: {
+    sans: [
+    'Roboto',
+    'Arial', // Fallback fonts
+    'sans-serif',
+    ],
+    serif: [
+    'Merriweather',
+    'Verdana', // Fallback fonts
+    'serif'
+    ],
+},
+```
+
+## Self-hosted fonts
+
+If you plan on hosting a fork of BST Graph, self hosting your own fonts is not required but recommended. An easy and open source way of going about this is through [google-webfonts-helper](https://google-webfonts-helper.herokuapp.com/fonts).
+
+After deciding on your font(s), replace the fonts found in `public > fonts` with the new ones. Then, replace the CSS in `public > fonts.css`. As an example:
+
+```
+// fonts.css
+
+/* roboto-regular - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/roboto-v30-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('./fonts/roboto-v30-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./fonts/roboto-v30-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./fonts/roboto-v30-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('./fonts/roboto-v30-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./fonts/roboto-v30-latin-regular.svg#Roboto') format('svg'); /* Legacy iOS */
+}
+```
 
 # Advanced
 
