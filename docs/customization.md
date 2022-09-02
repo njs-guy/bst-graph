@@ -10,7 +10,7 @@ BST Graph allows for you to locally change its colors in  code. Now, don't let t
 
 To change the main font, change the `fontFamily` property. Inside of this are two more properties: `sans` and `serif`. Sans-serif fonts should go under the `sans` property and Serif fonts should go under the `serif` property. As an example:
 
-```
+```js
 // tailwind.config.js
 
 // Fonts
@@ -34,8 +34,8 @@ If you plan on hosting a fork of BST Graph, self hosting your own fonts is not r
 
 After deciding on your font(s), replace the fonts found in `public > fonts` with the new ones. Then, replace the CSS in `public > fonts.css`. As an example:
 
-```
-// fonts.css
+```css
+/* fonts.css */
 
 /* roboto-regular - latin */
 @font-face {
