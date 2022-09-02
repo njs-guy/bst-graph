@@ -1,5 +1,6 @@
 # Developer information
-All information for developers like build instructions.
+
+All information for developers such as build instructions.
 
 ## Building
 
