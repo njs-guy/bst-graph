@@ -2,8 +2,8 @@
 
 Generate Pokémon base stat total graphs similar to what's seen on Bulbapedia.
 
-![Example in light mode](docs/images/example.svg)
-![Example in dark mode](docs/images/example_dark.svg)
+![Example in light mode](docs/images/example.png)
+![Example in dark mode](docs/images/example_dark.png)
 
 # Features
 
