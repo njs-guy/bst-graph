@@ -1,10 +1,48 @@
 # Customization
 
-BST Graph allows for you to locally change its colors in  code. Now, don't let that intimidate you if you don't know JavaScript. Thanks to [Tailwind CSS](https://tailwindcss.com/), the color values can easily be changed in tailwind.config.js at the root of the directory like you would a config file. For each color, the DEFAULT value is what the color will be in light mode, while the dark value is what the color will be in dark mode.
+BST Graph allows for you to locally change its colors in  code. Now, don't let that intimidate you if you don't know JavaScript. Thanks to [Tailwind CSS](https://tailwindcss.com/), the color values can easily be changed in tailwind.config.js at the root of the directory like you would a config file.
 
 (This doc is currently a WIP.)
 
 # Colors
+
+Colors can be changed to any [color value accepted by CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value). For each color, the `DEFAULT` value is what the color will be in light mode, while the `dark` value is what the color will be in dark mode. Examples:
+
+```js
+//tailwind.config.js
+
+// CSS names
+'panel': {
+    DEFAULT: 'red',
+    dark: 'dodgerblue'
+},
+
+// Hex values
+'panel': {
+    DEFAULT: '#FF0000',
+    dark: '#0094FF'
+},
+
+// rgb values
+'panel': {
+    DEFAULT: 'rgb(255, 0, 0)',
+    dark: 'rgb(0, 148, 255)'
+},
+
+// rgba values
+'panel': {
+    DEFAULT: 'rgba(255, 0, 0, 255)',
+    dark: 'rgba(0, 148, 255, 255)'
+},
+
+// hsl values
+'panel': {
+    DEFAULT: 'hsl(0, 100%, 50%)',
+    dark: 'hsl(205, 100%, 50%)'
+},
+```
+
+[More info on customizing Tailwind CSS colors](https://tailwindcss.com/docs/customizing-colors).
 
 # Fonts
 
