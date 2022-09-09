@@ -14,8 +14,9 @@
     "url": "https://github.com/njshockey/bst-graph.git"
   },
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 8080"
   },
   "dependencies": {
     "core-js": "^3.8.3",
@@ -25,9 +26,11 @@
     "vue": "^3.2.13"
   },
   "devDependencies": {
+    "@vitejs/plugin-vue": "^3.1.0",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-typescript": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
-    "typescript": "~4.5.5"
+    "typescript": "~4.5.5",
+    "vite": "^3.1.0"
   }
 }
