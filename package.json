@@ -14,6 +14,7 @@
     "url": "https://github.com/njshockey/bst-graph.git"
   },
   "scripts": {
+    "dev": "vite",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build"
   },
