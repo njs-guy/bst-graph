@@ -1,30 +1,39 @@
 <template>
-    <div class="input-container flex flex-col">
-        <label :for="idName" class="place-self-start">{{text}}</label>
-        <input type="number" :id="idName" :name="idName" 
-        class="rounded outline-primary caret-primary bg-bg dark:bg-bg-dark
-        outline-offset-0 h-8 px-2" 
-        min="1" max="999" :value="default"
-        @change="onChange($event)">
-    </div>
+	<div class="input-container flex flex-col">
+		<label
+			:for="idName"
+			class="place-self-start"
+			>{{ text }}</label
+		>
+		<input
+			type="number"
+			:id="idName"
+			:name="idName"
+			class="rounded outline-primary caret-primary bg-bg dark:bg-bg-dark outline-offset-0 h-8 px-2"
+			min="1"
+			max="999"
+			:value="default"
+			@change="onChange($event)"
+		/>
+	</div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent } from "vue";
 
 export default defineComponent({
-    Name: 'LabelInput',
-    props: {
-        idName: String,
-        text: String,
-        default: String,
-    },
-    methods: {
-        // Emit number box value when changed 
-        onChange(event: any) {
-            let num = event.target.value;
-            this.$emit('statChanged', num);
-        }
-    },
+	Name: "LabelInput",
+	props: {
+		idName: String,
+		text: String,
+		default: String,
+	},
+	methods: {
+		// Emit number box value when changed
+		onChange(event: any) {
+			let num = event.target.value;
+			this.$emit("statChanged", num);
+		},
+	},
 });
 </script>
