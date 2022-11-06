@@ -1,36 +1,36 @@
 {
-  "name": "bst-graph",
-  "version": "0.1.0",
-  "private": true,
-  "description": "Generate Pokémon base stat total charts",
-  "author": {
-    "name": "Nick Shockey",
-    "email": "shockeynj@gmail.com"
-  },
-  "homepage": "https://github.com/njshockey/bst-graph",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/njshockey/bst-graph.git"
-  },
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview --port 8080"
-  },
-  "dependencies": {
-    "core-js": "^3.8.3",
-    "dom-to-svg": "^0.12.2",
-    "pokenode-ts": "^1.14.0",
-    "tailwindcss": "^3.1.4",
-    "vue": "^3.2.13"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-vue": "^3.1.0",
-    "@vue/cli-plugin-babel": "~5.0.0",
-    "@vue/cli-plugin-typescript": "~5.0.0",
-    "@vue/cli-service": "~5.0.0",
-    "typescript": "~4.5.5",
-    "vite": "^3.1.0"
-  }
+	"name": "bst-graph",
+	"version": "0.1.0",
+	"private": true,
+	"description": "Generate Pokémon base stat total charts",
+	"author": {
+		"name": "Nick Shockey",
+		"email": "shockeynj@gmail.com"
+	},
+	"homepage": "https://github.com/njshockey/bst-graph",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/njshockey/bst-graph.git"
+	},
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview --port 8080"
+	},
+	"dependencies": {
+		"core-js": "^3.8.3",
+		"dom-to-svg": "^0.12.2",
+		"pokenode-ts": "^1.14.0",
+		"tailwindcss": "^3.1.4",
+		"vue": "^3.2.13"
+	},
+	"devDependencies": {
+		"@vitejs/plugin-vue": "^3.1.0",
+		"@vue/cli-plugin-babel": "~5.0.0",
+		"@vue/cli-plugin-typescript": "~5.0.0",
+		"@vue/cli-service": "~5.0.0",
+		"typescript": "~4.5.5",
+		"vite": "^3.1.0"
+	}
 }
