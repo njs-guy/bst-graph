@@ -7,26 +7,47 @@ The autofill button uses PokeAPI to automatically fill in the stats based on the
 # No response
 
 ## deoxys
+
 ## wormadam
+
 ## giratina
+
 ## shaymin
+
 ## basculin
+
 ## Darmanitan
+
 ## tornadus
+
 ## thundurus
+
 ## landorus
+
 ## keldeo
+
 ## meloetta
+
 ## aegislash
+
 ## pumpkaboo
+
 ## gourgeist
+
 ## zygarde
+
 ## oricorio
+
 ## lycanroc
+
 ## wishiwashi
+
 ## minior
+
 ## eiscue
+
 ## morpeko
+
 ## flabebe
 
 # Regional variants

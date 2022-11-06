@@ -1,6 +1,6 @@
 # Customization
 
-BST Graph allows for you to locally change its colors in  code. Now, don't let that intimidate you if you don't know JavaScript. Thanks to [Tailwind CSS](https://tailwindcss.com/), the color values can easily be changed in tailwind.config.js at the root of the directory like you would a config file.
+BST Graph allows for you to locally change its colors in code. Now, don't let that intimidate you if you don't know JavaScript. Thanks to [Tailwind CSS](https://tailwindcss.com/), the color values can easily be changed in tailwind.config.js at the root of the directory like you would a config file.
 
 (This doc is currently a WIP.)
 
@@ -77,16 +77,18 @@ After deciding on your font(s), replace the fonts found in `public > fonts` with
 
 /* roboto-regular - latin */
 @font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: url('./fonts/roboto-v30-latin-regular.eot'); /* IE9 Compat Modes */
-  src: local(''),
-       url('./fonts/roboto-v30-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('./fonts/roboto-v30-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('./fonts/roboto-v30-latin-regular.woff') format('woff'), /* Modern Browsers */
-       url('./fonts/roboto-v30-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('./fonts/roboto-v30-latin-regular.svg#Roboto') format('svg'); /* Legacy iOS */
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 400;
+	src: url("./fonts/roboto-v30-latin-regular.eot"); /* IE9 Compat Modes */
+	src: local(""),
+		url("./fonts/roboto-v30-latin-regular.eot?#iefix") format("embedded-opentype"),
+		/* IE6-IE8 */ url("./fonts/roboto-v30-latin-regular.woff2") format("woff2"),
+		/* Super Modern Browsers */ url("./fonts/roboto-v30-latin-regular.woff")
+			format("woff"), /* Modern Browsers */
+			url("./fonts/roboto-v30-latin-regular.ttf") format("truetype"),
+		/* Safari, Android, iOS */
+			url("./fonts/roboto-v30-latin-regular.svg#Roboto") format("svg"); /* Legacy iOS */
 }
 ```
 
