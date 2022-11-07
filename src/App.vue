@@ -3,14 +3,14 @@
 	<div class="mc-margin">
 		<div class="main-content grid grid-cols-1 gap-4 max-w-lg">
 			<Graph
-				:nameLabel="name"
-				:hpStat="hp"
-				:attStat="att"
-				:defStat="def"
-				:spaStat="spa"
-				:spdStat="spd"
-				:speStat="spe"
-				:totStat="tot"
+				:nameLabel="graphState.name"
+				:hpStat="graphState.hp"
+				:attStat="graphState.att"
+				:defStat="graphState.def"
+				:spaStat="graphState.spa"
+				:spdStat="graphState.spd"
+				:speStat="graphState.spe"
+				:totStat="graphState.total"
 			/>
 			<form
 				class="panel flex flex-row"
@@ -18,14 +18,14 @@
 			>
 				<NameInput
 					class="basis-1/2"
-					:default="name"
+					:default="graphState.name"
 					idName="name-input"
 					@nameChanged="onNameChanged"
 				/>
 				<button
 					type="button"
 					class="btn bg-primary self-end h-8 basis-1/2"
-					@click="fetchStats(name)"
+					@click="fetchStats(graphState.name)"
 				>
 					Auto fill
 				</button>
@@ -37,37 +37,37 @@
 				<LabelInput
 					idName="hp-input"
 					text="HP"
-					:default="String(hp)"
+					:default="String(graphState.hp)"
 					@statChanged="onHpChanged"
 				/>
 				<LabelInput
 					idName="att-input"
 					text="Attack"
-					:default="String(att)"
+					:default="String(graphState.att)"
 					@statChanged="onAttChanged"
 				/>
 				<LabelInput
 					idName="def-input"
 					text="Defense"
-					:default="String(def)"
+					:default="String(graphState.def)"
 					@statChanged="onDefChanged"
 				/>
 				<LabelInput
 					idName="spa-input"
 					text="Sp. Attack"
-					:default="String(spa)"
+					:default="String(graphState.spa)"
 					@statChanged="onSpaChanged"
 				/>
 				<LabelInput
 					idName="spd-input"
 					text="Sp. Defense"
-					:default="String(spd)"
+					:default="String(graphState.spd)"
 					@statChanged="onSpdChanged"
 				/>
 				<LabelInput
 					idName="spe-input"
 					text="Speed"
-					:default="String(spe)"
+					:default="String(graphState.spe)"
 					@statChanged="onSpeChanged"
 				/>
 			</form>
@@ -131,6 +131,7 @@ import NameInput from "./components/NameInput.vue";
 // Modules
 import { checkForForms } from "./modules/checkForForms";
 import { randInt } from "./modules/randInt";
+import { graphState } from "./modules/graphState";
 
 // Packages
 import { elementToSVG } from "dom-to-svg";
@@ -149,54 +150,54 @@ export default defineComponent({
 		NameInput,
 		Header,
 	},
-	props: {},
 	data() {
 		return {
 			// Stats for use in graph and control inputs
-			name: "Name",
-			hp: 1,
-			att: 1,
-			def: 1,
-			spa: 1,
-			spd: 1,
-			spe: 1,
-			tot: 1,
+			// name: "Name",
+			// hp: 1,
+			// att: 1,
+			// def: 1,
+			// spa: 1,
+			// spd: 1,
+			// spe: 1,
+			// tot: 1,
+			graphState,
 		};
 	},
 	methods: {
 		// When a stat changes
 		onNameChanged(value: string) {
-			this.name = value;
+			graphState.setName(value);
 		},
 		onHpChanged(value: string) {
-			this.hp = Number(value);
-			this.updateTotal();
+			graphState.setHp(Number(value));
+			// this.updateTotal();
 		},
 		onAttChanged(value: string) {
-			this.att = Number(value);
-			this.updateTotal();
+			graphState.setAtt(Number(value));
+			// this.updateTotal();
 		},
 		onDefChanged(value: string) {
-			this.def = Number(value);
-			this.updateTotal();
+			graphState.setDef(Number(value));
+			// this.updateTotal();
 		},
 		onSpaChanged(value: string) {
-			this.spa = Number(value);
-			this.updateTotal();
+			graphState.setSpa(Number(value));
+			// this.updateTotal();
 		},
 		onSpdChanged(value: string) {
-			this.spd = Number(value);
-			this.updateTotal();
+			graphState.setSpd(Number(value));
+			// this.updateTotal();
 		},
 		onSpeChanged(value: string) {
-			this.spe = Number(value);
-			this.updateTotal();
+			graphState.setSpe(Number(value));
+			// this.updateTotal();
 		},
 		// Updates the total stat
-		updateTotal() {
-			this.tot =
-				this.hp + this.att + this.def + this.spa + this.spd + this.spe;
-		},
+		// updateTotal() {
+		// 	this.tot =
+		// 		this.hp + this.att + this.def + this.spa + this.spd + this.spe;
+		// },
 		// Saves the graph as an svg or png image
 		outputImage(imgType = imageType.SVG) {
 			let output;
@@ -209,7 +210,7 @@ export default defineComponent({
 				return; // If element is null, do nothing
 			}
 
-			let fileName = this.name; // name of file. not extension.
+			let fileName = graphState.name; // name of file. not extension.
 
 			// Convert graph html to svg
 			let svg = elementToSVG(output);
@@ -318,13 +319,19 @@ export default defineComponent({
 		},
 		// Update graph with current stats
 		fillGraph(stats: Array<number>) {
-			this.hp = stats[0];
-			this.att = stats[1];
-			this.def = stats[2];
-			this.spa = stats[3];
-			this.spd = stats[4];
-			this.spe = stats[5];
-			this.updateTotal();
+			graphState.setHp(stats[0]);
+			graphState.setAtt(stats[1]);
+			graphState.setDef(stats[2]);
+			graphState.setSpa(stats[3]);
+			graphState.setSpd(stats[4]);
+			graphState.setSpe(stats[5]);
+			// this.hp = stats[0];
+			// this.att = stats[1];
+			// this.def = stats[2];
+			// this.spa = stats[3];
+			// this.spd = stats[4];
+			// this.spe = stats[5];
+			// this.updateTotal();
 		},
 		changeTheme(darkMode: Boolean) {
 			let html = document.getElementsByTagName("html")[0];
