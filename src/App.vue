@@ -132,7 +132,8 @@ import NameInput from "./components/NameInput.vue";
 import { fetchStats } from "./modules/fetchStats";
 import { graphState } from "./modules/graphState";
 import { outputImage } from "./modules/outputImage";
-import { randInt } from "./modules/randInt";
+import { randomGraph } from "./modules/randomGraph";
+// import { randInt } from "./modules/randInt";
 
 export default defineComponent({
 	name: "App",
@@ -215,40 +216,7 @@ export default defineComponent({
 	},
 	mounted: function () {
 		// On load
-
-		// Random names to stat with
-		const NAMES = [
-			"Pikablu",
-			"Missingno",
-			"Agumon",
-			"Jack Frost",
-			"Frodo",
-			"Helix",
-			"Sonic",
-			"Morgana",
-			"Mario",
-			"Mewthree",
-			"Slime",
-			"Moogle",
-			"Mega Bidoof",
-			"Cthulu",
-			"Chopper",
-		];
-
-		const defaultStatMin = 5;
-		const defaultStatMax = 120;
-
-		let nameIndex = randInt(0, NAMES.length);
-		let defaultName = NAMES[nameIndex];
-
-		this.onNameChanged(defaultName);
-		this.onHpChanged(String(randInt(defaultStatMin, defaultStatMax)));
-		this.onAttChanged(String(randInt(defaultStatMin, defaultStatMax)));
-		this.onDefChanged(String(randInt(defaultStatMin, defaultStatMax)));
-		this.onSpaChanged(String(randInt(defaultStatMin, defaultStatMax)));
-		this.onSpdChanged(String(randInt(defaultStatMin, defaultStatMax)));
-		this.onSpeChanged(String(randInt(defaultStatMin, defaultStatMax)));
-
+		randomGraph();
 		this.loadSettings();
 	},
 });
