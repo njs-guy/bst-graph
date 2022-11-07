@@ -130,17 +130,12 @@ import NameInput from "./components/NameInput.vue";
 
 // Modules
 import { checkForForms } from "./modules/checkForForms";
-import { randInt } from "./modules/randInt";
 import { graphState } from "./modules/graphState";
+import { outputImage } from "./modules/outputImage";
+import { randInt } from "./modules/randInt";
 
 // Packages
-import { elementToSVG } from "dom-to-svg";
 import { PokemonClient } from "pokenode-ts";
-
-const imageType = {
-	PNG: "png",
-	SVG: "svg",
-};
 
 export default defineComponent({
 	name: "App",
@@ -153,6 +148,8 @@ export default defineComponent({
 	data() {
 		return {
 			graphState,
+			// outputImage doesn't work in the HTML without this line
+			outputImage,
 		};
 	},
 	methods: {
@@ -178,100 +175,6 @@ export default defineComponent({
 		onSpeChanged(value: string) {
 			graphState.setSpe(Number(value));
 		},
-		// Saves the graph as an svg or png image
-		outputImage(imgType = imageType.SVG) {
-			let output;
-			let element = document.getElementById("output");
-
-			// Check whether output element is null because typescript kept yelling at me about it
-			if (element != null) {
-				output = element;
-			} else {
-				return; // If element is null, do nothing
-			}
-
-			let fileName = graphState.name; // name of file. not extension.
-
-			// Convert graph html to svg
-			let svg = elementToSVG(output);
-
-			// Serialize the svg xml to a string
-			let s = new XMLSerializer();
-			let strSVG = s.serializeToString(svg);
-
-			// Save that string as an svg file
-			let file = new Blob([strSVG], {
-				type: "image/svg+xml;charset=utf-8",
-			});
-			const a = document.createElement("a");
-			const url = URL.createObjectURL(file);
-
-			// If image should be an svg
-			if (imgType == imageType.SVG) {
-				// Download svg file
-				a.href = url;
-				a.download = fileName + ".svg";
-				document.body.appendChild(a);
-				a.click();
-
-				// Remove created link
-				document.body.removeChild(a);
-				window.URL.revokeObjectURL(url);
-			}
-
-			// if the image should be a png
-			if (imgType == imageType.PNG) {
-				let canvas = document.createElement("canvas");
-				let size = element.getBoundingClientRect();
-				const qSel = document.getElementById(
-					"quality-select"
-				) as HTMLSelectElement;
-				let w: number;
-				let h: number;
-
-				if (qSel != null) {
-					// take quality multiplier from qSel
-					let quality = Number(qSel.value);
-
-					this.saveQuality(String(quality));
-
-					w = size.width * quality;
-					h = size.height * quality;
-				} else {
-					w = size.width;
-					h = size.height;
-				}
-				let img = new Image();
-
-				img.onload = () => {
-					canvas.width = w;
-					canvas.height = h;
-
-					// Draw image from canvas
-					canvas.getContext("2d")?.drawImage(img, 0, 0, w, h);
-
-					// download PNG
-					let png = canvas.toDataURL();
-					a.href = png;
-					a.download = fileName;
-					document.body.appendChild(a);
-					a.click();
-
-					// Remove created link
-					document.body.removeChild(a);
-					window.URL.revokeObjectURL(png);
-				};
-
-				img.src = url;
-
-				// Get SVG size source:
-				// https://stackoverflow.com/a/24649456
-
-				// Convert SVG to PNG source:
-				// https://levelup.gitconnected.com/draw-an-svg-to-canvas-and-download-it-as-image-in-javascript-f7f7713cf81f
-			}
-		}, // End outputImage
-
 		// fetch stat totals from PokeAPI
 		async fetchStats(pokName: string = "bidoof") {
 			let statArr: any = [];
