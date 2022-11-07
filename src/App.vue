@@ -129,13 +129,10 @@ import LabelInput from "./components/LabelInput.vue";
 import NameInput from "./components/NameInput.vue";
 
 // Modules
-import { checkForForms } from "./modules/checkForForms";
+import { fetchStats } from "./modules/fetchStats";
 import { graphState } from "./modules/graphState";
 import { outputImage } from "./modules/outputImage";
 import { randInt } from "./modules/randInt";
-
-// Packages
-import { PokemonClient } from "pokenode-ts";
 
 export default defineComponent({
 	name: "App",
@@ -148,8 +145,9 @@ export default defineComponent({
 	data() {
 		return {
 			graphState,
-			// outputImage doesn't work in the HTML without this line
+			// outputImage and fetchStats don't work in the HTML without these lines
 			outputImage,
+			fetchStats,
 		};
 	},
 	methods: {
@@ -174,43 +172,6 @@ export default defineComponent({
 		},
 		onSpeChanged(value: string) {
 			graphState.setSpe(Number(value));
-		},
-		// fetch stat totals from PokeAPI
-		async fetchStats(pokName: string = "bidoof") {
-			let statArr: any = [];
-			let name = checkForForms(pokName.toLowerCase());
-
-			const api = new PokemonClient({
-				cacheOptions: { maxAge: 5000 },
-			});
-
-			await api
-				.getPokemonByName(name)
-				.then((data) => {
-					for (let i = 0; i < data.stats.length; i++) {
-						// Take each stat and push it to statArray
-						let current = data.stats[i].base_stat;
-						statArr.push(current);
-					}
-
-					// Send data to controls
-					this.fillGraph(statArr);
-				})
-				// Retrieve base stats
-				.catch((error) =>
-					alert(
-						"That Pokemon does not exist. Please check spelling and try again."
-					)
-				);
-		},
-		// Update graph with current stats
-		fillGraph(stats: Array<number>) {
-			graphState.setHp(stats[0]);
-			graphState.setAtt(stats[1]);
-			graphState.setDef(stats[2]);
-			graphState.setSpa(stats[3]);
-			graphState.setSpd(stats[4]);
-			graphState.setSpe(stats[5]);
 		},
 		changeTheme(darkMode: Boolean) {
 			let html = document.getElementsByTagName("html")[0];
