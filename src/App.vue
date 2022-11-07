@@ -152,15 +152,6 @@ export default defineComponent({
 	},
 	data() {
 		return {
-			// Stats for use in graph and control inputs
-			// name: "Name",
-			// hp: 1,
-			// att: 1,
-			// def: 1,
-			// spa: 1,
-			// spd: 1,
-			// spe: 1,
-			// tot: 1,
 			graphState,
 		};
 	},
@@ -171,33 +162,22 @@ export default defineComponent({
 		},
 		onHpChanged(value: string) {
 			graphState.setHp(Number(value));
-			// this.updateTotal();
 		},
 		onAttChanged(value: string) {
 			graphState.setAtt(Number(value));
-			// this.updateTotal();
 		},
 		onDefChanged(value: string) {
 			graphState.setDef(Number(value));
-			// this.updateTotal();
 		},
 		onSpaChanged(value: string) {
 			graphState.setSpa(Number(value));
-			// this.updateTotal();
 		},
 		onSpdChanged(value: string) {
 			graphState.setSpd(Number(value));
-			// this.updateTotal();
 		},
 		onSpeChanged(value: string) {
 			graphState.setSpe(Number(value));
-			// this.updateTotal();
 		},
-		// Updates the total stat
-		// updateTotal() {
-		// 	this.tot =
-		// 		this.hp + this.att + this.def + this.spa + this.spd + this.spe;
-		// },
 		// Saves the graph as an svg or png image
 		outputImage(imgType = imageType.SVG) {
 			let output;
@@ -250,7 +230,8 @@ export default defineComponent({
 				let h: number;
 
 				if (qSel != null) {
-					let quality = Number(qSel.value); // take quality multiplier from qSel
+					// take quality multiplier from qSel
+					let quality = Number(qSel.value);
 
 					this.saveQuality(String(quality));
 
@@ -309,8 +290,10 @@ export default defineComponent({
 						statArr.push(current);
 					}
 
-					this.fillGraph(statArr); // Send data to controls
-				}) // Retrieve base stats
+					// Send data to controls
+					this.fillGraph(statArr);
+				})
+				// Retrieve base stats
 				.catch((error) =>
 					alert(
 						"That Pokemon does not exist. Please check spelling and try again."
@@ -325,13 +308,6 @@ export default defineComponent({
 			graphState.setSpa(stats[3]);
 			graphState.setSpd(stats[4]);
 			graphState.setSpe(stats[5]);
-			// this.hp = stats[0];
-			// this.att = stats[1];
-			// this.def = stats[2];
-			// this.spa = stats[3];
-			// this.spd = stats[4];
-			// this.spe = stats[5];
-			// this.updateTotal();
 		},
 		changeTheme(darkMode: Boolean) {
 			let html = document.getElementsByTagName("html")[0];
