@@ -145,11 +145,12 @@ export default defineComponent({
 	},
 	data() {
 		return {
+			// Manages the graph state
 			graphState,
-			// outputImage and fetchStats don't work in the HTML without these lines
-			outputImage,
-			fetchStats,
+			// These don't work in the HTML without these lines
 			appConfig,
+			fetchStats,
+			outputImage,
 		};
 	},
 	methods: {
@@ -175,45 +176,6 @@ export default defineComponent({
 		onSpeChanged(value: string) {
 			graphState.setSpe(Number(value));
 		},
-		// changeTheme(darkMode: Boolean) {
-		// 	let html = document.getElementsByTagName("html")[0];
-
-		// 	if (darkMode) {
-		// 		html.classList.add("dark");
-		// 	} else {
-		// 		html.classList.remove("dark");
-		// 	}
-
-		// 	this.saveTheme(String(darkMode));
-		// },
-		// saveQuality(quality: string) {
-		// 	localStorage.setItem("quality", quality);
-		// },
-		// saveTheme(dark: string) {
-		// 	localStorage.setItem("dark", dark);
-		// },
-		// loadSettings() {
-		// 	let quality = localStorage.getItem("quality");
-		// 	let dark = localStorage.getItem("dark");
-
-		// 	const qSel = document.getElementById(
-		// 		"quality-select"
-		// 	) as HTMLSelectElement;
-		// 	const themeSw = document.getElementById(
-		// 		"theme"
-		// 	) as HTMLInputElement;
-
-		// 	// Check if there's a saved setting for quality
-		// 	if (quality !== null) {
-		// 		qSel.value = quality; // Set the value of the quality selector
-		// 	}
-
-		// 	// Check if dark mode is true
-		// 	if (dark === "true") {
-		// 		this.changeTheme(true); // Change theme
-		// 		themeSw.checked = true; // Check theme checkbox
-		// 	}
-		// },
 	},
 	mounted: function () {
 		// On load
