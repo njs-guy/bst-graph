@@ -9,7 +9,7 @@ export function saveTheme(dark: string) {
 }
 
 export function changeTheme(darkMode: boolean) {
-    let html = document.getElementsByTagName("html")[0];
+	let html = document.getElementsByTagName("html")[0];
 
 	if (darkMode) {
 		html.classList.add("dark");
@@ -17,7 +17,7 @@ export function changeTheme(darkMode: boolean) {
 		html.classList.remove("dark");
 	}
 
-    saveTheme(String(darkMode));
+	saveTheme(String(darkMode));
 }
 
 export function loadSettings() {

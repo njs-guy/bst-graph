@@ -62,8 +62,8 @@ export function outputImage(imgType = imageType.SVG) {
 		if (qSel != null) {
 			// take quality multiplier from qSel
 			let quality = Number(qSel.value);
-            
-            // Save quality to local storage
+
+			// Save quality to local storage
 			saveQuality(String(quality));
 
 			w = size.width * quality;
