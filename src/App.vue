@@ -1,5 +1,5 @@
 <template>
-	<Header @darkMode="changeTheme" />
+	<Header @darkMode="appConfig.changeTheme" />
 	<div class="mc-margin">
 		<div class="main-content grid grid-cols-1 gap-4 max-w-lg">
 			<Graph
@@ -129,11 +129,11 @@ import LabelInput from "./components/LabelInput.vue";
 import NameInput from "./components/NameInput.vue";
 
 // Modules
+import * as appConfig from "./modules/appConfig";
 import { fetchStats } from "./modules/fetchStats";
 import { graphState } from "./modules/graphState";
 import { outputImage } from "./modules/outputImage";
 import { randomGraph } from "./modules/randomGraph";
-// import { randInt } from "./modules/randInt";
 
 export default defineComponent({
 	name: "App",
@@ -149,6 +149,7 @@ export default defineComponent({
 			// outputImage and fetchStats don't work in the HTML without these lines
 			outputImage,
 			fetchStats,
+			appConfig,
 		};
 	},
 	methods: {
@@ -174,50 +175,50 @@ export default defineComponent({
 		onSpeChanged(value: string) {
 			graphState.setSpe(Number(value));
 		},
-		changeTheme(darkMode: Boolean) {
-			let html = document.getElementsByTagName("html")[0];
+		// changeTheme(darkMode: Boolean) {
+		// 	let html = document.getElementsByTagName("html")[0];
 
-			if (darkMode) {
-				html.classList.add("dark");
-			} else {
-				html.classList.remove("dark");
-			}
+		// 	if (darkMode) {
+		// 		html.classList.add("dark");
+		// 	} else {
+		// 		html.classList.remove("dark");
+		// 	}
 
-			this.saveTheme(String(darkMode));
-		},
-		saveQuality(quality: string) {
-			localStorage.setItem("quality", quality);
-		},
-		saveTheme(dark: string) {
-			localStorage.setItem("dark", dark);
-		},
-		loadSettings() {
-			let quality = localStorage.getItem("quality");
-			let dark = localStorage.getItem("dark");
+		// 	this.saveTheme(String(darkMode));
+		// },
+		// saveQuality(quality: string) {
+		// 	localStorage.setItem("quality", quality);
+		// },
+		// saveTheme(dark: string) {
+		// 	localStorage.setItem("dark", dark);
+		// },
+		// loadSettings() {
+		// 	let quality = localStorage.getItem("quality");
+		// 	let dark = localStorage.getItem("dark");
 
-			const qSel = document.getElementById(
-				"quality-select"
-			) as HTMLSelectElement;
-			const themeSw = document.getElementById(
-				"theme"
-			) as HTMLInputElement;
+		// 	const qSel = document.getElementById(
+		// 		"quality-select"
+		// 	) as HTMLSelectElement;
+		// 	const themeSw = document.getElementById(
+		// 		"theme"
+		// 	) as HTMLInputElement;
 
-			// Check if there's a saved setting for quality
-			if (quality !== null) {
-				qSel.value = quality; // Set the value of the quality selector
-			}
+		// 	// Check if there's a saved setting for quality
+		// 	if (quality !== null) {
+		// 		qSel.value = quality; // Set the value of the quality selector
+		// 	}
 
-			// Check if dark mode is true
-			if (dark === "true") {
-				this.changeTheme(true); // Change theme
-				themeSw.checked = true; // Check theme checkbox
-			}
-		},
+		// 	// Check if dark mode is true
+		// 	if (dark === "true") {
+		// 		this.changeTheme(true); // Change theme
+		// 		themeSw.checked = true; // Check theme checkbox
+		// 	}
+		// },
 	},
 	mounted: function () {
 		// On load
 		randomGraph();
-		this.loadSettings();
+		appConfig.loadSettings();
 	},
 });
 </script>

@@ -2,6 +2,7 @@
 
 import { elementToSVG } from "dom-to-svg";
 import { graphState } from "./graphState";
+import { saveQuality } from "./appConfig";
 
 const imageType = {
 	PNG: "png",
@@ -61,9 +62,9 @@ export function outputImage(imgType = imageType.SVG) {
 		if (qSel != null) {
 			// take quality multiplier from qSel
 			let quality = Number(qSel.value);
-
-			// TODO: Save quality to local storage using Vue reactive object
-			// this.saveQuality(String(quality));
+            
+            // Save quality to local storage
+			saveQuality(String(quality));
 
 			w = size.width * quality;
 			h = size.height * quality;
