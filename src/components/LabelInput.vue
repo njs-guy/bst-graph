@@ -9,7 +9,7 @@
 			type="number"
 			:id="idName"
 			:name="idName"
-			class="rounded outline-primary caret-primary bg-bg dark:bg-bg-dark outline-offset-0 h-8 px-2"
+			class="rounded outline-primary caret-primary bg-base-100 outline-offset-0 h-8 px-2"
 			min="1"
 			max="999"
 			:value="default"

@@ -24,7 +24,7 @@
 				/>
 				<button
 					type="button"
-					class="btn bg-primary self-end h-8 basis-1/2"
+					class="btn btn-primary self-end h-8 basis-1/2"
 					@click="fetchStats(graphState.name)"
 				>
 					Auto fill
@@ -84,7 +84,7 @@
 					<select
 						name="quality"
 						id="quality-select"
-						class="rounded p-1 h-8 bg-bg dark:bg-bg-dark"
+						class="rounded p-1 h-8 bg-base-100"
 					>
 						<option value="1">Low</option>
 						<option
@@ -100,14 +100,14 @@
 				</div>
 				<button
 					type="button"
-					class="btn bg-primary h-8 self-end"
+					class="btn btn-primary h-8 self-end"
 					@click="outputImage('png')"
 				>
 					Save as PNG
 				</button>
 				<button
 					type="button"
-					class="btn bg-primary h-8 col-span-2"
+					class="btn btn-primary h-8 col-span-2"
 					@click="outputImage()"
 				>
 					Save as SVG
@@ -191,15 +191,10 @@ html {
 	padding: 0;
 }
 
-body {
-	@apply bg-bg dark:bg-bg-dark;
-}
-
 #app {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-align: center;
-	@apply text-txt dark:text-txt-dark;
 }
 
 .mc-margin {
@@ -211,39 +206,30 @@ body {
 }
 
 .panel {
-	@apply bg-panel dark:bg-panel-dark rounded-md p-3 place-content-stretch gap-4;
-}
-
-.btn {
-	@apply dark:bg-primary-dark hover:bg-primary-hover hover:dark:bg-primary-hoverDark text-white rounded;
-	/* the bg class is on every individual button because applying it here does not work and I can't fathom why */
+	@apply bg-base-200 rounded-md p-3 place-content-stretch gap-4;
 }
 
 .bar-hp {
-	@apply bg-hp dark:bg-hp-dark;
+	@apply bg-hp;
 }
 
 .bar-att {
-	@apply bg-att dark:bg-att-dark;
+	@apply bg-att;
 }
 
 .bar-def {
-	@apply bg-def dark:bg-def-dark;
+	@apply bg-def;
 }
 
 .bar-spa {
-	@apply bg-spa dark:bg-spa-dark;
+	@apply bg-spa;
 }
 
 .bar-spd {
-	@apply bg-spd dark:bg-spd-dark;
+	@apply bg-spd;
 }
 
 .bar-spe {
-	@apply bg-spe dark:bg-spe-dark;
-}
-
-.bar-tot {
-	@apply bg-tot dark:bg-tot-dark;
+	@apply bg-spe;
 }
 </style>

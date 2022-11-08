@@ -7,7 +7,7 @@
 		>
 		<input
 			type="text"
-			class="rounded outline-primary caret-primary bg-bg dark:bg-bg-dark outline-offset-0 h-8 px-2"
+			class="rounded outline-primary caret-primary bg-base-100 outline-offset-0 h-8 px-2"
 			:value="default"
 			:id="idName"
 			:name="idName"

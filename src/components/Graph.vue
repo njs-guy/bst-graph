@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="graph bg-panel dark:bg-panel-dark rounded-md px-3 py-1"
+		class="graph bg-base-200 rounded-md px-3 py-1"
 		id="output"
 	>
 		<h1 class="name text-3xl leading-normal">{{ nameLabel }}</h1>
