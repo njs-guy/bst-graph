@@ -24,7 +24,7 @@
 				/>
 				<button
 					type="button"
-					class="btn btn-primary self-end h-8 basis-1/2"
+					class="btn btn-primary btn-sm self-end basis-1/2 rounded animate-none"
 					@click="fetchStats(graphState.name)"
 				>
 					Auto fill
@@ -100,14 +100,14 @@
 				</div>
 				<button
 					type="button"
-					class="btn btn-primary h-8 self-end"
+					class="btn btn-primary btn-sm self-end rounded animate-none"
 					@click="outputImage('png')"
 				>
 					Save as PNG
 				</button>
 				<button
 					type="button"
-					class="btn btn-primary h-8 col-span-2"
+					class="btn btn-primary btn-sm col-span-2 rounded animate-none"
 					@click="outputImage()"
 				>
 					Save as SVG
