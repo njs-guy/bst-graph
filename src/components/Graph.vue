@@ -4,7 +4,7 @@
 		id="output"
 	>
 		<h1 class="name text-3xl leading-normal">{{ nameLabel }}</h1>
-		<div class="grid place-items-center gap-2">
+		<div class="flex flex-col place-items-center">
 			<Bar
 				class="hp-bar"
 				barId="bar-hp"
@@ -77,7 +77,6 @@ export default defineComponent({
 
 <style scoped>
 .graph {
-	background-color: white;
 	width: 100%;
 }
 </style>

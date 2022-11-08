@@ -80,6 +80,7 @@ export default defineComponent({
 }
 
 .stat {
+	@apply p-2 w-fit;
 	float: right;
 }
 
