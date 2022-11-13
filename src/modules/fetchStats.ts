@@ -3,9 +3,9 @@ import { checkForForms } from "./checkForForms";
 import { graphState } from "./graphState";
 
 // Fetch stats for Pokemon through PokeAPI
-export async function fetchStats(pokName: string = "bidoof") {
-	let statArr: any = [];
-	let name = checkForForms(pokName.toLowerCase());
+export async function fetchStats(pokName = "bidoof") {
+	const statArr: any = [];
+	const name = checkForForms(pokName.toLowerCase());
 
 	const api = new PokemonClient({
 		cacheOptions: { maxAge: 5000 },
@@ -16,7 +16,7 @@ export async function fetchStats(pokName: string = "bidoof") {
 		.then((data) => {
 			for (let i = 0; i < data.stats.length; i++) {
 				// Take each stat and push it to statArray
-				let current = data.stats[i].base_stat;
+				const current = data.stats[i].base_stat;
 				statArr.push(current);
 			}
 

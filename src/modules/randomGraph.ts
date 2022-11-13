@@ -25,8 +25,8 @@ export function randomGraph() {
 	const DEFAULT_STAT_MIN = 5;
 	const DEFAULT_STAT_MAX = 120;
 
-	let nameIndex = randInt(0, NAMES.length);
-	let defaultName = NAMES[nameIndex];
+	const nameIndex = randInt(0, NAMES.length);
+	const defaultName = NAMES[nameIndex];
 
 	graphState.setName(defaultName);
 	graphState.setHp(randInt(DEFAULT_STAT_MIN, DEFAULT_STAT_MAX));

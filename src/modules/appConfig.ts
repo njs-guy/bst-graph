@@ -9,7 +9,7 @@ export function saveTheme(dark: string) {
 }
 
 export function changeTheme(darkMode: boolean) {
-	let html = document.getElementsByTagName("html")[0];
+	const html = document.getElementsByTagName("html")[0];
 
 	if (darkMode) {
 		html.classList.add("dark");
@@ -21,8 +21,8 @@ export function changeTheme(darkMode: boolean) {
 }
 
 export function loadSettings() {
-	let quality = localStorage.getItem("quality");
-	let dark = localStorage.getItem("dark");
+	const quality = localStorage.getItem("quality");
+	const dark = localStorage.getItem("dark");
 
 	const qSel = document.getElementById("quality-select") as HTMLSelectElement;
 	const themeSw = document.getElementById("theme") as HTMLInputElement;
