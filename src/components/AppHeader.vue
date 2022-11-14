@@ -13,7 +13,7 @@ import { defineComponent } from "vue";
 import ThemeSwitcher from "./ThemeSwitcher.vue";
 
 export default defineComponent({
-	Name: "Header",
+	Name: "AppHeader",
 	methods: {
 		onDarkMode(d: boolean) {
 			this.$emit("darkMode", d);

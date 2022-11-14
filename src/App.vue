@@ -1,8 +1,8 @@
 <template>
-	<Header @darkMode="appConfig.changeTheme" />
+	<AppHeader @darkMode="appConfig.changeTheme" />
 	<div class="mc-margin">
 		<div class="main-content grid grid-cols-1 gap-4 max-w-lg">
-			<Graph
+			<StatGraph
 				:nameLabel="graphState.name"
 				:hpStat="graphState.hp"
 				:attStat="graphState.att"
@@ -123,10 +123,10 @@
 import { defineComponent } from "vue";
 
 // Components
-import Graph from "./components/Graph.vue";
-import Header from "./components/Header.vue";
+import AppHeader from "./components/AppHeader.vue";
 import LabelInput from "./components/LabelInput.vue";
 import NameInput from "./components/NameInput.vue";
+import StatGraph from "./components/StatGraph.vue";
 
 // Modules
 import * as appConfig from "./modules/appConfig";
@@ -138,10 +138,10 @@ import { randomGraph } from "./modules/randomGraph";
 export default defineComponent({
 	name: "App",
 	components: {
-		Graph,
+		StatGraph,
 		LabelInput,
 		NameInput,
-		Header,
+		AppHeader,
 	},
 	data() {
 		return {

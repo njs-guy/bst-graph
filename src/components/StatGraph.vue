@@ -5,43 +5,43 @@
 	>
 		<h1 class="name text-3xl leading-normal">{{ nameLabel }}</h1>
 		<div class="flex flex-col place-items-center">
-			<Bar
+			<StatBar
 				class="hp-bar"
 				barId="bar-hp"
 				label="HP"
 				:stat="hpStat"
 			/>
-			<Bar
+			<StatBar
 				class="att-bar"
 				barId="bar-att"
 				label="Attack"
 				:stat="attStat"
 			/>
-			<Bar
+			<StatBar
 				class="def-bar"
 				barId="bar-def"
 				label="Defense"
 				:stat="defStat"
 			/>
-			<Bar
+			<StatBar
 				class="spa-bar"
 				barId="bar-spa"
 				label="Sp. Atk"
 				:stat="spaStat"
 			/>
-			<Bar
+			<StatBar
 				class="spd-bar"
 				barId="bar-spd"
 				label="Sp. Def"
 				:stat="spdStat"
 			/>
-			<Bar
+			<StatBar
 				class="spe-bar"
 				barId="bar-spe"
 				label="Speed"
 				:stat="speStat"
 			/>
-			<Bar
+			<StatBar
 				class="tot-bar"
 				barId="bar-tot"
 				label="Total"
@@ -53,14 +53,12 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Bar from "./Bar.vue";
-import LabelInput from "./LabelInput.vue";
+import StatBar from "./StatBar.vue";
 
 export default defineComponent({
-	Name: "Graph",
+	Name: "StatGraph",
 	components: {
-		Bar,
-		LabelInput,
+		StatBar,
 	},
 	props: {
 		nameLabel: String,

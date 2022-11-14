@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	env: {
 		browser: true,
 		es2021: true,
@@ -18,6 +18,6 @@ module.exports = {
 	plugins: ["vue", "@typescript-eslint"],
 	rules: {
 		semi: ["warn", "always"],
-		quotes: ["error", "double"],
+		quotes: ["warn", "double"],
 	},
 };

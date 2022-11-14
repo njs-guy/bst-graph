@@ -18,7 +18,7 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
-	Name: "Bar",
+	Name: "StatBar",
 	props: {
 		barId: {
 			type: String,
@@ -55,7 +55,7 @@ export default defineComponent({
 		this.adjustBarWidth();
 	},
 	watch: {
-		stat(value) {
+		stat() {
 			this.adjustBarWidth();
 		},
 	},
