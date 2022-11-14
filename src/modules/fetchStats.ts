@@ -4,7 +4,7 @@ import { graphState } from "./graphState";
 
 // Fetch stats for Pokemon through PokeAPI
 export async function fetchStats(pokName = "bidoof") {
-	const statArr: any = [];
+	const statArr: number[] = [];
 	const name = checkForForms(pokName.toLowerCase());
 
 	const api = new PokemonClient({
@@ -24,7 +24,7 @@ export async function fetchStats(pokName = "bidoof") {
 			fillGraph(statArr);
 		})
 		// Retrieve base stats
-		.catch((error) =>
+		.catch(() =>
 			alert(
 				"That Pokemon does not exist. Please check spelling and try again."
 			)

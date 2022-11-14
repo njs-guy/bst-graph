@@ -8,7 +8,7 @@
 		<input
 			type="text"
 			class="rounded outline-primary caret-primary bg-base-100 outline-offset-0 h-8 px-2"
-			:value="default"
+			:value="defaultVal"
 			:id="idName"
 			:name="idName"
 			@change="onChange($event)"
@@ -23,12 +23,12 @@ export default defineComponent({
 	Name: "NameInput",
 	props: {
 		idName: String,
-		default: String,
+		defaultVal: String,
 	},
 	methods: {
 		// emit text box value when changed
-		onChange(event: any) {
-			let text = event.target.value;
+		onChange(event: Event) {
+			let text = (event.target as HTMLInputElement).value;
 			this.$emit("nameChanged", text);
 		},
 	},

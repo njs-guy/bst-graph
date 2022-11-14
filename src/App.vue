@@ -18,7 +18,7 @@
 			>
 				<NameInput
 					class="basis-1/2"
-					:default="graphState.name"
+					:defaultVal="graphState.name"
 					idName="name-input"
 					@nameChanged="onNameChanged"
 				/>
@@ -37,37 +37,37 @@
 				<LabelInput
 					idName="hp-input"
 					text="HP"
-					:default="String(graphState.hp)"
+					:defaultVal="String(graphState.hp)"
 					@statChanged="onHpChanged"
 				/>
 				<LabelInput
 					idName="att-input"
 					text="Attack"
-					:default="String(graphState.att)"
+					:defaultVal="String(graphState.att)"
 					@statChanged="onAttChanged"
 				/>
 				<LabelInput
 					idName="def-input"
 					text="Defense"
-					:default="String(graphState.def)"
+					:defaultVal="String(graphState.def)"
 					@statChanged="onDefChanged"
 				/>
 				<LabelInput
 					idName="spa-input"
 					text="Sp. Attack"
-					:default="String(graphState.spa)"
+					:defaultVal="String(graphState.spa)"
 					@statChanged="onSpaChanged"
 				/>
 				<LabelInput
 					idName="spd-input"
 					text="Sp. Defense"
-					:default="String(graphState.spd)"
+					:defaultVal="String(graphState.spd)"
 					@statChanged="onSpdChanged"
 				/>
 				<LabelInput
 					idName="spe-input"
 					text="Speed"
-					:default="String(graphState.spe)"
+					:defaultVal="String(graphState.spe)"
 					@statChanged="onSpeChanged"
 				/>
 			</form>

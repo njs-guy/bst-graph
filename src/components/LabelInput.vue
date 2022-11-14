@@ -12,7 +12,7 @@
 			class="rounded outline-primary caret-primary bg-base-100 outline-offset-0 h-8 px-2"
 			min="1"
 			max="999"
-			:value="default"
+			:value="defaultVal"
 			@change="onChange($event)"
 		/>
 	</div>
@@ -26,12 +26,12 @@ export default defineComponent({
 	props: {
 		idName: String,
 		text: String,
-		default: String,
+		defaultVal: String,
 	},
 	methods: {
 		// Emit number box value when changed
-		onChange(event: any) {
-			let num = event.target.value;
+		onChange(event: Event) {
+			let num = (event.target as HTMLInputElement).value;
 			this.$emit("statChanged", num);
 		},
 	},
