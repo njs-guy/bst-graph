@@ -32,6 +32,11 @@ export default defineComponent({
 		// Emit number box value when changed
 		onChange(event: Event) {
 			let num = (event.target as HTMLInputElement).value;
+			
+			if (Number(num) > 999) {
+				num = "999";
+			}
+
 			this.$emit("statChanged", num);
 		},
 	},
