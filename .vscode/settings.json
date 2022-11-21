@@ -33,5 +33,6 @@
 		"wishiwashi",
 		"wormadam",
 		"zygarde"
-	]
+	],
+	"typescript.tsdk": "node_modules/typescript/lib"
 }

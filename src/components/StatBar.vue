@@ -1,7 +1,7 @@
 <template>
 	<div class="row flex flex-row items-center gap-2">
 		<div class="text-container basis-1/3">
-			<p class="label">{{ label }}:</p>
+			<p class="label self-center">{{ label }}:</p>
 			<p class="stat">{{ stat }}</p>
 		</div>
 		<div class="bar-container basis-2/3">
@@ -80,12 +80,12 @@ export default defineComponent({
 }
 
 .stat {
-	@apply p-2 w-fit;
 	float: right;
 }
 
 .label,
 .stat {
+	@apply px-2 py-1 w-fit;
 	font-size: 18px;
 }
 
