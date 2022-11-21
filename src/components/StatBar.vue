@@ -4,7 +4,7 @@
 			<p class="label self-center">{{ label }}:</p>
 			<p class="stat">{{ stat }}</p>
 		</div>
-		<div class="bar-container basis-7/12">
+		<div class="bar-container bg-base-100 basis-7/12">
 			<div
 				class="bar"
 				:class="barId"

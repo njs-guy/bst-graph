@@ -209,27 +209,27 @@ html {
 	@apply bg-base-200 rounded-md p-3 place-content-stretch gap-4;
 }
 
-.bar-hp {
+#bar-hp {
 	@apply bg-hp;
 }
 
-.bar-att {
+#bar-att {
 	@apply bg-att;
 }
 
-.bar-def {
+#bar-def {
 	@apply bg-def;
 }
 
-.bar-spa {
+#bar-spa {
 	@apply bg-spa;
 }
 
-.bar-spd {
+#bar-spd {
 	@apply bg-spd;
 }
 
-.bar-spe {
+#bar-spe {
 	@apply bg-spe;
 }
 </style>
