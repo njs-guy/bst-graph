@@ -28,6 +28,7 @@ export default defineComponent({
 		stat: Number,
 	},
 	methods: {
+		// Adjusts the width of the stat bar
 		adjustBarWidth() {
 			let bar = document.getElementById(this.barId);
 			let wid = 0;

@@ -25,10 +25,10 @@ export function randomGraph() {
 	const DEFAULT_STAT_MIN = 5;
 	const DEFAULT_STAT_MAX = 120;
 
-	const nameIndex = randInt(0, NAMES.length);
-	const defaultName = NAMES[nameIndex];
+	const NAME_INDEX = randInt(0, NAMES.length);
+	const DEFAULT_NAME = NAMES[NAME_INDEX];
 
-	graphState.setName(defaultName);
+	graphState.setName(DEFAULT_NAME);
 	graphState.setHp(randInt(DEFAULT_STAT_MIN, DEFAULT_STAT_MAX));
 	graphState.setAtt(randInt(DEFAULT_STAT_MIN, DEFAULT_STAT_MAX));
 	graphState.setDef(randInt(DEFAULT_STAT_MIN, DEFAULT_STAT_MAX));
