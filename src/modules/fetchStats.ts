@@ -4,24 +4,24 @@ import { graphState } from "./graphState";
 
 // Fetch stats for Pokemon through PokeAPI
 export async function fetchStats(pokName = "bidoof") {
-	const STAT_ARR: number[] = [];
-	const NAME = checkForForms(pokName.toLowerCase());
+	const statArr: number[] = [];
+	const name = checkForForms(pokName.toLowerCase());
 
-	const API = new PokemonClient({
+	const api = new PokemonClient({
 		cacheOptions: { maxAge: 5000 },
 	});
 
-	await API
-		.getPokemonByName(NAME)
+	await api
+		.getPokemonByName(name)
 		.then((data) => {
 			for (let i = 0; i < data.stats.length; i++) {
 				// Take each stat and push it to statArray
-				const CURRENT = data.stats[i].base_stat;
-				STAT_ARR.push(CURRENT);
+				const current = data.stats[i].base_stat;
+				statArr.push(current);
 			}
 
 			// Send data to controls
-			fillGraph(STAT_ARR);
+			fillGraph(statArr);
 		})
 		// Retrieve base stats
 		.catch(() =>

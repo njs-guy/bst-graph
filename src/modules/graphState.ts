@@ -1,15 +1,15 @@
 import { reactive } from "vue";
 
-const DEFAULT_STAT = 5;
+const defaultStat = 5;
 
 export const graphState = reactive({
 	name: "Name",
-	hp: DEFAULT_STAT,
-	att: DEFAULT_STAT,
-	def: DEFAULT_STAT,
-	spa: DEFAULT_STAT,
-	spd: DEFAULT_STAT,
-	spe: DEFAULT_STAT,
+	hp: defaultStat,
+	att: defaultStat,
+	def: defaultStat,
+	spa: defaultStat,
+	spd: defaultStat,
+	spe: defaultStat,
 	total: 30,
 	setName(newName: string) {
 		this.name = newName;

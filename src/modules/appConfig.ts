@@ -14,13 +14,13 @@ export function saveTheme(dark: string) {
 
 // Changes the theme
 export function changeTheme(darkMode: boolean) {
-	const HTML = document.documentElement;
-	HTML.removeAttribute("data-theme"); // remove previous theme
+	const html = document.documentElement;
+	html.removeAttribute("data-theme"); // remove previous theme
 
 	if (darkMode) {
-		HTML.setAttribute("data-theme", "dark");
+		html.setAttribute("data-theme", "dark");
 	} else {
-		HTML.setAttribute("data-theme", "light");
+		html.setAttribute("data-theme", "light");
 	}
 
 	saveTheme(String(darkMode));
@@ -28,28 +28,28 @@ export function changeTheme(darkMode: boolean) {
 
 // Loads settings
 export function loadSettings() {
-	const QUALITY = localStorage.getItem("quality");
-	const DARK = localStorage.getItem("dark");
+	const quality = localStorage.getItem("quality");
+	const dark = localStorage.getItem("dark");
 	let darkBool = false;
 
-	const Q_SEL = document.getElementById("quality-select") as HTMLSelectElement;
-	const THEME_SW = document.getElementById("theme") as HTMLInputElement;
+	const qSel = document.getElementById("quality-select") as HTMLSelectElement;
+	const themeSw = document.getElementById("theme") as HTMLInputElement;
 
 	// ------Quality------
 	// Check if there's a saved setting for quality
-	if (QUALITY !== null) {
-		Q_SEL.value = QUALITY; // Set the value of the quality selector
+	if (quality !== null) {
+		qSel.value = quality; // Set the value of the quality selector
 	}
 
 	// ------Dark------
 	// Check if dark mode is true
 	// LocalStorage can only store strings, so booleans have to be converted first.
-	if (DARK === "true") {
+	if (dark === "true") {
 		darkBool = true;
 	} else {
 		darkBool = false;
 	}
 
 	changeTheme(darkBool); // Change theme
-	THEME_SW.checked = darkBool; // Check theme checkbox
+	themeSw.checked = darkBool; // Check theme checkbox
 }
