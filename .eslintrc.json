@@ -1,27 +1,38 @@
 {
 	"root": true,
 	"env": {
-		"browser": true
-	},
-	"parser": "vue-eslint-parser",
-	"parserOptions": {
-		"parser": "@typescript-eslint/parser",
-		"ecmaVersion": 2021,
-		"sourceType": "module"
+		"browser": true,
+		"es2021": true
 	},
 	"extends": [
 		"eslint:recommended",
 		"plugin:vue/vue3-essential",
 		"plugin:@typescript-eslint/recommended"
 	],
+	"parser": "vue-eslint-parser",
+	"parserOptions": {
+		"parser": "@typescript-eslint/parser",
+		"ecmaVersion": "latest",
+		"sourceType": "module"
+	},
 	"plugins": ["vue", "@typescript-eslint"],
 	"rules": {
-		"@typescript-eslint/naming-convention": "warn",
-		"curly": "warn",
-		"eqeqeq": "warn",
+		"@typescript-eslint/naming-convention": [
+			"warn",
+			{
+				"selector": "variable",
+				"format": ["camelCase"]
+			},
+			{
+				"selector": "class",
+				"format": ["PascalCase"]
+			}
+		],
+		"curly": "error",
+		"eqeqeq": "error",
 		"no-throw-literal": "warn",
 		"prefer-const": "warn",
-		"semi": "warn",
-		"quotes": 1
+		"semi": ["error", "always"],
+		"quotes": ["error", "double"]
 	}
 }
