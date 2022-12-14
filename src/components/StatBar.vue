@@ -30,11 +30,11 @@ export default defineComponent({
 	methods: {
 		// Adjusts the width of the stat bar
 		adjustBarWidth() {
-			let bar = document.getElementById(this.barId);
+			const bar = document.getElementById(this.barId);
 			let wid = 0;
 
 			// Check whether the stat or bar is null because typescript kept yelling at me about it
-			if (this.stat == null || bar == null) {
+			if (this.stat === undefined || bar === undefined || bar === null) {
 				return;
 			}
 

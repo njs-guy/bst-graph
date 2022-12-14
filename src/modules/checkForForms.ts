@@ -67,6 +67,7 @@ export function checkForForms(pokName: string) {
 			return "morpeko-hangry";
 			break;
 
+		// TODO: Gen 9
 		// TODO: Accept alternate form names
 
 		// Default: entered in a regularly valid name

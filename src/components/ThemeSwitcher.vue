@@ -29,15 +29,17 @@ export default defineComponent({
 	methods: {
 		// Emit dark value when changed
 		onChange() {
-			let themeId = document.getElementById("theme") as HTMLInputElement;
+			const themeId = document.getElementById(
+				"theme"
+			) as HTMLInputElement;
 
-			if (themeId == null) {
+			if (themeId === null) {
 				return;
 			} else {
 				this.dark = themeId?.checked;
 			}
 
-			let d = this.dark;
+			const d = this.dark;
 			this.$emit("darkMode", d);
 		},
 	},

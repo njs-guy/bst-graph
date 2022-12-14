@@ -28,7 +28,7 @@ export default defineComponent({
 	methods: {
 		// emit text box value when changed
 		onChange(event: Event) {
-			let text = (event.target as HTMLInputElement).value;
+			const text = (event.target as HTMLInputElement).value;
 			this.$emit("nameChanged", text);
 		},
 	},

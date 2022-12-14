@@ -4,97 +4,97 @@ import { elementToSVG } from "dom-to-svg";
 import { graphState } from "./graphState";
 import { saveQuality } from "./appConfig";
 
-const IMG_TYPE = {
+const imageType = {
 	PNG: "png",
 	SVG: "svg",
 };
 
 // Creates and downloads the graph image
-export function outputImage(imgType = IMG_TYPE.SVG) {
+export function outputImage(imgType = imageType.SVG) {
 	let output;
-	const ELEMENT = document.getElementById("output");
+	const element = document.getElementById("output");
 
 	// Check whether output element is null because typescript kept yelling at me about it
-	if (ELEMENT != null) {
-		output = ELEMENT;
+	if (element !== null) {
+		output = element;
 	} else {
 		return; // If element is null, do nothing
 	}
 
-	const FILE_NAME = graphState.name; // name of file. not extension.
+	const fileName = graphState.name; // name of file. not extension.
 
 	// Convert graph html to svg
-	const SVG = elementToSVG(output);
+	const svg = elementToSVG(output);
 
 	// Serialize the svg xml to a string
-	const S = new XMLSerializer();
-	const STR_SVG = S.serializeToString(SVG);
+	const s = new XMLSerializer();
+	const strSvg = s.serializeToString(svg);
 
 	// Save that string as an svg file
-	const FILE = new Blob([STR_SVG], {
+	const file = new Blob([strSvg], {
 		type: "image/svg+xml;charset=utf-8",
 	});
-	const A = document.createElement("a");
-	const url = URL.createObjectURL(FILE);
+	const a = document.createElement("a");
+	const url = URL.createObjectURL(file);
 
 	// If image should be an svg
-	if (imgType == IMG_TYPE.SVG) {
+	if (imgType === imageType.SVG) {
 		// Download svg file
-		A.href = url;
-		A.download = FILE_NAME + ".svg";
-		document.body.appendChild(A);
-		A.click();
+		a.href = url;
+		a.download = fileName + ".svg";
+		document.body.appendChild(a);
+		a.click();
 
 		// Remove created link
-		document.body.removeChild(A);
+		document.body.removeChild(a);
 		window.URL.revokeObjectURL(url);
 	}
 
 	// if the image should be a png
-	if (imgType == IMG_TYPE.PNG) {
-		const CANVAS = document.createElement("canvas");
-		const SIZE = ELEMENT.getBoundingClientRect();
-		const Q_SEL = document.getElementById(
+	if (imgType === imageType.PNG) {
+		const canvas = document.createElement("canvas");
+		const size = element.getBoundingClientRect();
+		const qSel = document.getElementById(
 			"quality-select"
 		) as HTMLSelectElement;
 		let w: number;
 		let h: number;
 
-		if (Q_SEL != null) {
+		if (qSel !== null) {
 			// take quality multiplier from qSel
-			const QUALITY = Number(Q_SEL.value);
+			const quality = Number(qSel.value);
 
 			// Save quality to local storage
-			saveQuality(String(QUALITY));
+			saveQuality(String(quality));
 
-			w = SIZE.width * QUALITY;
-			h = SIZE.height * QUALITY;
+			w = size.width * quality;
+			h = size.height * quality;
 		} else {
-			w = SIZE.width;
-			h = SIZE.height;
+			w = size.width;
+			h = size.height;
 		}
-		const IMG = new Image();
+		const img = new Image();
 
-		IMG.onload = () => {
-			CANVAS.width = w;
-			CANVAS.height = h;
+		img.onload = () => {
+			canvas.width = w;
+			canvas.height = h;
 
 			// Draw image from canvas
-			CANVAS.getContext("2d")?.drawImage(IMG, 0, 0, w, h);
+			canvas.getContext("2d")?.drawImage(img, 0, 0, w, h);
 
 			// download PNG
-			const PNG = CANVAS.toDataURL();
-			A.href = PNG;
-			A.download = FILE_NAME;
-			document.body.appendChild(A);
-			A.click();
+			const png = canvas.toDataURL();
+			a.href = png;
+			a.download = fileName;
+			document.body.appendChild(a);
+			a.click();
 
 			// Remove created link
-			document.body.removeChild(A);
-			window.URL.revokeObjectURL(PNG);
+			document.body.removeChild(a);
+			window.URL.revokeObjectURL(png);
 		};
 
-		IMG.src = url;
+		img.src = url;
 
 		// Get SVG size source:
 		// https://stackoverflow.com/a/24649456
