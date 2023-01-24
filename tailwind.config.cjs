@@ -1,5 +1,6 @@
-// Use this to customize the base colors.
+require("daisyui/src/colors/themes");
 
+// Use these values to customize the base colors.
 const fontFamily = "'Cabin', Arial, sans";
 const primary = "#1d4ed8";
 const primaryDark = "#6d28d9";
@@ -42,9 +43,7 @@ module.exports = {
 		themes: [
 			{
 				light: {
-					...require("daisyui/src/colors/themes")[
-						"[data-theme=light]"
-					],
+					...["[data-theme=light]"],
 					"fontFamily": fontFamily,
 					"base-100": bg,
 					"base-200": panel,
@@ -54,9 +53,7 @@ module.exports = {
 					"--btn-text-case": "none",
 				},
 				dark: {
-					...require("daisyui/src/colors/themes")[
-						"[data-theme=dark]"
-					],
+					...["[data-theme=dark]"],
 					"fontFamily": fontFamily,
 					"base-100": bgDark,
 					"base-200": panelDark,
