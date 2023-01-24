@@ -208,28 +208,4 @@ html {
 .panel {
 	@apply bg-base-200 rounded-md p-3 place-content-stretch gap-4;
 }
-
-#bar-hp {
-	@apply bg-hp;
-}
-
-#bar-att {
-	@apply bg-att;
-}
-
-#bar-def {
-	@apply bg-def;
-}
-
-#bar-spa {
-	@apply bg-spa;
-}
-
-#bar-spd {
-	@apply bg-spd;
-}
-
-#bar-spe {
-	@apply bg-spe;
-}
 </style>
