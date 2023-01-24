@@ -1,77 +1,84 @@
 # Autofill
 
-The autofill button uses PokeAPI to automatically fill in the stats based on the Pokemon name. However, there are a few Pokemon that do not give a response by default, usually because of an alternate form. For convenience, BST Graph modifies the name sent to PokeAPI to give a response for the base form. Alternatively, the stats can still be entered manually. The changes and bindings are as follows.
+The autofill button uses PokeAPI to automatically fill in the stats based
+on the Pokemon name.
+However, there are a few Pokemon that do not give a response by default,
+usually because of an alternate form.
+For convenience, BST Graph modifies the name sent to PokeAPI
+to give a response for the base form.
+Alternatively, the stats can still be entered manually.
+The changes and bindings are as follows.
 
 (This file is currently a placeholder.)
 
-# No response
+## No response
 
-## deoxys
+### deoxys
 
-## wormadam
+### wormadam
 
-## giratina
+### giratina
 
-## shaymin
+### shaymin
 
-## basculin
+### basculin
 
-## Darmanitan
+### Darmanitan
 
-## tornadus
+### tornadus
 
-## thundurus
+### thundurus
 
-## landorus
+### landorus
 
-## keldeo
+### keldeo
 
-## meloetta
+### meloetta
 
-## aegislash
+### aegislash
 
-## pumpkaboo
+### pumpkaboo
 
-## gourgeist
+### gourgeist
 
-## zygarde
+### zygarde
 
-## oricorio
+### oricorio
 
-## lycanroc
+### lycanroc
 
-## wishiwashi
+### wishiwashi
 
-## minior
+### minior
 
-## eiscue
+### eiscue
 
-## morpeko
+### morpeko
 
-## flabebe
+### flabebe
 
-# Regional variants
+## Regional variants
 
-# Mega Evolutions
+## Mega Evolutions
 
-# Other forms with different stats
+## Other forms with different stats
 
-## Rotom
+### Rotom
 
-## Dialga
+### Dialga
 
-## Palkia
+### Palkia
 
-## Greninja
+### Greninja
 
-## Necrozma
+### Necrozma
 
-## Zacian
+### Zacian
 
-## Zamazenta
+### Zamazenta
 
-## Urshifu
+### Urshifu
 
-## Calyrex
+### Calyrex
 
-## Enamorus
+### Enamorus
