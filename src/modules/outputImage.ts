@@ -65,7 +65,7 @@ export function outputImage(imgType = imageType.SVG) {
 			const quality = Number(qSel.value);
 
 			// Save quality to local storage
-			saveQuality(String(quality));
+			saveQuality(quality);
 
 			w = size.width * quality;
 			h = size.height * quality;

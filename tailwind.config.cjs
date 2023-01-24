@@ -42,6 +42,7 @@ module.exports = {
 	daisyui: {
 		themes: [
 			{
+				// TODO: Change btn text colors to white
 				light: {
 					...["[data-theme=light]"],
 					"fontFamily": fontFamily,

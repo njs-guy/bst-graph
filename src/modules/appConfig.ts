@@ -1,15 +1,13 @@
 // Handles saving and loading app settings
 
-// TODO: Have the save functions take the correct data type and have it convert it to string within the save function.
-
 // Saves the PNG quality
-export function saveQuality(quality: string) {
-	localStorage.setItem("quality", quality);
+export function saveQuality(quality: number) {
+	localStorage.setItem("quality", String(quality));
 }
 
 // Saves whether dark mode is active
-export function saveTheme(dark: string) {
-	localStorage.setItem("dark", dark);
+export function saveTheme(dark: boolean) {
+	localStorage.setItem("dark", String(dark));
 }
 
 // Changes the theme
@@ -23,7 +21,7 @@ export function changeTheme(darkMode: boolean) {
 		html.setAttribute("data-theme", "light");
 	}
 
-	saveTheme(String(darkMode));
+	saveTheme(darkMode);
 }
 
 // Loads settings
@@ -46,9 +44,8 @@ export function loadSettings() {
 	// LocalStorage can only store strings, so booleans have to be converted first.
 	if (dark === "true") {
 		darkBool = true;
-	} else {
-		darkBool = false;
 	}
+	// Else, darkBool is already false.
 
 	changeTheme(darkBool); // Change theme
 	themeSw.checked = darkBool; // Check theme checkbox
