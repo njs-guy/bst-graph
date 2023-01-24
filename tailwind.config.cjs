@@ -42,7 +42,7 @@ module.exports = {
 	daisyui: {
 		themes: [
 			{
-				// TODO: Change btn text colors to white
+				// TODO: Set stat colors in DaisyUI instead of base Tailwind
 				light: {
 					...["[data-theme=light]"],
 					"fontFamily": fontFamily,
@@ -52,6 +52,9 @@ module.exports = {
 					"base-content": txtColor,
 					"primary": primary,
 					"--btn-text-case": "none",
+					".btn-primary": {
+						color: "#ffffff",
+					},
 				},
 				dark: {
 					...["[data-theme=dark]"],
@@ -62,6 +65,9 @@ module.exports = {
 					"base-content": txtColorDark,
 					"primary": primaryDark,
 					"--btn-text-case": "none",
+					".btn-primary": {
+						color: "#ffffff",
+					},
 				},
 			},
 		],
