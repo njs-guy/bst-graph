@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+// Use this to customize the base colors.
 
 const fontFamily = "'Cabin', Arial, sans";
 const primary = "#1d4ed8";
@@ -22,6 +22,7 @@ const spdDark = "#16a34a";
 const spe = "#ec4899";
 const speDark = "#db2777";
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
 	content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
 	theme: {
