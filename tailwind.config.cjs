@@ -1,27 +1,26 @@
 /** @type {import('tailwindcss').Config} */
 
-let fontFamily = "'Cabin', Arial, sans";
-let primary = "#1d4ed8";
-let primaryDark = "#6d28d9";
-let bg = "#e5e5e5";
-let bgDark = "#262626";
-let panel = "#ffffff";
-let panelDark = "#404040";
-let txtColor = "#000000";
-let txtColorDark = "#fafafa";
-
-let hp = "#ef4444";
-let hpDark = "#dc2626";
-let att = "#f97316";
-let attDark = "#ea580c";
-let def = "#eab308";
-let defDark = "#ca8a04";
-let spa = "#3b82f6";
-let spaDark = "#2563eb";
-let spd = "#22c55e";
-let spdDark = "#16a34a";
-let spe = "#ec4899";
-let speDark = "#db2777";
+const fontFamily = "'Cabin', Arial, sans";
+const primary = "#1d4ed8";
+const primaryDark = "#6d28d9";
+const bg = "#e5e5e5";
+const bgDark = "#262626";
+const panel = "#ffffff";
+const panelDark = "#404040";
+const txtColor = "#000000";
+const txtColorDark = "#fafafa";
+const hp = "#ef4444";
+const hpDark = "#dc2626";
+const att = "#f97316";
+const attDark = "#ea580c";
+const def = "#eab308";
+const defDark = "#ca8a04";
+const spa = "#3b82f6";
+const spaDark = "#2563eb";
+const spd = "#22c55e";
+const spdDark = "#16a34a";
+const spe = "#ec4899";
+const speDark = "#db2777";
 
 module.exports = {
 	content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
