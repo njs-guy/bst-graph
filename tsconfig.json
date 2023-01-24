@@ -12,7 +12,6 @@
 		"useDefineForClassFields": true,
 		"sourceMap": true,
 		"baseUrl": ".",
-		"types": ["webpack-env"],
 		"paths": {
 			"@/*": ["src/*"]
 		},
@@ -23,7 +22,8 @@
 		"src/**/*.tsx",
 		"src/**/*.vue",
 		"tests/**/*.ts",
-		"tests/**/*.tsx"
+		"tests/**/*.tsx",
+		"vite.config.ts"
 	],
 	"exclude": ["node_modules"]
 }
