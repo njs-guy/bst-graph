@@ -1,5 +1,5 @@
 <template>
-	<div class="input-container flex flex-col">
+	<div class="form-control input-container flex flex-col">
 		<label
 			:for="idName"
 			class="place-self-start"
@@ -7,7 +7,7 @@
 		>
 		<input
 			type="text"
-			class="rounded outline-primary caret-primary bg-base-100 outline-offset-0 h-8 px-2"
+			class="input input-primary border-none rounded bg-base-100 h-8 px-2"
 			:value="defaultVal"
 			:id="idName"
 			:name="idName"
