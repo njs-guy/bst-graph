@@ -24,16 +24,16 @@
 				:stat="defStat"
 			/>
 			<StatBar
-				class="spa-bar"
-				barId="bar-spa"
+				class="spA-bar"
+				barId="bar-spA"
 				label="Sp. Atk"
-				:stat="spaStat"
+				:stat="spAStat"
 			/>
 			<StatBar
-				class="spd-bar"
-				barId="bar-spd"
+				class="spD-bar"
+				barId="bar-spD"
 				label="Sp. Def"
-				:stat="spdStat"
+				:stat="spDStat"
 			/>
 			<StatBar
 				class="spe-bar"
@@ -65,8 +65,8 @@ export default defineComponent({
 		hpStat: Number,
 		attStat: Number,
 		defStat: Number,
-		spaStat: Number,
-		spdStat: Number,
+		spAStat: Number,
+		spDStat: Number,
 		speStat: Number,
 		totStat: Number,
 	},

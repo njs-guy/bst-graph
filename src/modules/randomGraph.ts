@@ -32,7 +32,7 @@ export function randomGraph() {
 	graphState.setHp(randInt(defaultStatMin, defaultStatMax));
 	graphState.setAtt(randInt(defaultStatMin, defaultStatMax));
 	graphState.setDef(randInt(defaultStatMin, defaultStatMax));
-	graphState.setSpa(randInt(defaultStatMin, defaultStatMax));
-	graphState.setSpd(randInt(defaultStatMin, defaultStatMax));
+	graphState.setSpA(randInt(defaultStatMin, defaultStatMax));
+	graphState.setSpD(randInt(defaultStatMin, defaultStatMax));
 	graphState.setSpe(randInt(defaultStatMin, defaultStatMax));
 }

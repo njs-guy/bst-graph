@@ -55,10 +55,10 @@ module.exports = {
 					"#bar-def": {
 						"background-color": def,
 					},
-					"#bar-spa": {
+					"#bar-spA": {
 						"background-color": spA,
 					},
-					"#bar-spd": {
+					"#bar-spD": {
 						"background-color": spD,
 					},
 					"#bar-spe": {
@@ -85,10 +85,10 @@ module.exports = {
 					"#bar-def": {
 						"background-color": defDark,
 					},
-					"#bar-spa": {
+					"#bar-spA": {
 						"background-color": spADark,
 					},
-					"#bar-spd": {
+					"#bar-spD": {
 						"background-color": spDDark,
 					},
 					"#bar-spe": {

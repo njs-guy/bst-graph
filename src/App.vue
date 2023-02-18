@@ -7,8 +7,8 @@
 				:hpStat="graphState.hp"
 				:attStat="graphState.att"
 				:defStat="graphState.def"
-				:spaStat="graphState.spa"
-				:spdStat="graphState.spd"
+				:spAStat="graphState.spA"
+				:spDStat="graphState.spD"
 				:speStat="graphState.spe"
 				:totStat="graphState.total"
 			/>
@@ -53,16 +53,16 @@
 					@statChanged="onDefChanged"
 				/>
 				<LabelInput
-					idName="spa-input"
+					idName="spA-input"
 					text="Sp. Attack"
-					:defaultVal="String(graphState.spa)"
-					@statChanged="onSpaChanged"
+					:defaultVal="String(graphState.spA)"
+					@statChanged="onSpAChanged"
 				/>
 				<LabelInput
-					idName="spd-input"
+					idName="spD-input"
 					text="Sp. Defense"
-					:defaultVal="String(graphState.spd)"
-					@statChanged="onSpdChanged"
+					:defaultVal="String(graphState.spD)"
+					@statChanged="onSpDChanged"
 				/>
 				<LabelInput
 					idName="spe-input"
@@ -167,11 +167,11 @@ export default defineComponent({
 		onDefChanged(value: string) {
 			graphState.setDef(Number(value));
 		},
-		onSpaChanged(value: string) {
-			graphState.setSpa(Number(value));
+		onSpAChanged(value: string) {
+			graphState.setSpA(Number(value));
 		},
-		onSpdChanged(value: string) {
-			graphState.setSpd(Number(value));
+		onSpDChanged(value: string) {
+			graphState.setSpD(Number(value));
 		},
 		onSpeChanged(value: string) {
 			graphState.setSpe(Number(value));

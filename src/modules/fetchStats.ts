@@ -36,7 +36,7 @@ function fillGraph(stats: Array<number>) {
 	graphState.setHp(stats[0]);
 	graphState.setAtt(stats[1]);
 	graphState.setDef(stats[2]);
-	graphState.setSpa(stats[3]);
-	graphState.setSpd(stats[4]);
+	graphState.setSpA(stats[3]);
+	graphState.setSpD(stats[4]);
 	graphState.setSpe(stats[5]);
 }

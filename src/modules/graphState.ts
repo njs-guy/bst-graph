@@ -7,8 +7,8 @@ export const graphState = reactive({
 	hp: defaultStat,
 	att: defaultStat,
 	def: defaultStat,
-	spa: defaultStat,
-	spd: defaultStat,
+	spA: defaultStat,
+	spD: defaultStat,
 	spe: defaultStat,
 	total: 30,
 	setName(newName: string) {
@@ -26,12 +26,12 @@ export const graphState = reactive({
 		this.def = stat;
 		this.updateTotal();
 	},
-	setSpa(stat: number) {
-		this.spa = stat;
+	setSpA(stat: number) {
+		this.spA = stat;
 		this.updateTotal();
 	},
-	setSpd(stat: number) {
-		this.spd = stat;
+	setSpD(stat: number) {
+		this.spD = stat;
 		this.updateTotal();
 	},
 	setSpe(stat: number) {
@@ -40,6 +40,6 @@ export const graphState = reactive({
 	},
 	updateTotal() {
 		this.total =
-			this.hp + this.att + this.def + this.spa + this.spd + this.spe;
+			this.hp + this.att + this.def + this.spA + this.spD + this.spe;
 	},
 });
