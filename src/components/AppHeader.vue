@@ -1,5 +1,5 @@
 <template>
-	<div class="header flex flex-row p-2 bg-base-200">
+	<div class="navbar bg-base-200 rounded-md mb-4">
 		<h1 class="text-2xl mr-auto">BST Graph</h1>
 		<ThemeSwitcher
 			@darkMode="onDarkMode"
