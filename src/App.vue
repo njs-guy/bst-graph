@@ -23,13 +23,10 @@
 					idName="name-input"
 					@nameChanged="onNameChanged"
 				/>
-				<button
-					type="button"
-					class="btn btn-primary btn-sm self-end basis-1/2 rounded animate-none"
+				<FormButton
+					label="Auto fill"
 					@click="fetchStats(graphState.name)"
-				>
-					Auto fill
-				</button>
+				/>
 			</form>
 			<form
 				class="panel flex-row grid grid-cols-3"
@@ -85,7 +82,7 @@
 					<select
 						name="quality"
 						id="quality-select"
-						class="rounded p-1 h-8 bg-base-100"
+						class="select select-primary border-none rounded select-sm"
 					>
 						<option value="1">Low</option>
 						<option
@@ -99,20 +96,15 @@
 						<option value="10">Ultra</option>
 					</select>
 				</div>
-				<button
-					type="button"
-					class="btn btn-primary btn-sm self-end rounded animate-none"
+				<FormButton
+					label="Save as PNG"
 					@click="outputImage('png')"
-				>
-					Save as PNG
-				</button>
-				<button
-					type="button"
-					class="btn btn-primary btn-sm col-span-2 rounded animate-none"
+				/>
+				<FormButton
+					class="col-span-2"
+					label="Save as SVG"
 					@click="outputImage()"
-				>
-					Save as SVG
-				</button>
+				/>
 			</div>
 		</div>
 	</div>
@@ -125,6 +117,7 @@ import { defineComponent } from "vue";
 
 // Components
 import AppHeader from "./components/AppHeader.vue";
+import FormButton from "./components/FormButton.vue";
 import LabelInput from "./components/LabelInput.vue";
 import NameInput from "./components/NameInput.vue";
 import StatGraph from "./components/StatGraph.vue";
@@ -139,10 +132,11 @@ import { randomGraph } from "./modules/randomGraph";
 export default defineComponent({
 	name: "App",
 	components: {
-		StatGraph,
+		AppHeader,
+		FormButton,
 		LabelInput,
 		NameInput,
-		AppHeader,
+		StatGraph,
 	},
 	data() {
 		return {
