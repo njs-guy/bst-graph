@@ -14,7 +14,7 @@
 				:totStat="graphState.total"
 			/>
 			<form
-				class="panel flex flex-row"
+				class="panel grid grid-cols-2"
 				id="name-sec"
 			>
 				<NameInput
@@ -29,7 +29,7 @@
 				/>
 			</form>
 			<form
-				class="panel flex-row grid grid-cols-3"
+				class="panel grid grid-cols-2 sm:grid-cols-3"
 				id="stat-sec"
 			>
 				<LabelInput
