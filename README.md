@@ -10,7 +10,7 @@ Generate Pokémon base stat total graphs similar to what's seen on Bulbapedia.
 - Can fully edit any stat and use any name.
     - Great for fakémon!
 - Export to PNG or SVG.
-- Autofill stats from Pokémon name. (Based on Generation 8.)
+- Autofill stats from Pokémon name. (Based on Generation 9.)
 - Also works on mobile!
 - Open source under MIT license.
 

@@ -1,7 +1,5 @@
 # Developer information
 
-All information for developers such as build instructions.
-
 ## Building
 
 1. Install [Yarn](https://yarnpkg.com/getting-started/install) if you haven't already.

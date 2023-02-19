@@ -13,49 +13,49 @@ The changes and bindings are as follows.
 
 ## No response
 
-### deoxys
+### Deoxys
 
-### wormadam
+### Wormadam
 
-### giratina
+### Giratina
 
-### shaymin
+### Shaymin
 
-### basculin
+### Basculin
 
 ### Darmanitan
 
-### tornadus
+### Tornadus
 
-### thundurus
+### Thundurus
 
-### landorus
+### Landorus
 
-### keldeo
+### Keldeo
 
-### meloetta
+### Meloetta
 
-### aegislash
+### Aegislash
 
-### pumpkaboo
+### Pumpkaboo
 
-### gourgeist
+### Gourgeist
 
-### zygarde
+### Zygarde
 
-### oricorio
+### Oricorio
 
-### lycanroc
+### Lycanroc
 
-### wishiwashi
+### Wishiwashi
 
-### minior
+### Minior
 
-### eiscue
+### Eiscue
 
-### morpeko
+### Morpeko
 
-### flabebe
+### Flabebe
 
 ## Regional variants
 
