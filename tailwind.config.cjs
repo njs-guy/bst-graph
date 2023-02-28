@@ -1,5 +1,3 @@
-require("daisyui/src/colors/themes");
-
 // Use these values to customize the base colors.
 // Font
 const fontFamily = "'Cabin', Arial, sans";
