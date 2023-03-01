@@ -1,5 +1,4 @@
 <template>
-	<!-- TODO: Fix mobile layout issues -->
 	<div class="mc-margin">
 		<AppHeader @darkMode="appConfig.changeTheme" />
 		<div class="main-content grid grid-cols-1 gap-4 max-w-lg">

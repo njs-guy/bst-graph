@@ -10,8 +10,6 @@ at the root of the directory like you would a config file.
 
 ## Colors
 
-TODO: Update docs with new configuration.
-
 Colors can be changed to any [color value accepted by CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value).
 For convenience, they are located at the top of the Tailwind config.
 
