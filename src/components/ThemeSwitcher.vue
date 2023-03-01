@@ -1,5 +1,8 @@
 <template>
-	<label class="swap swap-rotate theme-switcher self-center">
+	<label
+		class="swap swap-rotate theme-switcher self-center"
+		title="Change theme"
+	>
 		<input
 			type="checkbox"
 			class="mr-1"
@@ -9,11 +12,13 @@
 			@change="onChange"
 		/>
 		<!-- The heroicons license (MIT) can be found in ../src/assets/ -->
+
+		<!-- Moon -->
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			viewBox="0 0 24 24"
 			fill="currentColor"
-			class="swap-off w-8 h-8"
+			class="swap-off w-8 h-8 mr-2"
 		>
 			<path
 				fill-rule="evenodd"
@@ -21,6 +26,8 @@
 				clip-rule="evenodd"
 			/>
 		</svg>
+
+		<!-- Sun -->
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			viewBox="0 0 24 24"
@@ -63,5 +70,3 @@ export default defineComponent({
 	},
 });
 </script>
-
-<style scoped></style>
