@@ -43,7 +43,7 @@ export default defineComponent({
 			}
 
 			if (this.isTotal) {
-				wid = (this.stat / 780) * 100; //convert stat to width percent
+				wid = (this.stat / 700) * 100; //convert stat to width percent
 			} else {
 				wid = (this.stat / 255) * 100; //convert stat to width percent
 			}
@@ -58,10 +58,39 @@ export default defineComponent({
 
 			bar.style.width = String(wid) + "%";
 		},
+		changeContainerColor() {
+			// const container = document.querySelector(".bar-container");
+
+			const bar = document.getElementById(this.barId);
+			const container = bar?.parentElement;
+
+			if (container && container.querySelector("#bar-hp")) {
+				container.classList.add("bar-hp-container");
+			}
+			if (container && container.querySelector("#bar-att")) {
+				container.classList.add("bar-att-container");
+			}
+			if (container && container.querySelector("#bar-def")) {
+				container.classList.add("bar-def-container");
+			}
+			if (container && container.querySelector("#bar-spA")) {
+				container.classList.add("bar-spA-container");
+			}
+			if (container && container.querySelector("#bar-spD")) {
+				container.classList.add("bar-spD-container");
+			}
+			if (container && container.querySelector("#bar-spe")) {
+				container.classList.add("bar-spe-container");
+			}
+			if (container && container.querySelector("#bar-tot")) {
+				container.classList.add("bar-tot-container");
+			}
+		},
 	},
 	mounted: function () {
 		// On load
 		this.adjustBarWidth();
+		this.changeContainerColor();
 	},
 	watch: {
 		stat() {
@@ -86,6 +115,7 @@ export default defineComponent({
 
 .label {
 	float: left;
+	padding-left: 4px !important;
 }
 
 .stat {
