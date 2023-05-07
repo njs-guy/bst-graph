@@ -46,6 +46,7 @@
 				barId="bar-tot"
 				label="Total"
 				:stat="totStat"
+				:isTotal="true"
 			/>
 		</div>
 	</div>

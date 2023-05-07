@@ -13,6 +13,7 @@ const att = "#f97316";
 const spA = "#3b82f6";
 const spD = "#22c55e";
 const spe = "#ec4899";
+const tot = "#94a3b8";
 
 // Dark colors
 const txtColorDark = "#fafafa";
@@ -25,6 +26,7 @@ const defDark = "#ca8a04";
 const spADark = "#2563eb";
 const spDDark = "#16a34a";
 const speDark = "#db2777";
+const totDark = "#94a3b8";
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -62,6 +64,9 @@ module.exports = {
 					"#bar-spe": {
 						"background-color": spe,
 					},
+					"#bar-tot": {
+						"background-color": tot,
+					},
 				},
 				dark: {
 					...["[data-theme=dark]"],
@@ -91,6 +96,9 @@ module.exports = {
 					},
 					"#bar-spe": {
 						"background-color": speDark,
+					},
+					"#bar-tot": {
+						"background-color": totDark,
 					},
 				},
 			},

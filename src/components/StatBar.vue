@@ -26,6 +26,10 @@ export default defineComponent({
 		},
 		label: String,
 		stat: Number,
+		isTotal: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	methods: {
 		// Adjusts the width of the stat bar
@@ -38,7 +42,11 @@ export default defineComponent({
 				return;
 			}
 
-			wid = (this.stat / 255) * 100; //convert stat to width percent
+			if (this.isTotal) {
+				wid = (this.stat / 780) * 100; //convert stat to width percent
+			} else {
+				wid = (this.stat / 255) * 100; //convert stat to width percent
+			}
 
 			if (wid > 100) {
 				wid = 100; // Width cannot be more than 100%
