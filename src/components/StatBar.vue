@@ -1,7 +1,7 @@
 <template>
-	<div class="row flex flex-row items-center gap-2">
+	<div class="row flex flex-row items-center gap-0">
 		<div class="text-container basis-5/12">
-			<p class="label self-center">{{ label }}:</p>
+			<p class="label self-center">{{ label }}</p>
 			<p class="stat">{{ stat }}</p>
 		</div>
 		<div class="bar-container basis-7/12">

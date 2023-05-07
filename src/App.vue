@@ -200,6 +200,6 @@ html {
 }
 
 .panel {
-	@apply bg-base-200 rounded-md p-3 place-content-stretch gap-4;
+	@apply bg-base-200 rounded-md p-3 place-content-stretch gap-3;
 }
 </style>
