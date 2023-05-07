@@ -4,9 +4,9 @@
 			<p class="label self-center">{{ label }}</p>
 			<p class="stat">{{ stat }}</p>
 		</div>
-		<div class="bar-container basis-7/12">
+		<div class="bar-container rounded basis-7/12">
 			<div
-				class="bar"
+				class="bar rounded"
 				:class="barId"
 				:id="barId"
 			></div>
@@ -52,8 +52,8 @@ export default defineComponent({
 				wid = 100; // Width cannot be more than 100%
 			}
 
-			if (wid < 0) {
-				wid = 0; // Width cannot be less than 0%
+			if (wid < 2) {
+				wid = 2; // Width cannot be less than 2%
 			}
 
 			bar.style.width = String(wid) + "%";

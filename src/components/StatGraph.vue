@@ -56,8 +56,6 @@
 import { defineComponent } from "vue";
 import StatBar from "./StatBar.vue";
 
-// TODO: Possibly rounded bar corners
-
 export default defineComponent({
 	Name: "StatGraph",
 	components: {
