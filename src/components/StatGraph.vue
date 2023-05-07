@@ -3,7 +3,7 @@
 		class="graph bg-base-200 rounded-md p-1.5"
 		id="output"
 	>
-		<h1 class="name text-3xl leading-tight">{{ nameLabel }}</h1>
+		<h1 class="name text-3xl leading-normal">{{ nameLabel }}</h1>
 		<div class="flex flex-col place-items-center leading-snug">
 			<StatBar
 				class="hp-bar"
