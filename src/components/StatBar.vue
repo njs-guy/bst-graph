@@ -45,7 +45,7 @@ export default defineComponent({
 			if (this.isTotal) {
 				wid = (this.stat / 700) * 100; //convert stat to width percent
 			} else {
-				wid = (this.stat / 255) * 100; //convert stat to width percent
+				wid = (this.stat / 180) * 100; //convert stat to width percent
 			}
 
 			if (wid > 100) {
