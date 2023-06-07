@@ -6,7 +6,7 @@
 		</div>
 		<div class="bar-container rounded basis-7/12">
 			<div
-				class="bar rounded"
+				class="bar rounded-sm"
 				:class="barId"
 				:id="barId"
 			></div>
@@ -111,6 +111,7 @@ export default defineComponent({
 
 .bar-container {
 	height: 1.7em;
+	padding: 0.1em;
 }
 
 .label {
