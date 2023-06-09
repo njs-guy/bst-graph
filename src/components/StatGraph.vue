@@ -4,7 +4,7 @@
 		id="output"
 	>
 		<h1 class="name text-3xl leading-normal">{{ nameLabel }}</h1>
-		<div class="flex flex-col place-items-center leading-snug pr-1.5">
+		<div class="flex flex-col place-items-center leading-tight pr-1.5">
 			<StatBar
 				class="hp-bar"
 				barId="bar-hp"

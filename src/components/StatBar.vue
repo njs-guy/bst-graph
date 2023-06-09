@@ -111,7 +111,7 @@ export default defineComponent({
 
 .bar-container {
 	height: 1.7em;
-	padding: 0.1em;
+	/* padding: 0.1em; */
 }
 
 .label {
@@ -126,7 +126,7 @@ export default defineComponent({
 .label,
 .stat {
 	@apply px-2 py-1 w-fit;
-	font-size: 18px;
+	font-size: 22px;
 }
 
 @media (min-width: 32rem) {
