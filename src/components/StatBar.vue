@@ -6,7 +6,7 @@
 		</div>
 		<div class="bar-container rounded basis-7/12">
 			<div
-				class="bar rounded-sm"
+				class="bar rounded"
 				:class="barId"
 				:id="barId"
 			></div>
