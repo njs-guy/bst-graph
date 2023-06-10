@@ -1,6 +1,6 @@
 <template>
 	<div class="navbar bg-base-200 rounded-md mb-4">
-		<h1 class="text-2xl ml-2 mr-auto">BST Graph</h1>
+		<h1 class="text-2xl ml-2 mr-auto"><LogoIcon />BST Graph</h1>
 		<GitHubIcon />
 		<ThemeSwitcher
 			@darkMode="onDarkMode"
@@ -11,8 +11,9 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import ThemeSwitcher from "./ThemeSwitcher.vue";
 import GitHubIcon from "./GitHubIcon.vue";
+import LogoIcon from "./LogoIcon.vue";
+import ThemeSwitcher from "./ThemeSwitcher.vue";
 
 export default defineComponent({
 	Name: "AppHeader",
@@ -24,6 +25,7 @@ export default defineComponent({
 	components: {
 		ThemeSwitcher,
 		GitHubIcon,
+		LogoIcon,
 	},
 });
 </script>
