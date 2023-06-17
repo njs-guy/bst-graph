@@ -28,6 +28,22 @@
 				/>
 			</form>
 			<form
+				class="panel grid grid-cols-2"
+				id="type-sec"
+			>
+				<label class="label cursor-pointer">
+					<span class="label-text">Include types</span>
+					<input
+						type="checkbox"
+						checked
+						class="checkbox checkbox-primary"
+					/>
+				</label>
+				<p></p>
+				<TypeSelect label="Type 1" />
+				<TypeSelect label="Type 2" />
+			</form>
+			<form
 				class="panel grid grid-cols-2 sm:grid-cols-3"
 				id="stat-sec"
 			>
@@ -120,6 +136,7 @@ import FormButton from "./components/FormButton.vue";
 import LabelInput from "./components/LabelInput.vue";
 import NameInput from "./components/NameInput.vue";
 import StatGraph from "./components/StatGraph.vue";
+import TypeSelect from "./components/TypeSelect.vue";
 
 // Modules
 import * as appConfig from "./modules/appConfig";
@@ -136,6 +153,7 @@ export default defineComponent({
 		LabelInput,
 		NameInput,
 		StatGraph,
+		TypeSelect,
 	},
 	data() {
 		return {
