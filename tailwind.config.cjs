@@ -7,6 +7,7 @@ const txtColor = "#000000";
 const primary = "#1d4ed8";
 const bg = "#e5e5e5";
 const panel = "#ffffff";
+const logoFill = "#262626";
 const barContainer = bg;
 const hp = "#ef4444";
 const hpContainer = barContainer;
@@ -28,6 +29,7 @@ const txtColorDark = "#fafafa";
 const primaryDark = "#6d28d9";
 const bgDark = "#262626";
 const panelDark = "#404040";
+const logoFillDark = "#ffffff";
 const barContainerDark = bgDark;
 const hpDark = "#dc2626";
 const hpContainerDark = barContainerDark;
@@ -61,6 +63,9 @@ module.exports = {
 					"--btn-text-case": "none",
 					".btn-primary": {
 						color: "#ffffff",
+					},
+					".logo-bg": {
+						fill: logoFill,
 					},
 					"#bar-hp": {
 						"background-color": hp,
@@ -115,6 +120,9 @@ module.exports = {
 					"--btn-text-case": "none",
 					".btn-primary": {
 						color: "#ffffff",
+					},
+					".logo-bg": {
+						fill: logoFillDark,
 					},
 					"#bar-hp": {
 						"background-color": hpDark,

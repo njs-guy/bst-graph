@@ -8,7 +8,7 @@
 		<title>BST Graph</title>
 		<g transform="translate(-9.6616352,-6.324601)">
 			<rect
-				style="fill: #fafafa"
+				class="logo-bg"
 				id="rect286"
 				width="26.696274"
 				height="26.696274"
@@ -52,5 +52,8 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
 	name: "LogoIcon",
+	props: {
+		background: String,
+	},
 });
 </script>
