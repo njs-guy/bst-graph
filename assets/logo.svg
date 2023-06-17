@@ -8,7 +8,10 @@
    version="1.1"
    id="svg5"
    inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
-   sodipodi:docname="drawing.svg"
+   sodipodi:docname="logo.svg"
+   inkscape:export-filename="logo_hd.png"
+   inkscape:export-xdpi="2827.4297"
+   inkscape:export-ydpi="2827.4297"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -25,8 +28,8 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="6.7277216"
-     inkscape:cx="22.667406"
-     inkscape:cy="61.833712"
+     inkscape:cx="22.072852"
+     inkscape:cy="59.901409"
      inkscape:window-width="2560"
      inkscape:window-height="1377"
      inkscape:window-x="-8"
@@ -48,50 +51,32 @@
        x="9.7886353"
        y="6.451601"
        ry="1.5" />
-    <text
-       xml:space="preserve"
-       style="font-weight:bold;font-size:8.46667px;line-height:0.95;font-family:Roboto;-inkscape-font-specification:'Roboto Bold';stroke-width:0.264583"
-       x="12.02909"
-       y="14.345181"
-       id="text450"><tspan
-         sodipodi:role="line"
-         id="tspan448"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46667px;font-family:Cabin;-inkscape-font-specification:'Cabin Bold';stroke-width:0.264583"
-         x="12.02909"
-         y="14.345181">B</tspan><tspan
-         sodipodi:role="line"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46667px;font-family:Cabin;-inkscape-font-specification:'Cabin Bold';stroke-width:0.264583"
-         x="12.02909"
-         y="22.763073"
-         id="tspan452">S</tspan><tspan
-         sodipodi:role="line"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.46667px;font-family:Cabin;-inkscape-font-specification:'Cabin Bold';stroke-width:0.264583"
-         x="12.02909"
-         y="31.180964"
-         id="tspan454">T</tspan></text>
-    <rect
-       style="fill:#ef4444;fill-opacity:1;stroke:#ffffff;stroke-width:0.254;stroke-opacity:0"
-       id="rect1010"
-       width="9.0099945"
-       height="5.4504895"
-       x="18.353691"
-       y="8.3982029"
-       ry="1" />
-    <rect
-       style="fill:#3b82f6;fill-opacity:1;stroke:#ffffff;stroke-width:0.254;stroke-opacity:0"
-       id="rect1740"
-       width="5.1167874"
-       height="5.4504895"
-       x="18.353691"
-       y="17.074493"
-       ry="1" />
-    <rect
-       style="fill:#22c55e;fill-opacity:1;stroke:#ffffff;stroke-width:0.254;stroke-opacity:0"
-       id="rect1742"
-       width="15.684064"
-       height="5.4504895"
-       x="18.353689"
-       y="25.750784"
-       ry="1" />
+    <g
+       id="g852">
+      <rect
+         style="fill:#ef4444;fill-opacity:1;stroke:#ffffff;stroke-width:0.254;stroke-opacity:0"
+         id="rect1010"
+         width="15.538331"
+         height="5.4504895"
+         x="11.825352"
+         y="8.3982029"
+         ry="1" />
+      <rect
+         style="fill:#3b82f6;fill-opacity:1;stroke:#ffffff;stroke-width:0.253999;stroke-opacity:0"
+         id="rect1740"
+         width="11.094542"
+         height="5.4504895"
+         x="11.825351"
+         y="17.074493"
+         ry="1" />
+      <rect
+         style="fill:#22c55e;fill-opacity:1;stroke:#ffffff;stroke-width:0.254;stroke-opacity:0"
+         id="rect1742"
+         width="22.684328"
+         height="5.4504895"
+         x="11.825351"
+         y="25.750784"
+         ry="1" />
+    </g>
   </g>
 </svg>

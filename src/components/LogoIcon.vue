@@ -6,86 +6,40 @@
 		xmlns="http://www.w3.org/2000/svg"
 	>
 		<title>BST Graph</title>
-		<g
-			id="layer1"
-			transform="translate(-9.6616352,-6.324601)"
-		>
+		<g transform="translate(-9.6616352,-6.324601)">
 			<rect
 				style="fill: #fafafa"
+				id="rect286"
 				width="26.696274"
 				height="26.696274"
 				x="9.7886353"
 				y="6.451601"
 				ry="1.5"
 			/>
-			<text
-				x="12.02909"
-				y="14.345181"
-			>
-				<tspan
-					style="
-						font-style: normal;
-						font-variant: normal;
-						font-weight: bold;
-						font-stretch: normal;
-						font-size: 8.46667px;
-						font-family: Cabin;
-					"
-					x="12.02909"
-					y="14.345181"
-				>
-					B
-				</tspan>
-				<tspan
-					style="
-						font-style: normal;
-						font-variant: normal;
-						font-weight: bold;
-						font-stretch: normal;
-						font-size: 8.46667px;
-						font-family: Cabin;
-					"
-					x="12.02909"
-					y="22.763073"
-				>
-					S
-				</tspan>
-				<tspan
-					style="
-						font-style: normal;
-						font-variant: normal;
-						font-weight: bold;
-						font-stretch: normal;
-						font-size: 8.46667px;
-						font-family: Cabin;
-					"
-					x="12.02909"
-					y="31.180964"
-				>
-					T
-				</tspan>
-			</text>
 			<rect
 				style="fill: #ef4444"
-				width="9.0099945"
+				id="rect1010"
+				width="15.538331"
 				height="5.4504895"
-				x="18.353691"
+				x="11.825352"
 				y="8.3982029"
 				ry="1"
 			/>
 			<rect
 				style="fill: #3b82f6"
-				width="5.1167874"
+				id="rect1740"
+				width="11.094542"
 				height="5.4504895"
-				x="18.353691"
+				x="11.825351"
 				y="17.074493"
 				ry="1"
 			/>
 			<rect
 				style="fill: #22c55e"
-				width="15.684064"
+				id="rect1742"
+				width="22.684328"
 				height="5.4504895"
-				x="18.353689"
+				x="11.825351"
 				y="25.750784"
 				ry="1"
 			/>
