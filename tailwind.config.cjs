@@ -46,6 +46,46 @@ const speContainerDark = barContainerDark;
 const totDark = "#94a3b8";
 const totContainerDark = barContainerDark;
 
+// Types
+const bugBg = "#AABB22";
+const bugText = "white";
+const darkBg = "#775544";
+const darkText = "white";
+const dragonBg = "#7766EE";
+const dragonText = "white";
+const electricBg = "#FFCC33";
+const electricText = "black";
+const fairyBg = "#EE99EE";
+const fairyText = "black";
+const fightingBg = "#BB5544";
+const fightingText = "white";
+const fireBg = "#FF4422";
+const fireText = "white";
+const flyingBg = "#8899FF";
+const flyingText = "white";
+const ghostBg = "#6666BB";
+const ghostText = "white";
+const grassBg = "#77CC55";
+const grassText = "white";
+const groundBg = "#DAB954";
+const groundText = "white";
+const iceBg = "#66CCFF";
+const iceText = "black";
+const normalBg = "#AAAA99";
+const normalText = "white";
+const poisonBg = "#AA5599";
+const poisonText = "white";
+const psychicBg = "#FF5599";
+const psychicText = "white";
+const rockBg = "#BBAA66";
+const rockText = "white";
+const steelBg = "#AAAABB";
+const steelText = "white";
+const waterBg = "#3399FF";
+const waterText = "white";
+
+// END CONFIG VALUES
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],

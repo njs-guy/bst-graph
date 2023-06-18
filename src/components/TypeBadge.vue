@@ -60,8 +60,4 @@ export default defineComponent({
 .type-badge {
 	@apply badge badge-lg bg-black border-none rounded w-full;
 }
-
-.type-flying {
-	background-color: wheat;
-}
 </style>
