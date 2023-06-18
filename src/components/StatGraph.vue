@@ -31,6 +31,7 @@ export default defineComponent({
 </script>
 
 <template>
+	<!-- TODO: Fix padding/margins -->
 	<div
 		class="graph bg-base-200 rounded-md p-1.5"
 		id="output"
@@ -42,11 +43,12 @@ export default defineComponent({
 			<!-- Type 1 -->
 			<TypeBadge :typeName="graphState.type1" />
 			<!-- Type 2 -->
-			<TypeBadge :typeName="graphState.type2" />
+			<TypeBadge
+				:typeName="graphState.type2"
+				id-name="type2"
+			/>
 		</div>
-		<div
-			class="flex flex-col place-items-center leading-tight pr-1.5 clear-right"
-		>
+		<div class="flex flex-col place-items-center leading-tight pr-1.5">
 			<StatBar
 				class="hp-bar"
 				barId="bar-hp"

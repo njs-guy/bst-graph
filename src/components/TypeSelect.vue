@@ -1,6 +1,6 @@
 <script lang="ts">
 import { defineComponent } from "vue";
-import { pokeTypes } from "../modules/pokeTypes";
+import { getPokeTypes } from "../modules/pokeTypes";
 import capitalizeWord from "../modules/capitalizeWord";
 import { graphState } from "../modules/graphState";
 
@@ -25,7 +25,7 @@ export default defineComponent({
 	},
 	data() {
 		return {
-			types: pokeTypes,
+			types: getPokeTypes(),
 			capitalizeWord,
 		};
 	},
@@ -52,11 +52,11 @@ export default defineComponent({
 				None
 			</option>
 			<option
-				v-for="(type, key) in types"
+				v-for="(type, key) of types"
 				:key="key"
-				:value="key"
+				:value="type"
 			>
-				{{ capitalizeWord(key) }}
+				{{ capitalizeWord(type) }}
 			</option>
 		</select>
 	</div>

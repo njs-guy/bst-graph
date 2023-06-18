@@ -1,20 +1,40 @@
-export const pokeTypes = {
-	bug: { class: "type-bug" },
-	dark: { class: "type-dark" },
-	dragon: { class: "type-dragon" },
-	electric: { class: "type-electric" },
-	fairy: { class: "type-fairy" },
-	fighting: { class: "type-fighting" },
-	fire: { class: "type-fire" },
-	flying: { class: "type-flying" },
-	ghost: { class: "type-ghost" },
-	grass: { class: "type-grass" },
-	ground: { class: "type-ground" },
-	ice: { class: "type-ice" },
-	normal: { class: "type-normal" },
-	poison: { class: "type-poison" },
-	psychic: { class: "type-psychic" },
-	rock: { class: "type-rock" },
-	steel: { class: "type-steel" },
-	water: { class: "type-water" },
-};
+const pokeTypes: string[] = [
+	"bug",
+	"dark",
+	"dragon",
+	"electric",
+	"fairy",
+	"fighting",
+	"fire",
+	"flying",
+	"ghost",
+	"grass",
+	"ground",
+	"ice",
+	"normal",
+	"poison",
+	"psychic",
+	"rock",
+	"steel",
+	"water",
+];
+
+export function getPokeTypes() {
+	return pokeTypes;
+}
+
+export function getPokeTypeClassPrefix() {
+	return "type-";
+}
+
+export function getPokeTypeClasses() {
+	const classes: string[] = [];
+	const types = getPokeTypes();
+	const classPrefix = getPokeTypeClassPrefix();
+
+	for (const type of types) {
+		classes.push(classPrefix + type);
+	}
+
+	return classes;
+}
