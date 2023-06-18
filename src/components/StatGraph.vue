@@ -1,8 +1,11 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import StatBar from "./StatBar.vue";
-
 import TypeBadge from "./TypeBadge.vue";
+import { graphState } from "../modules/graphState";
+
+// TODO: Use graphState instead of props
+
 export default defineComponent({
 	Name: "StatGraph",
 	components: {
@@ -19,6 +22,11 @@ export default defineComponent({
 		speStat: Number,
 		totStat: Number,
 	},
+	data() {
+		return {
+			graphState,
+		};
+	},
 });
 </script>
 
@@ -32,9 +40,9 @@ export default defineComponent({
 		</h1>
 		<div class="flex flex-row justify-center mr-2 mb-1 gap-1">
 			<!-- Type 1 -->
-			<TypeBadge typeName="bug" />
+			<TypeBadge :typeName="graphState.type1" />
 			<!-- Type 2 -->
-			<TypeBadge typeName="fighting" />
+			<TypeBadge :typeName="graphState.type2" />
 		</div>
 		<div
 			class="flex flex-col place-items-center leading-tight pr-1.5 clear-right"

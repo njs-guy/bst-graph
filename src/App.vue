@@ -73,6 +73,7 @@ export default defineComponent({
 	<div class="mc-margin">
 		<AppHeader @darkMode="appConfig.changeTheme" />
 		<div class="main-content grid grid-cols-1 gap-4 max-w-lg">
+			<!-- TODO: Remove these props after refactor -->
 			<StatGraph
 				:nameLabel="graphState.name"
 				:hpStat="graphState.hp"
@@ -103,7 +104,10 @@ export default defineComponent({
 				id="type-sec"
 			>
 				<TypeSelect label="Type 1" />
-				<TypeSelect label="Type 2" />
+				<TypeSelect
+					label="Type 2"
+					:isType2="true"
+				/>
 			</form>
 			<form
 				class="panel grid grid-cols-2 sm:grid-cols-3"
