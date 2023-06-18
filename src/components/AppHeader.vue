@@ -5,7 +5,7 @@ import LogoIcon from "./LogoIcon.vue";
 import ThemeSwitcher from "./ThemeSwitcher.vue";
 
 export default defineComponent({
-	Name: "AppHeader",
+	name: "AppHeader",
 	methods: {
 		onDarkMode(d: boolean) {
 			this.$emit("darkMode", d);

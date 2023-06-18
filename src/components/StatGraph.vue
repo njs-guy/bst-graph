@@ -2,10 +2,12 @@
 import { defineComponent } from "vue";
 import StatBar from "./StatBar.vue";
 
+import TypeBadge from "./TypeBadge.vue";
 export default defineComponent({
 	Name: "StatGraph",
 	components: {
 		StatBar,
+		TypeBadge,
 	},
 	props: {
 		nameLabel: String,
@@ -25,8 +27,18 @@ export default defineComponent({
 		class="graph bg-base-200 rounded-md p-1.5"
 		id="output"
 	>
-		<h1 class="name text-3xl leading-normal">{{ nameLabel }}</h1>
-		<div class="flex flex-col place-items-center leading-tight pr-1.5">
+		<h1 class="name text-3xl leading-normal clear-both">
+			{{ nameLabel }}
+		</h1>
+		<div class="flex flex-row justify-center mr-2 mb-1 gap-1">
+			<!-- Type 1 -->
+			<TypeBadge typeName="bug" />
+			<!-- Type 2 -->
+			<TypeBadge typeName="fighting" />
+		</div>
+		<div
+			class="flex flex-col place-items-center leading-tight pr-1.5 clear-right"
+		>
 			<StatBar
 				class="hp-bar"
 				barId="bar-hp"

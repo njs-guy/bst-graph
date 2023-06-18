@@ -1,14 +1,17 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { pokeTypes } from "../modules/pokeTypes";
+import capitalizeWord from "../modules/capitalizeWord";
 
 export default defineComponent({
+	name: "TypeSelect",
 	props: {
 		label: String,
 	},
 	data() {
 		return {
 			types: pokeTypes,
+			capitalizeWord,
 		};
 	},
 });
@@ -37,9 +40,7 @@ export default defineComponent({
 				:key="key"
 				:value="type"
 			>
-				<!-- Capitalize first letter of the word -->
-				<!-- "fire" becomes "Fire" -->
-				{{ type.charAt(0).toUpperCase() + type.slice(1) }}
+				{{ capitalizeWord(type) }}
 			</option>
 		</select>
 	</div>

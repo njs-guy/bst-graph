@@ -11,6 +11,8 @@ export const graphState = reactive({
 	spD: defaultStat,
 	spe: defaultStat,
 	total: 30,
+	type1: "none",
+	type2: "none",
 	setName(newName: string) {
 		this.name = newName;
 	},
@@ -41,5 +43,11 @@ export const graphState = reactive({
 	updateTotal() {
 		this.total =
 			this.hp + this.att + this.def + this.spA + this.spD + this.spe;
+	},
+	setType1(newType: string) {
+		this.type1 = newType;
+	},
+	setType2(newType: string) {
+		this.type2 = newType;
 	},
 });
