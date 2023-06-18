@@ -54,9 +54,9 @@ export default defineComponent({
 			<option
 				v-for="(type, key) in types"
 				:key="key"
-				:value="type"
+				:value="key"
 			>
-				{{ capitalizeWord(type) }}
+				{{ capitalizeWord(key) }}
 			</option>
 		</select>
 	</div>

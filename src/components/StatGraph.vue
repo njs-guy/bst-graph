@@ -38,7 +38,7 @@ export default defineComponent({
 		<h1 class="name text-3xl leading-normal clear-both">
 			{{ nameLabel }}
 		</h1>
-		<div class="flex flex-row justify-center mr-2 mb-1 gap-1">
+		<div class="flex flex-row justify-center mr-1.5 mb-1 gap-1">
 			<!-- Type 1 -->
 			<TypeBadge :typeName="graphState.type1" />
 			<!-- Type 2 -->

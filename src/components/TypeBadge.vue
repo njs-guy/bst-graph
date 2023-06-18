@@ -7,6 +7,11 @@ export default defineComponent({
 	props: {
 		typeName: { type: String, default: "none" },
 	},
+	methods: {
+		changeColor() {
+			console.log("wow");
+		},
+	},
 	data() {
 		return {
 			capitalizeWord,
@@ -18,8 +23,10 @@ export default defineComponent({
 <template>
 	<div
 		v-if="typeName !== 'none'"
-		class="badge border-none rounded w-full bg-red-500 text-white"
+		class="badge badge-lg bg-red-500 border-none rounded w-full"
 	>
-		{{ capitalizeWord(typeName) }}
+		<p class="type-text">
+			{{ capitalizeWord(typeName) }}
+		</p>
 	</div>
 </template>
