@@ -34,9 +34,15 @@ export default defineComponent({
 			>
 				None
 			</option>
-			<option :value="types.grass">{{ types.grass.name }}</option>
-			<option :value="types.fire">{{ types.fire.name }}</option>
-			<option :value="types.water">{{ types.water.name }}</option>
+			<option
+				v-for="(type, key) in types"
+				:key="key"
+				:value="type"
+			>
+				<!-- Capitalize first letter of the word -->
+				<!-- "fire" becomes "Fire" -->
+				{{ type.charAt(0).toUpperCase() + type.slice(1) }}
+			</option>
 		</select>
 	</div>
 </template>
