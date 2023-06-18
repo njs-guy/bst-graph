@@ -47,42 +47,26 @@ const totDark = "#94a3b8";
 const totContainerDark = barContainerDark;
 
 // Types
-const bugBg = "#AABB22";
-const bugText = "white";
-const darkBg = "#775544";
-const darkText = "white";
-const dragonBg = "#7766EE";
-const dragonText = "white";
-const electricBg = "#FFCC33";
-const electricText = "black";
-const fairyBg = "#EE99EE";
-const fairyText = "black";
-const fightingBg = "#BB5544";
-const fightingText = "white";
-const fireBg = "#FF4422";
-const fireText = "white";
-const flyingBg = "#8899FF";
-const flyingText = "white";
-const ghostBg = "#6666BB";
-const ghostText = "white";
-const grassBg = "#77CC55";
-const grassText = "white";
-const groundBg = "#DAB954";
-const groundText = "white";
-const iceBg = "#66CCFF";
-const iceText = "black";
-const normalBg = "#AAAA99";
-const normalText = "white";
-const poisonBg = "#AA5599";
-const poisonText = "white";
-const psychicBg = "#FF5599";
-const psychicText = "white";
-const rockBg = "#BBAA66";
-const rockText = "white";
-const steelBg = "#AAAABB";
-const steelText = "white";
-const waterBg = "#3399FF";
-const waterText = "white";
+const typeColors = {
+	bug: { bg: "#AABB22", text: "white" },
+	dark: { bg: "#775544", text: "white" },
+	dragon: { bg: "#7766EE", text: "white" },
+	electric: { bg: "#FFCC33", text: "black" },
+	fairy: { bg: "#EE99EE", text: "black" },
+	fighting: { bg: "#BB5544", text: "white" },
+	fire: { bg: "#FF4422", text: "white" },
+	flying: { bg: "#8899FF", text: "white" },
+	ghost: { bg: "#6666BB", text: "white" },
+	grass: { bg: "#77CC55", text: "white" },
+	ground: { bg: "#DAB954", text: "white" },
+	ice: { bg: "#66CCFF", text: "black" },
+	normal: { bg: "#AAAA99", text: "white" },
+	poison: { bg: "#AA5599", text: "white" },
+	psychic: { bg: "#FF5599", text: "white" },
+	rock: { bg: "#BBAA66", text: "white" },
+	steel: { bg: "#AAAABB", text: "white" },
+	water: { bg: "#3399FF", text: "white" },
+};
 
 // END CONFIG VALUES
 
@@ -206,6 +190,30 @@ module.exports = {
 					".bar-tot-container": {
 						"background-color": totContainerDark,
 					},
+					".type-bug": {
+						"color": typeColors.bug.text,
+						"background-color": typeColors.bug.bg,
+					},
+					".type-dark": {
+						"color": typeColors.dark.text,
+						"background-color": typeColors.dark.bg,
+					},
+					".type-dragon": {},
+					".type-electric": {},
+					".type-fairy": {},
+					".type-fighting": {},
+					".type-fire": {},
+					".type-flying": {},
+					".type-ghost": {},
+					".type-grass": {},
+					".type-ground": {},
+					".type-ice": {},
+					".type-normal": {},
+					".type-poison": {},
+					".type-psychic": {},
+					".type-rock": {},
+					".type-steel": {},
+					".type-water": {},
 				},
 			},
 		],
