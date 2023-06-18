@@ -1,3 +1,33 @@
+<script lang="ts">
+import { defineComponent } from "vue";
+
+export default defineComponent({
+	Name: "ThemeSwitcher",
+	data() {
+		return {
+			dark: false,
+		};
+	},
+	methods: {
+		// Emit dark value when changed
+		onChange() {
+			const themeId = document.getElementById(
+				"theme"
+			) as HTMLInputElement;
+
+			if (themeId === null) {
+				return;
+			} else {
+				this.dark = themeId?.checked;
+			}
+
+			const d = this.dark;
+			this.$emit("darkMode", d);
+		},
+	},
+});
+</script>
+
 <template>
 	<label
 		class="swap swap-rotate theme-switcher self-center"
@@ -40,33 +70,3 @@
 		</svg>
 	</label>
 </template>
-
-<script lang="ts">
-import { defineComponent } from "vue";
-
-export default defineComponent({
-	Name: "ThemeSwitcher",
-	data() {
-		return {
-			dark: false,
-		};
-	},
-	methods: {
-		// Emit dark value when changed
-		onChange() {
-			const themeId = document.getElementById(
-				"theme"
-			) as HTMLInputElement;
-
-			if (themeId === null) {
-				return;
-			} else {
-				this.dark = themeId?.checked;
-			}
-
-			const d = this.dark;
-			this.$emit("darkMode", d);
-		},
-	},
-});
-</script>

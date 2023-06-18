@@ -1,3 +1,25 @@
+<script lang="ts">
+import { defineComponent } from "vue";
+import StatBar from "./StatBar.vue";
+
+export default defineComponent({
+	Name: "StatGraph",
+	components: {
+		StatBar,
+	},
+	props: {
+		nameLabel: String,
+		hpStat: Number,
+		attStat: Number,
+		defStat: Number,
+		spAStat: Number,
+		spDStat: Number,
+		speStat: Number,
+		totStat: Number,
+	},
+});
+</script>
+
 <template>
 	<div
 		class="graph bg-base-200 rounded-md p-1.5"
@@ -51,28 +73,6 @@
 		</div>
 	</div>
 </template>
-
-<script lang="ts">
-import { defineComponent } from "vue";
-import StatBar from "./StatBar.vue";
-
-export default defineComponent({
-	Name: "StatGraph",
-	components: {
-		StatBar,
-	},
-	props: {
-		nameLabel: String,
-		hpStat: Number,
-		attStat: Number,
-		defStat: Number,
-		spAStat: Number,
-		spDStat: Number,
-		speStat: Number,
-		totStat: Number,
-	},
-});
-</script>
 
 <style scoped>
 .graph {

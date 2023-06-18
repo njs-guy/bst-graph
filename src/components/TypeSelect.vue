@@ -2,8 +2,6 @@
 import { defineComponent } from "vue";
 import { pokeTypes } from "../modules/pokeTypes";
 
-// TODO: Put script at top of each component
-
 export default defineComponent({
 	props: {
 		label: String,

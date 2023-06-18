@@ -1,19 +1,3 @@
-<template>
-	<div class="row flex flex-row items-center gap-0">
-		<div class="text-container basis-5/12">
-			<p class="label self-center">{{ label }}</p>
-			<p class="stat">{{ stat }}</p>
-		</div>
-		<div class="bar-container rounded basis-7/12">
-			<div
-				class="bar rounded"
-				:class="barId"
-				:id="barId"
-			></div>
-		</div>
-	</div>
-</template>
-
 <script lang="ts">
 import { defineComponent } from "vue";
 
@@ -99,6 +83,22 @@ export default defineComponent({
 	},
 });
 </script>
+
+<template>
+	<div class="row flex flex-row items-center gap-0">
+		<div class="text-container basis-5/12">
+			<p class="label self-center">{{ label }}</p>
+			<p class="stat">{{ stat }}</p>
+		</div>
+		<div class="bar-container rounded basis-7/12">
+			<div
+				class="bar rounded"
+				:class="barId"
+				:id="barId"
+			></div>
+		</div>
+	</div>
+</template>
 
 <style scoped>
 .row {

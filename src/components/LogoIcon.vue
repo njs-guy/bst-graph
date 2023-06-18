@@ -1,3 +1,14 @@
+<script lang="ts">
+import { defineComponent } from "vue";
+
+export default defineComponent({
+	name: "LogoIcon",
+	props: {
+		background: String,
+	},
+});
+</script>
+
 <template>
 	<svg
 		viewBox="0 0 26.950274 26.950274"
@@ -46,14 +57,3 @@
 		</g>
 	</svg>
 </template>
-
-<script lang="ts">
-import { defineComponent } from "vue";
-
-export default defineComponent({
-	name: "LogoIcon",
-	props: {
-		background: String,
-	},
-});
-</script>

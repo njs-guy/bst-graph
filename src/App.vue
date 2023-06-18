@@ -1,3 +1,74 @@
+<script lang="ts">
+// Vue
+import { defineComponent } from "vue";
+
+// Components
+import AppHeader from "./components/AppHeader.vue";
+import FormButton from "./components/FormButton.vue";
+import LabelInput from "./components/LabelInput.vue";
+import NameInput from "./components/NameInput.vue";
+import StatGraph from "./components/StatGraph.vue";
+import TypeSelect from "./components/TypeSelect.vue";
+
+// Modules
+import * as appConfig from "./modules/appConfig";
+import { fetchStats } from "./modules/fetchStats";
+import { graphState } from "./modules/graphState";
+import { outputImage } from "./modules/outputImage";
+import { randomGraph } from "./modules/randomGraph";
+
+export default defineComponent({
+	name: "App",
+	components: {
+		AppHeader,
+		FormButton,
+		LabelInput,
+		NameInput,
+		StatGraph,
+		TypeSelect,
+	},
+	data() {
+		return {
+			// Manages the graph state
+			graphState,
+			// These don't work in the HTML without these lines
+			appConfig,
+			fetchStats,
+			outputImage,
+		};
+	},
+	methods: {
+		// When a stat changes
+		onNameChanged(value: string) {
+			graphState.setName(value);
+		},
+		onHpChanged(value: string) {
+			graphState.setHp(Number(value));
+		},
+		onAttChanged(value: string) {
+			graphState.setAtt(Number(value));
+		},
+		onDefChanged(value: string) {
+			graphState.setDef(Number(value));
+		},
+		onSpAChanged(value: string) {
+			graphState.setSpA(Number(value));
+		},
+		onSpDChanged(value: string) {
+			graphState.setSpD(Number(value));
+		},
+		onSpeChanged(value: string) {
+			graphState.setSpe(Number(value));
+		},
+	},
+	mounted: function () {
+		// On load
+		randomGraph();
+		appConfig.loadSettings();
+	},
+});
+</script>
+
 <template>
 	<div class="mc-margin">
 		<AppHeader @darkMode="appConfig.changeTheme" />
@@ -31,15 +102,6 @@
 				class="panel grid grid-cols-2"
 				id="type-sec"
 			>
-				<label class="label cursor-pointer">
-					<span class="label-text">Include types</span>
-					<input
-						type="checkbox"
-						checked
-						class="checkbox checkbox-primary"
-					/>
-				</label>
-				<p></p>
 				<TypeSelect label="Type 1" />
 				<TypeSelect label="Type 2" />
 			</form>
@@ -125,77 +187,6 @@
 	</div>
 	<!-- Footer, probably -->
 </template>
-
-<script lang="ts">
-// Vue
-import { defineComponent } from "vue";
-
-// Components
-import AppHeader from "./components/AppHeader.vue";
-import FormButton from "./components/FormButton.vue";
-import LabelInput from "./components/LabelInput.vue";
-import NameInput from "./components/NameInput.vue";
-import StatGraph from "./components/StatGraph.vue";
-import TypeSelect from "./components/TypeSelect.vue";
-
-// Modules
-import * as appConfig from "./modules/appConfig";
-import { fetchStats } from "./modules/fetchStats";
-import { graphState } from "./modules/graphState";
-import { outputImage } from "./modules/outputImage";
-import { randomGraph } from "./modules/randomGraph";
-
-export default defineComponent({
-	name: "App",
-	components: {
-		AppHeader,
-		FormButton,
-		LabelInput,
-		NameInput,
-		StatGraph,
-		TypeSelect,
-	},
-	data() {
-		return {
-			// Manages the graph state
-			graphState,
-			// These don't work in the HTML without these lines
-			appConfig,
-			fetchStats,
-			outputImage,
-		};
-	},
-	methods: {
-		// When a stat changes
-		onNameChanged(value: string) {
-			graphState.setName(value);
-		},
-		onHpChanged(value: string) {
-			graphState.setHp(Number(value));
-		},
-		onAttChanged(value: string) {
-			graphState.setAtt(Number(value));
-		},
-		onDefChanged(value: string) {
-			graphState.setDef(Number(value));
-		},
-		onSpAChanged(value: string) {
-			graphState.setSpA(Number(value));
-		},
-		onSpDChanged(value: string) {
-			graphState.setSpD(Number(value));
-		},
-		onSpeChanged(value: string) {
-			graphState.setSpe(Number(value));
-		},
-	},
-	mounted: function () {
-		// On load
-		randomGraph();
-		appConfig.loadSettings();
-	},
-});
-</script>
 
 <style>
 html {

@@ -1,3 +1,11 @@
+<script lang="ts">
+import { defineComponent } from "vue";
+
+export default defineComponent({
+	name: "GitHubIcon",
+});
+</script>
+
 <template>
 	<!-- Obtained from Github Logos -->
 	<!-- https://github.com/logos -->
@@ -22,11 +30,3 @@
 		</svg>
 	</a>
 </template>
-
-<script lang="ts">
-import { defineComponent } from "vue";
-
-export default defineComponent({
-	name: "GitHubIcon",
-});
-</script>

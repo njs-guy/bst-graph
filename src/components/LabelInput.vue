@@ -1,23 +1,3 @@
-<template>
-	<div class="form-control input-container flex flex-col">
-		<label
-			:for="idName"
-			class="place-self-start"
-			>{{ text }}</label
-		>
-		<input
-			type="number"
-			:id="idName"
-			:name="idName"
-			class="input input-primary border-none rounded bg-base-100 h-8 px-2"
-			min="1"
-			max="999"
-			:value="defaultVal"
-			@change="onChange($event)"
-		/>
-	</div>
-</template>
-
 <script lang="ts">
 import { defineComponent } from "vue";
 
@@ -42,3 +22,23 @@ export default defineComponent({
 	},
 });
 </script>
+
+<template>
+	<div class="form-control input-container flex flex-col">
+		<label
+			:for="idName"
+			class="place-self-start"
+			>{{ text }}</label
+		>
+		<input
+			type="number"
+			:id="idName"
+			:name="idName"
+			class="input input-primary border-none rounded bg-base-100 h-8 px-2"
+			min="1"
+			max="999"
+			:value="defaultVal"
+			@change="onChange($event)"
+		/>
+	</div>
+</template>
