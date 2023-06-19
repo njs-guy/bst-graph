@@ -103,10 +103,13 @@ export default defineComponent({
 				class="panel grid grid-cols-2"
 				id="type-sec"
 			>
-				<TypeSelect label="Type 1" />
+				<TypeSelect
+					label="Type 1"
+					id="type1"
+				/>
 				<TypeSelect
 					label="Type 2"
-					:isType2="true"
+					id="type2"
 				/>
 			</form>
 			<form

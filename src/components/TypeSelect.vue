@@ -8,18 +8,20 @@ export default defineComponent({
 	name: "TypeSelect",
 	props: {
 		label: String,
-		isType2: { type: Boolean, default: false },
+		id: String,
 	},
 	methods: {
 		onChange(event: Event) {
 			const selected = (event.target as HTMLSelectElement).value;
+			const targetId = (event.target as HTMLSelectElement).id;
 
-			if (this.isType2) {
-				console.log("Set type 2: " + selected);
-				graphState.setType2(selected);
-			} else {
+			if (targetId === "type1") {
 				console.log("Set type 1: " + selected);
 				graphState.setType1(selected);
+			}
+			if (targetId === "type2") {
+				console.log("Set type 2: " + selected);
+				graphState.setType2(selected);
 			}
 		},
 	},
@@ -40,8 +42,7 @@ export default defineComponent({
 			>{{ label }}</label
 		>
 		<select
-			name="quality"
-			id="quality-select"
+			:id="id"
 			class="select select-primary border-none rounded select-sm"
 			@change="onChange($event)"
 		>
