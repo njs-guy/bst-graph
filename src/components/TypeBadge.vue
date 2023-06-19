@@ -58,6 +58,6 @@ export default defineComponent({
 
 <style scoped>
 .type-badge {
-	@apply badge badge-lg bg-black border-none rounded w-full;
+	@apply badge badge-lg bg-black border-none rounded w-16;
 }
 </style>
