@@ -42,23 +42,23 @@ export default defineComponent({
 		onNameChanged(value: string) {
 			graphState.setName(value);
 		},
-		onHpChanged(value: string) {
-			graphState.setHp(Number(value));
+		onHpChanged(value: number) {
+			graphState.setHp(value);
 		},
-		onAttChanged(value: string) {
-			graphState.setAtt(Number(value));
+		onAttChanged(value: number) {
+			graphState.setAtt(value);
 		},
-		onDefChanged(value: string) {
-			graphState.setDef(Number(value));
+		onDefChanged(value: number) {
+			graphState.setDef(value);
 		},
-		onSpAChanged(value: string) {
-			graphState.setSpA(Number(value));
+		onSpAChanged(value: number) {
+			graphState.setSpA(value);
 		},
-		onSpDChanged(value: string) {
-			graphState.setSpD(Number(value));
+		onSpDChanged(value: number) {
+			graphState.setSpD(value);
 		},
-		onSpeChanged(value: string) {
-			graphState.setSpe(Number(value));
+		onSpeChanged(value: number) {
+			graphState.setSpe(value);
 		},
 	},
 	mounted: function () {
@@ -73,17 +73,7 @@ export default defineComponent({
 	<div class="mc-margin">
 		<AppHeader @darkMode="appConfig.changeTheme" />
 		<div class="main-content grid grid-cols-1 gap-4 max-w-lg">
-			<!-- TODO: Remove these props after refactor -->
-			<StatGraph
-				:nameLabel="graphState.name"
-				:hpStat="graphState.hp"
-				:attStat="graphState.att"
-				:defStat="graphState.def"
-				:spAStat="graphState.spA"
-				:spDStat="graphState.spD"
-				:speStat="graphState.spe"
-				:totStat="graphState.total"
-			/>
+			<StatGraph />
 			<form
 				class="panel grid grid-cols-2"
 				id="name-sec"

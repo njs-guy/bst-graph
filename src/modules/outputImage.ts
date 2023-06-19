@@ -4,9 +4,6 @@ import { elementToSVG } from "dom-to-svg";
 import { graphState } from "./graphState";
 import { saveQuality } from "./appConfig";
 
-// BUG: PNG conversion only saves as a useless txt file now.
-// Quality does not seem to be saved anymore.
-
 const imageType = {
 	PNG: "png",
 	SVG: "svg",
