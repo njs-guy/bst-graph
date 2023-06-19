@@ -5,6 +5,7 @@ const fontFamily = "'Cabin', Arial, sans";
 // Light colors
 const txtColor = "#000000";
 const primary = "#1d4ed8";
+const btnTextColor = "#ffffff";
 const bg = "#e5e5e5";
 const panel = "#ffffff";
 const logoFill = "#262626";
@@ -68,7 +69,190 @@ const typeColors = {
 	water: { bg: "#3399FF", text: "white" },
 };
 
-// END CONFIG VALUES
+//
+// END
+// CONFIG
+// VALUES
+//
+
+function createTheme(genOpts, statOpts, typeOpts, isDarkTheme) {
+	let base = {};
+
+	if (isDarkTheme) {
+		base = {
+			...["[data-theme=dark]"],
+		};
+	} else {
+		base = {
+			...["[data-theme=light]"],
+		};
+	}
+
+	const theme = {
+		"fontFamily": genOpts.fontFamily,
+		"base-100": genOpts.bg,
+		"base-200": genOpts.panel,
+		"base-content": genOpts.txtColor,
+		"primary": genOpts.primary,
+		"--btn-text-case": "none",
+		".btn-primary": {
+			color: genOpts.btnTextColor,
+		},
+		".logo-bg": { fill: genOpts.logoFill },
+		"#bar-hp": { "background-color": statOpts.hp },
+		".bar-hp-container": { "background-color": statOpts.hpContainer },
+		"#bar-att": { "background-color": statOpts.att },
+		".bar-att-container": { "background-color": statOpts.attContainer },
+		"#bar-def": { "background-color": statOpts.def },
+		".bar-def-container": { "background-color": statOpts.defContainer },
+		"#bar-spA": { "background-color": statOpts.spA },
+		".bar-spA-container": { "background-color": statOpts.spAContainer },
+		"#bar-spD": { "background-color": statOpts.spD },
+		".bar-spD-container": { "background-color": statOpts.spDContainer },
+		"#bar-spe": { "background-color": statOpts.spe },
+		".bar-spe-container": { "background-color": statOpts.speContainer },
+		"#bar-tot": { "background-color": statOpts.tot },
+		".bar-tot-container": { "background-color": statOpts.totContainer },
+		".type-bug": {
+			"color": typeOpts.bug.text,
+			"background-color": typeOpts.bug.bg,
+		},
+		".type-dark": {
+			"color": typeOpts.dark.text,
+			"background-color": typeOpts.dark.bg,
+		},
+		".type-dragon": {
+			"color": typeOpts.dragon.text,
+			"background-color": typeOpts.dragon.bg,
+		},
+		".type-electric": {
+			"color": typeOpts.electric.text,
+			"background-color": typeOpts.electric.bg,
+		},
+		".type-fairy": {
+			"color": typeOpts.fairy.text,
+			"background-color": typeOpts.fairy.bg,
+		},
+		".type-fighting": {
+			"color": typeOpts.fighting.text,
+			"background-color": typeOpts.fighting.bg,
+		},
+		".type-fire": {
+			"color": typeOpts.fire.text,
+			"background-color": typeOpts.fire.bg,
+		},
+		".type-flying": {
+			"color": typeOpts.flying.text,
+			"background-color": typeOpts.flying.bg,
+		},
+		".type-ghost": {
+			"color": typeOpts.ghost.text,
+			"background-color": typeOpts.ghost.bg,
+		},
+		".type-grass": {
+			"color": typeOpts.grass.text,
+			"background-color": typeOpts.grass.bg,
+		},
+		".type-ground": {
+			"color": typeOpts.ground.text,
+			"background-color": typeOpts.ground.bg,
+		},
+		".type-ice": {
+			"color": typeOpts.ice.text,
+			"background-color": typeOpts.ice.bg,
+		},
+		".type-normal": {
+			"color": typeOpts.normal.text,
+			"background-color": typeOpts.normal.bg,
+		},
+		".type-poison": {
+			"color": typeOpts.poison.text,
+			"background-color": typeOpts.poison.bg,
+		},
+		".type-psychic": {
+			"color": typeOpts.psychic.text,
+			"background-color": typeOpts.psychic.bg,
+		},
+		".type-rock": {
+			"color": typeOpts.rock.text,
+			"background-color": typeOpts.rock.bg,
+		},
+		".type-steel": {
+			"color": typeOpts.steel.text,
+			"background-color": typeOpts.steel.bg,
+		},
+		".type-water": {
+			"color": typeOpts.water.text,
+			"background-color": typeOpts.water.bg,
+		},
+	};
+
+	const result = { ...base, ...theme };
+
+	return result;
+}
+
+function lightTheme() {
+	const genOpts = {
+		fontFamily: fontFamily,
+		txtColor: txtColor,
+		primary: primary,
+		btnTextColor: btnTextColor,
+		bg: bg,
+		panel: panel,
+		logoFill: logoFill,
+	};
+
+	const statOpts = {
+		hp: hp,
+		hpContainer: hpContainer,
+		att: att,
+		attContainer: attContainer,
+		def: def,
+		defContainer: defContainer,
+		spA: spA,
+		spAContainer: spAContainer,
+		spD: spD,
+		spDContainer: spDContainer,
+		spe: spe,
+		speContainer: speContainer,
+		tot: tot,
+		totContainer: totContainer,
+	};
+
+	return createTheme(genOpts, statOpts, typeColors, false);
+}
+
+function darkTheme() {
+	const genOpts = {
+		fontFamily: fontFamily,
+		txtColor: txtColorDark,
+		primary: primaryDark,
+		btnTextColor: btnTextColor,
+		bg: bgDark,
+		panel: panelDark,
+		logoFill: logoFillDark,
+	};
+
+	const statOpts = {
+		hp: hpDark,
+		hpContainer: hpContainerDark,
+		att: attDark,
+		attContainer: attContainerDark,
+		def: defDark,
+		defContainer: defContainerDark,
+		spA: spADark,
+		spAContainer: spAContainerDark,
+		spD: spDDark,
+		spDContainer: spDContainerDark,
+		spe: speDark,
+		speContainer: speContainerDark,
+		tot: totDark,
+		totContainer: totContainerDark,
+	};
+
+	return createTheme(genOpts, statOpts, typeColors, true);
+}
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -77,144 +261,8 @@ module.exports = {
 	daisyui: {
 		themes: [
 			{
-				light: {
-					...["[data-theme=light]"],
-					"fontFamily": fontFamily,
-					"base-100": bg,
-					"base-200": panel,
-					"base-content": txtColor,
-					"primary": primary,
-					"--btn-text-case": "none",
-					".btn-primary": {
-						color: "#ffffff",
-					},
-					".logo-bg": {
-						fill: logoFill,
-					},
-					"#bar-hp": {
-						"background-color": hp,
-					},
-					".bar-hp-container": {
-						"background-color": hpContainer,
-					},
-					"#bar-att": {
-						"background-color": att,
-					},
-					".bar-att-container": {
-						"background-color": attContainer,
-					},
-					"#bar-def": {
-						"background-color": def,
-					},
-					".bar-def-container": {
-						"background-color": defContainer,
-					},
-					"#bar-spA": {
-						"background-color": spA,
-					},
-					".bar-spA-container": {
-						"background-color": spAContainer,
-					},
-					"#bar-spD": {
-						"background-color": spD,
-					},
-					".bar-spD-container": {
-						"background-color": spDContainer,
-					},
-					"#bar-spe": {
-						"background-color": spe,
-					},
-					".bar-spe-container": {
-						"background-color": speContainer,
-					},
-					"#bar-tot": {
-						"background-color": tot,
-					},
-					".bar-tot-container": {
-						"background-color": totContainer,
-					},
-				},
-				dark: {
-					...["[data-theme=dark]"],
-					"fontFamily": fontFamily,
-					"base-100": bgDark,
-					"base-200": panelDark,
-					"base-content": txtColorDark,
-					"primary": primaryDark,
-					"--btn-text-case": "none",
-					".btn-primary": {
-						color: "#ffffff",
-					},
-					".logo-bg": {
-						fill: logoFillDark,
-					},
-					"#bar-hp": {
-						"background-color": hpDark,
-					},
-					".bar-hp-container": {
-						"background-color": hpContainerDark,
-					},
-					"#bar-att": {
-						"background-color": attDark,
-					},
-					".bar-att-container": {
-						"background-color": attContainerDark,
-					},
-					"#bar-def": {
-						"background-color": defDark,
-					},
-					".bar-def-container": {
-						"background-color": defContainerDark,
-					},
-					"#bar-spA": {
-						"background-color": spADark,
-					},
-					".bar-spA-container": {
-						"background-color": spAContainerDark,
-					},
-					"#bar-spD": {
-						"background-color": spDDark,
-					},
-					".bar-spD-container": {
-						"background-color": spDContainerDark,
-					},
-					"#bar-spe": {
-						"background-color": speDark,
-					},
-					".bar-spe-container": {
-						"background-color": speContainerDark,
-					},
-					"#bar-tot": {
-						"background-color": totDark,
-					},
-					".bar-tot-container": {
-						"background-color": totContainerDark,
-					},
-					".type-bug": {
-						"color": typeColors.bug.text,
-						"background-color": typeColors.bug.bg,
-					},
-					".type-dark": {
-						"color": typeColors.dark.text,
-						"background-color": typeColors.dark.bg,
-					},
-					".type-dragon": {},
-					".type-electric": {},
-					".type-fairy": {},
-					".type-fighting": {},
-					".type-fire": {},
-					".type-flying": {},
-					".type-ghost": {},
-					".type-grass": {},
-					".type-ground": {},
-					".type-ice": {},
-					".type-normal": {},
-					".type-poison": {},
-					".type-psychic": {},
-					".type-rock": {},
-					".type-steel": {},
-					".type-water": {},
-				},
+				light: lightTheme(),
+				dark: darkTheme(),
 			},
 		],
 		darkTheme: "dark",
