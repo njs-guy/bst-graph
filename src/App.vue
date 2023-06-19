@@ -95,11 +95,11 @@ export default defineComponent({
 			>
 				<TypeSelect
 					label="Type 1"
-					id="type1"
+					id="typeSelect1"
 				/>
 				<TypeSelect
 					label="Type 2"
-					id="type2"
+					id="typeSelect2"
 				/>
 			</form>
 			<form

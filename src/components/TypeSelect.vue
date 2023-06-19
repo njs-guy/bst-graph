@@ -1,5 +1,5 @@
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, watch } from "vue";
 import { getPokeTypes } from "../modules/pokeTypes";
 import capitalizeWord from "../modules/capitalizeWord";
 import { graphState } from "../modules/graphState";
@@ -12,24 +12,46 @@ export default defineComponent({
 	},
 	methods: {
 		onChange(event: Event) {
-			const selected = (event.target as HTMLSelectElement).value;
-			const targetId = (event.target as HTMLSelectElement).id;
+			const select = event.target as HTMLSelectElement;
+			const selectId = select.id;
+			const selectValue = select.value;
 
-			if (targetId === "type1") {
-				console.log("Set type 1: " + selected);
-				graphState.setType1(selected);
+			if (selectId === "typeSelect1") {
+				console.log("Set type 1: " + selectValue);
+				graphState.setType1(selectValue);
 			}
-			if (targetId === "type2") {
-				console.log("Set type 2: " + selected);
-				graphState.setType2(selected);
+			if (selectId === "typeSelect2") {
+				console.log("Set type 2: " + selectValue);
+				graphState.setType2(selectValue);
 			}
 		},
 	},
 	data() {
 		return {
 			types: getPokeTypes(),
+			graphState,
 			capitalizeWord,
 		};
+	},
+	created() {
+		watch(
+			[() => graphState.type1, () => graphState.type2],
+			([newType1, newType2]) => {
+				const typeSelect1 = document.getElementById(
+					"typeSelect1"
+				) as HTMLSelectElement;
+				const typeSelect2 = document.getElementById(
+					"typeSelect2"
+				) as HTMLSelectElement;
+
+				if (this.id === "typeSelect1") {
+					typeSelect1.value = newType1;
+				}
+				if (this.id === "typeSelect2") {
+					typeSelect2.value = newType2;
+				}
+			}
+		);
 	},
 });
 </script>
@@ -42,6 +64,7 @@ export default defineComponent({
 			>{{ label }}</label
 		>
 		<select
+			:ref="id"
 			:id="id"
 			class="select select-primary border-none rounded select-sm"
 			@change="onChange($event)"
