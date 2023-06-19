@@ -85,7 +85,7 @@ export default defineComponent({
 </script>
 
 <template>
-	<div class="row flex flex-row items-center gap-0">
+	<div class="row flex flex-row items-center gap-x-2">
 		<div class="text-container basis-5/12">
 			<p class="label self-center">{{ label }}</p>
 			<p class="stat">{{ stat }}</p>
@@ -116,7 +116,7 @@ export default defineComponent({
 
 .label {
 	float: left;
-	padding-left: 4px !important;
+	/* padding-left: 1px !important; */
 }
 
 .stat {
@@ -125,7 +125,7 @@ export default defineComponent({
 
 .label,
 .stat {
-	@apply px-2 py-1 w-fit;
+	@apply w-fit p-0;
 	font-size: 22px;
 }
 

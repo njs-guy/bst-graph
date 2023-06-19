@@ -19,22 +19,21 @@ export default defineComponent({
 </script>
 
 <template>
-	<!-- TODO: Fix padding/margins -->
 	<div
-		class="graph bg-base-200 rounded-md p-1.5"
+		class="graph bg-base-200 rounded-md p-2 flex flex-col gap-2"
 		id="output"
 	>
-		<h1 class="name text-3xl leading-normal clear-both">
+		<h1 class="name text-3xl leading-none">
 			{{ graphState.name }}
 		</h1>
-		<div class="flex flex-row justify-center mr-1.5 mb-1 gap-1">
+		<div class="flex flex-row justify-center gap-1">
 			<TypeBadge :typeName="graphState.type1" />
 			<TypeBadge
 				:typeName="graphState.type2"
 				id-name="type2"
 			/>
 		</div>
-		<div class="flex flex-col place-items-center leading-tight pr-1.5">
+		<div class="flex flex-col place-items-center gap-y-1">
 			<StatBar
 				class="hp-bar"
 				barId="bar-hp"
