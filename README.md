@@ -22,7 +22,7 @@ Generate Pokémon base stat total graphs similar to what's seen on Bulbapedia.
 ## Special thanks
 
 BST Graph uses [PokeAPI](https://pokeapi.co/) to autofill data,
-[pokenode-ts](https://pokenode-ts-docs-gabb-c.vercel.app/) for caching that data,
+[pokenode-ts](https://pokenode-ts.vercel.app/) for caching that data,
 [dom-to-svg](https://github.com/felixfbecker/dom-to-svg) for generating svg images,
 and [Vue](https://vuejs.org/) for the frontend.
 Without them, the making of BST Graph would have been significantly harder!
