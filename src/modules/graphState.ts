@@ -42,7 +42,13 @@ export const graphState = reactive({
 	},
 	updateTotal() {
 		this.total =
-			this.hp + this.att + this.def + this.spA + this.spD + this.spe;
+			Number(this.hp) +
+			Number(this.att) +
+			Number(this.def) +
+			Number(this.spA) +
+			Number(this.spD) +
+			Number(this.spe);
+		// I hate javascript
 	},
 	setType1(newType: string) {
 		this.type1 = newType;
