@@ -10,7 +10,7 @@ export async function fetchStats(pokName = "bidoof") {
 	const name = checkForForms(pokName.toLowerCase());
 
 	const api = new PokemonClient({
-		cacheOptions: { maxAge: 5000 },
+		logs: true,
 	});
 
 	await api
