@@ -60,6 +60,9 @@ export default defineComponent({
 		onSpeChanged(value: number) {
 			graphState.setSpe(value);
 		},
+		setShowName(value: boolean) {
+			appConfig.saveShowName(value);
+		},
 	},
 	mounted: function () {
 		// On load
@@ -93,6 +96,7 @@ export default defineComponent({
 					<input
 						type="checkbox"
 						v-model="graphState.showName"
+						@change="appConfig.saveShowName(graphState.showName)"
 						class="checkbox checkbox-primary"
 					/>
 				</label>
@@ -114,6 +118,7 @@ export default defineComponent({
 					<input
 						type="checkbox"
 						v-model="graphState.showTypes"
+						@change="appConfig.saveShowTypes(graphState.showTypes)"
 						class="checkbox checkbox-primary"
 					/>
 				</label>
@@ -163,6 +168,7 @@ export default defineComponent({
 					<input
 						type="checkbox"
 						v-model="graphState.showTotal"
+						@change="appConfig.saveShowTotal(graphState.showTotal)"
 						class="checkbox checkbox-primary"
 					/>
 				</label>
