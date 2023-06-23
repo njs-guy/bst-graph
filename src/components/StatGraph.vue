@@ -23,10 +23,16 @@ export default defineComponent({
 		class="graph bg-base-200 rounded-md p-2 flex flex-col gap-2"
 		id="output"
 	>
-		<h1 class="name text-3xl leading-none">
+		<h1
+			v-show="graphState.showName"
+			class="name text-3xl leading-none"
+		>
 			{{ graphState.name }}
 		</h1>
-		<div class="flex flex-row justify-center gap-1">
+		<div
+			v-show="graphState.showTypes"
+			class="flex flex-row justify-center gap-1"
+		>
 			<TypeBadge :typeName="graphState.type1" />
 			<TypeBadge
 				:typeName="graphState.type2"
@@ -71,6 +77,7 @@ export default defineComponent({
 				:stat="graphState.spe"
 			/>
 			<StatBar
+				v-show="graphState.showTotal"
 				class="tot-bar"
 				barId="bar-tot"
 				label="Total"

@@ -1,8 +1,8 @@
 <script lang="ts">
 import { defineComponent, watch } from "vue";
 import { getPokeTypes } from "../modules/pokeTypes";
-import capitalizeWord from "../modules/capitalizeWord";
 import { graphState } from "../modules/graphState";
+import capitalizeWord from "../modules/capitalizeWord";
 
 export default defineComponent({
 	name: "TypeSelect",
@@ -17,11 +17,9 @@ export default defineComponent({
 			const selectValue = select.value;
 
 			if (selectId === "typeSelect1") {
-				console.log("Set type 1: " + selectValue);
 				graphState.setType1(selectValue);
 			}
 			if (selectId === "typeSelect2") {
-				console.log("Set type 2: " + selectValue);
 				graphState.setType2(selectValue);
 			}
 		},

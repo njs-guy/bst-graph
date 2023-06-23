@@ -88,6 +88,14 @@ export default defineComponent({
 					label="Auto fill"
 					@click="fetchStats(graphState.name)"
 				/>
+				<label class="label cursor-pointer">
+					<span class="label-text">Show name</span>
+					<input
+						type="checkbox"
+						v-model="graphState.showName"
+						class="checkbox checkbox-primary"
+					/>
+				</label>
 			</form>
 			<form
 				class="panel grid grid-cols-2"
@@ -101,6 +109,14 @@ export default defineComponent({
 					label="Type 2"
 					id="typeSelect2"
 				/>
+				<label class="label cursor-pointer">
+					<span class="label-text">Show types</span>
+					<input
+						type="checkbox"
+						v-model="graphState.showTypes"
+						class="checkbox checkbox-primary"
+					/>
+				</label>
 			</form>
 			<form
 				class="panel grid grid-cols-2 sm:grid-cols-3"
@@ -142,6 +158,14 @@ export default defineComponent({
 					:defaultVal="String(graphState.spe)"
 					@statChanged="onSpeChanged"
 				/>
+				<label class="label cursor-pointer">
+					<span class="label-text">Show total</span>
+					<input
+						type="checkbox"
+						v-model="graphState.showTotal"
+						class="checkbox checkbox-primary"
+					/>
+				</label>
 			</form>
 			<div
 				class="panel flex-row grid grid-cols-2"

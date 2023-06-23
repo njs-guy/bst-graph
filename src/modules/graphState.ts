@@ -13,6 +13,9 @@ export const graphState = reactive({
 	total: 30,
 	type1: "none",
 	type2: "none",
+	showName: true,
+	showTypes: true,
+	showTotal: true,
 	setName(newName: string) {
 		this.name = newName;
 	},
