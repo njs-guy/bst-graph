@@ -2,7 +2,7 @@
 
 Generate Pokémon base stat total graphs similar to what's seen on Bulbapedia.
 
-Check it out at https://njs-guy.github.io/bst-graph/!
+Check it out at https://njs-guy.github.io/bst-graph/ !
 
 ![Light mode](docs/images/example.png "Light mode")
 ![Dark mode](docs/images/example_dark.png "Dark mode")
