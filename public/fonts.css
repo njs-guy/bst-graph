@@ -5,7 +5,8 @@
 	font-weight: 400;
 	src: url("./fonts/cabin-v26-latin-regular.eot");
 	/* IE9 Compat Modes */
-	src: local(""),
+	src:
+		local(""),
 		url("./fonts/cabin-v26-latin-regular.eot?#iefix")
 			format("embedded-opentype"),
 		/* IE6-IE8 */ url("./fonts/cabin-v26-latin-regular.woff2")
