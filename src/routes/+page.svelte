@@ -1,7 +1,8 @@
 <script lang="ts">
+import BstGraph from "$lib/components/BstGraph.svelte";
 import PkmnStats from "$lib/modules/pkmnStats";
 
-var stats = $state(new PkmnStats(100, 101, 102, 103, 104, 105));
+var stats = $state(new PkmnStats(100, 201, 102, 103, 104, 107));
 </script>
 
 <svelte:head>
@@ -10,12 +11,6 @@ var stats = $state(new PkmnStats(100, 101, 102, 103, 104, 105));
 
 <main>
 	<div class="main-content flex flex-col justify-self-center">
-		<p>HP: {stats.hp}</p>
-		<p>Attack: {stats.attack}</p>
-		<p>Defense: {stats.defense}</p>
-		<p>Sp. Attack: {stats.spAttack}</p>
-		<p>Sp. Defense: {stats.spDefense}</p>
-		<p>Speed: {stats.speed}</p>
-		<p>Total: {stats.total}</p>
+		<BstGraph {stats} />
 	</div>
 </main>
