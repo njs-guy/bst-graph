@@ -1,3 +1,8 @@
+export interface typeBadgeColors {
+	text: string;
+	bg: string;
+}
+
 export interface GraphTheme {
 	textColor: string;
 	background: string;
@@ -28,10 +33,35 @@ export interface GraphTheme {
 	water: typeBadgeColors;
 }
 
-export interface typeBadgeColors {
-	text: string;
-	bg: string;
-}
+export const themeLight: GraphTheme = {
+	textColor: "#000000",
+	background: "#ffffff",
+	hp: "#ef4444",
+	attack: "#f97316",
+	defense: "#eab308",
+	spAttack: "#3b82f6",
+	spDefense: "#22c55e",
+	speed: "#ec4899",
+	total: "#94A3B8",
+	bug: { bg: "#AABB22", text: "black" },
+	dark: { bg: "#735A4A", text: "white" },
+	dragon: { bg: "#7766EE", text: "black" },
+	electric: { bg: "#FFCC33", text: "black" },
+	fairy: { bg: "#EE99EE", text: "black" },
+	fighting: { bg: "#BB5544", text: "white" },
+	fire: { bg: "#FF4422", text: "white" },
+	flying: { bg: "#8899FF", text: "black" },
+	ghost: { bg: "#6666BB", text: "white" },
+	grass: { bg: "#77CC55", text: "black" },
+	ground: { bg: "#DAB954", text: "black" },
+	ice: { bg: "#66CCFF", text: "black" },
+	normal: { bg: "#AAAA99", text: "black" },
+	poison: { bg: "#AA5599", text: "white" },
+	psychic: { bg: "#FF5599", text: "black" },
+	rock: { bg: "#BBAA66", text: "black" },
+	steel: { bg: "#AAAABB", text: "black" },
+	water: { bg: "#3399FF", text: "black" },
+};
 
 export const themeDark: GraphTheme = {
 	textColor: "#fafafa",
