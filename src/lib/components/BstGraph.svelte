@@ -3,6 +3,7 @@ import Card from "./Card.svelte";
 import StatBar from "./StatBar.svelte";
 import PkmnStats from "$lib/modules/pkmnStats";
 import { smallGraph } from "$lib/modules/graphSize";
+import TypeBadge from "./TypeBadge.svelte";
 
 const fallbackStats = new PkmnStats(100, 101, 102, 103, 104, 105);
 const graphSize = smallGraph;
@@ -21,6 +22,18 @@ let { stats = fallbackStats, name = "Name" } = $props();
 		>
 			{name}
 		</h2>
+		<div class="flex flex-row gap-2 self-center">
+			<TypeBadge
+				label="Normal"
+				bgColor="beige"
+				textColor="black"
+			/>
+			<TypeBadge
+				label="Fire"
+				bgColor="red"
+				textColor="white"
+			/>
+		</div>
 		<StatBar
 			label="HP"
 			stat={stats.hp}
