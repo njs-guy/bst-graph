@@ -31,7 +31,7 @@ updateWidth();
 		<p class="place-self-end">{stat}</p>
 	</div>
 	<div
-		class="bst-stat-bar col-span-2 flex self-center rounded bg-base-300"
+		class="bst-stat-bar col-span-2 flex self-center"
 		style="--bst-stat-bar-height: {height}px;"
 	>
 		<div
