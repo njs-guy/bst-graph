@@ -11,6 +11,9 @@ import { themeDark, type GraphTheme } from "$lib/modules/graphTheme";
 
 const fallbackStats = new PkmnStats(100, 101, 102, 103, 104, 105);
 const graphSize = smallGraph;
+
+let typeName1: string = $state("water");
+let typeName2: string = $state("fairy");
 let currentTheme: GraphTheme = $state(themeDark);
 
 theme.subscribe((value) => {
@@ -23,7 +26,8 @@ let { stats = fallbackStats, name = "Name" } = $props();
 <div
 	class="bst-graph"
 	id="bst-graph"
-	style="--bst-width:{graphSize.width}rem;--bst-text-color:{currentTheme.textColor}"
+	style="--bst-width:{graphSize.width}rem;
+	--bst-text-color:{currentTheme.textColor};"
 >
 	<Card colorOverride={currentTheme.background}>
 		<h2
@@ -34,14 +38,14 @@ let { stats = fallbackStats, name = "Name" } = $props();
 		</h2>
 		<div class="flex flex-row gap-2 self-center">
 			<TypeBadge
-				label="Normal"
-				bgColor="beige"
-				textColor="black"
+				label={typeName1}
+				bgColor={currentTheme[typeName1].bg}
+				textColor={currentTheme[typeName1].text}
 			/>
 			<TypeBadge
-				label="Fire"
-				bgColor="red"
-				textColor="white"
+				label={typeName2}
+				bgColor={currentTheme[typeName2].bg}
+				textColor={currentTheme[typeName2].text}
 			/>
 		</div>
 		<StatBar
@@ -49,42 +53,42 @@ let { stats = fallbackStats, name = "Name" } = $props();
 			stat={stats.hp}
 			height={graphSize.barHeight}
 			fontSize={graphSize.fontSize}
-			color="red"
+			color={currentTheme.hp}
 		/>
 		<StatBar
 			label="Attack"
 			stat={stats.attack}
 			height={graphSize.barHeight}
 			fontSize={graphSize.fontSize}
-			color="orange"
+			color={currentTheme.attack}
 		/>
 		<StatBar
 			label="Defense"
 			stat={stats.defense}
 			height={graphSize.barHeight}
 			fontSize={graphSize.fontSize}
-			color="gold"
+			color={currentTheme.defense}
 		/>
 		<StatBar
 			label="Sp. Att"
 			stat={stats.spAttack}
 			height={graphSize.barHeight}
 			fontSize={graphSize.fontSize}
-			color="dodgerblue"
+			color={currentTheme.spAttack}
 		/>
 		<StatBar
 			label="Sp. Def"
 			stat={stats.spDefense}
 			height={graphSize.barHeight}
 			fontSize={graphSize.fontSize}
-			color="limegreen"
+			color={currentTheme.spDefense}
 		/>
 		<StatBar
 			label="Speed"
 			stat={stats.speed}
 			height={graphSize.barHeight}
 			fontSize={graphSize.fontSize}
-			color="orchid"
+			color={currentTheme.speed}
 		/>
 		<StatBar
 			label="Total"
@@ -92,7 +96,7 @@ let { stats = fallbackStats, name = "Name" } = $props();
 			height={graphSize.barHeight}
 			fontSize={graphSize.fontSize}
 			isTotal={true}
-			color="slategray"
+			color={currentTheme.total}
 		/>
 	</Card>
 </div>
