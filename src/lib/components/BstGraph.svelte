@@ -24,36 +24,43 @@ let { stats = fallbackStats, name = "Name" } = $props();
 		<StatBar
 			label="HP"
 			stat={stats.hp}
+			height={graphSize.barHeight}
 			fontSize={graphSize.fontSize}
 		/>
 		<StatBar
 			label="Attack"
 			stat={stats.attack}
+			height={graphSize.barHeight}
 			fontSize={graphSize.fontSize}
 		/>
 		<StatBar
 			label="Defense"
 			stat={stats.defense}
+			height={graphSize.barHeight}
 			fontSize={graphSize.fontSize}
 		/>
 		<StatBar
 			label="Sp. Att"
 			stat={stats.spAttack}
+			height={graphSize.barHeight}
 			fontSize={graphSize.fontSize}
 		/>
 		<StatBar
 			label="Sp. Def"
 			stat={stats.spDefense}
+			height={graphSize.barHeight}
 			fontSize={graphSize.fontSize}
 		/>
 		<StatBar
 			label="Speed"
 			stat={stats.speed}
+			height={graphSize.barHeight}
 			fontSize={graphSize.fontSize}
 		/>
 		<StatBar
 			label="Total"
 			stat={stats.total}
+			height={graphSize.barHeight}
 			fontSize={graphSize.fontSize}
 		/>
 	</Card>
