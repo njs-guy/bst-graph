@@ -1,0 +1,49 @@
+/* Delete this url */
+@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap");
+
+@import "tailwindcss";
+@plugin "daisyui" {
+	/* Change daisyUI settings here */
+	themes: night --default;
+}
+
+:root {
+	font-family: "Cabin", Arial, sans-serif;
+	font-size: 16px;
+	line-height: 24px;
+
+	color-scheme: light dark;
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+}
+
+a:not(.nav-link) {
+	@apply link link-info link-hover;
+}
+
+h1 {
+	@apply text-5xl font-bold;
+}
+h2 {
+	@apply text-4xl font-bold;
+}
+h3 {
+	@apply text-3xl font-bold;
+}
+h4 {
+	@apply text-2xl font-bold;
+}
+h5 {
+	@apply text-xl font-bold;
+}
+h6 {
+	@apply text-lg font-bold;
+}
+
+.main-content {
+	margin: 0 auto;
+	max-width: 60em;
+}
