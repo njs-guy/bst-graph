@@ -1,6 +1,5 @@
 export interface GraphSize {
 	width: number;
-	rowHeight: number;
 	barHeight: number;
 	fontSize: number;
 	nameFontSize: number;
@@ -9,24 +8,21 @@ export interface GraphSize {
 // Placeholder graph sizes
 
 export const smallGraph: GraphSize = {
-	width: 5,
-	rowHeight: 5,
-	barHeight: 5,
+	width: 25,
+	barHeight: 16,
 	fontSize: 16,
-	nameFontSize: 24,
+	nameFontSize: 36,
 };
 
 export const baseGraph: GraphSize = {
-	width: 5,
-	rowHeight: 5,
+	width: 30,
 	barHeight: 5,
 	fontSize: 16,
 	nameFontSize: 24,
 };
 
 export const largeGraph: GraphSize = {
-	width: 5,
-	rowHeight: 5,
+	width: 35,
 	barHeight: 5,
 	fontSize: 16,
 	nameFontSize: 24,
