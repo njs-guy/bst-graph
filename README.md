@@ -1,58 +1,40 @@
-# njs-guy's Svelte Kit Template
+# BST Graph
 
-A nice and simple Svelte Kit template to let me (or anyone else)
-quickly whip up new projects.
+Generate Pokémon base stat total graphs similar to what's seen on Bulbapedia.
+
+Check it out at https://njs-guy.github.io/bst-graph/ !
+
+![Light mode](docs/images/example.png "Light mode")
+![Dark mode](docs/images/example_dark.png "Dark mode")
 
 ## Features
 
-- [Svelte](https://svelte.dev/) + [Svelte Kit](https://svelte.dev/docs/kit/introduction)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Vite](https://vitejs.dev/)
-- [PNPM](https://pnpm.io/) for package management
-- [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/)
-  with some sensible defaults.
-- [Tailwind CSS](https://tailwindcss.com/) + [DaisyUI](https://daisyui.com/)
-- [Vitest](https://vitest.dev/) for testing
+- Can fully edit any stat and use any name.
+    - Great for fakémon!
+- Export to PNG or SVG.
+- Autofill stats from Pokémon name. (Based on Generation 9.)
+- Also works on mobile!
+- Open source under MIT license.
 
-## Coding style
+## More information
 
-This ESLint and Prettier config uses double-quotes and semicolons.
+- For more info about using autofill, see [autofill.md](docs/autofill.md).
+- For build instructions, see [dev_info.md](docs/dev_info.md).
 
-```ts
-const msg = "wow";
-```
+## Special thanks
 
-## Installation
+BST Graph uses [PokeAPI](https://pokeapi.co/) to autofill data,
+[pokenode-ts](https://pokenode-ts.vercel.app/) for caching that data,
+[dom-to-svg](https://github.com/felixfbecker/dom-to-svg) for generating svg images,
+and [Vue](https://vuejs.org/) for the frontend.
+Without them, the making of BST Graph would have been significantly harder!
 
-You can download this repo as a .zip or clone it with git,
-but a cleaner approach is with [degit](https://github.com/Rich-Harris/degit).
+## Building
 
-```bash
-npx degit njs-templates/svelte new-project
-cd new-project
-yarn
-```
+For build instructions, see [dev_info](docs/dev_info.md).
 
-## Recommended IDE
+## DISCLAIMER
 
-This was meant to be used with VS Code, but it should work with any editor.
-You'll be prompted to install any recommended extensions that aren't installed.
-If no one on your team is using VS Code, just delete the `.vscode/` folder.
-
-## Next steps
-
-1. Run `pnpm dev` to start Vite and make sure everything's working.
-2. Run `pnpm build` to make sure that building works.
-3. Run `pnpm test` to make sure Vitest is working.
-4. In `package.json`, change the project name and version.
-5. Delete the following:
-    1. `LICENSE.txt` from the root of the directory.
-        - If your project still uses an MIT License, just edit the author and year.
-	2. Either delete `CHANGELOG.md` or remove its contents.
-    3. The boilerplate from `src/lib/`, and  `static/`.
-    4. `pnpm-lock.yaml` if you want to use a different package manager.
-    5. The `.git/` folder if you cloned this repo.
-6. Run a `git init` to start tracking changes.
-
-After all that, do whatever. This code is yours now.
-Credit is appreciated but not needed.
+BST Graph is NOT an official product and is not associated with Pokémon,
+The Pokémon Company, Nintendo, Creatures Inc.,
+or any of their respective copyright holders.
