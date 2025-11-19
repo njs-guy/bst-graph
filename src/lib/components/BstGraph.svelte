@@ -4,6 +4,7 @@ import StatBar from "./StatBar.svelte";
 import PkmnStats from "$lib/modules/pkmnStats";
 import { smallGraph } from "$lib/modules/graphSize";
 import TypeBadge from "./TypeBadge.svelte";
+import ExportBtn from "./ExportBtn.svelte";
 
 const fallbackStats = new PkmnStats(100, 101, 102, 103, 104, 105);
 const graphSize = smallGraph;
@@ -85,6 +86,10 @@ let { stats = fallbackStats, name = "Name" } = $props();
 			color="slategray"
 		/>
 	</Card>
+	<div class="flex flex-row place-self-center gap-2 mt-4">
+		<ExportBtn />
+		<ExportBtn exportAsPng={true} />
+	</div>
 </div>
 
 <style scoped>
