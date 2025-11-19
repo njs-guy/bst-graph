@@ -1,13 +1,21 @@
 <script lang="ts">
 import Card from "./Card.svelte";
 import StatBar from "./StatBar.svelte";
-import PkmnStats from "$lib/modules/pkmnStats";
-import { smallGraph } from "$lib/modules/graphSize";
 import TypeBadge from "./TypeBadge.svelte";
 import ExportBtn from "./ExportBtn.svelte";
 
+import PkmnStats from "$lib/modules/pkmnStats";
+import { smallGraph } from "$lib/modules/graphSize";
+import { theme } from "$lib/stores/themeStore";
+import { themeDark, type GraphTheme } from "$lib/modules/graphTheme";
+
 const fallbackStats = new PkmnStats(100, 101, 102, 103, 104, 105);
 const graphSize = smallGraph;
+let currentTheme: GraphTheme = $state(themeDark);
+
+theme.subscribe((value) => {
+	currentTheme = value;
+});
 
 let { stats = fallbackStats, name = "Name" } = $props();
 </script>
@@ -15,9 +23,9 @@ let { stats = fallbackStats, name = "Name" } = $props();
 <div
 	class="bst-graph"
 	id="bst-graph"
-	style="--bst-width:{graphSize.width}rem;"
+	style="--bst-width:{graphSize.width}rem;--bst-text-color:{currentTheme.textColor}"
 >
-	<Card>
+	<Card colorOverride={currentTheme.background}>
 		<h2
 			class="self-center pt-0 bst-graph-name"
 			style="--bst-name-font-size:{graphSize.nameFontSize}px; "
@@ -98,6 +106,7 @@ let { stats = fallbackStats, name = "Name" } = $props();
 .bst-graph {
 	font-weight: bold;
 	width: var(--bst-width);
+	color: var(--bst-text-color);
 }
 
 .bst-graph-name {
