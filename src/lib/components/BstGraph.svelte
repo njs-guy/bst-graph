@@ -14,6 +14,7 @@ let { stats = fallbackStats, name = "Name" } = $props();
 
 <div
 	class="bst-graph"
+	id="bst-graph"
 	style="--bst-width:{graphSize.width}rem;"
 >
 	<Card>
@@ -86,10 +87,11 @@ let { stats = fallbackStats, name = "Name" } = $props();
 			color="slategray"
 		/>
 	</Card>
-	<div class="flex flex-row place-self-center gap-2 mt-4">
-		<ExportBtn />
-		<ExportBtn exportAsPng={true} />
-	</div>
+</div>
+
+<div class="flex flex-row place-self-center gap-2 mt-4">
+	<ExportBtn exportAsSvg={true} />
+	<ExportBtn />
 </div>
 
 <style scoped>

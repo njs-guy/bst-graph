@@ -1,23 +1,29 @@
 <script lang="ts">
+import { outputImage } from "$lib/modules/outputImage";
+
 function saveAsSvg() {
-	console.log("svg");
+	outputImage(true);
 }
 
 function saveAsPng() {
-	console.log("png");
+	outputImage();
 }
 
-let { exportAsPng = false } = $props();
+let { exportAsSvg = false } = $props();
 </script>
 
-{#if exportAsPng}
+{#if exportAsSvg}
 	<button
 		class="btn btn-primary shadow-none"
-		onclick={saveAsPng}>Export as PNG</button
+		onclick={saveAsSvg}
 	>
+		Export as SVG
+	</button>
 {:else}
 	<button
 		class="btn btn-primary shadow-none"
-		onclick={saveAsSvg}>Export as SVG</button
+		onclick={saveAsPng}
 	>
+		Export as PNG
+	</button>
 {/if}
