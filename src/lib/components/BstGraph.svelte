@@ -8,7 +8,7 @@ const fallbackStats = new PkmnStats(100, 101, 102, 103, 104, 105);
 let { stats = fallbackStats } = $props();
 </script>
 
-<div>
+<div class="w-100 font-bold">
 	<Card>
 		<StatBar
 			label="HP"
@@ -23,11 +23,11 @@ let { stats = fallbackStats } = $props();
 			stat={stats.defense}
 		/>
 		<StatBar
-			label="Sp. Attack"
+			label="Sp. Att"
 			stat={stats.spAttack}
 		/>
 		<StatBar
-			label="Sp. Defense"
+			label="Sp. Def"
 			stat={stats.spDefense}
 		/>
 		<StatBar
