@@ -11,6 +11,9 @@ var stats = $state(new PkmnStats(100, 201, 102, 103, 104, 107));
 
 <main>
 	<div class="main-content flex flex-col justify-self-center">
-		<BstGraph {stats} />
+		<BstGraph
+			{stats}
+			name="Pikablu"
+		/>
 	</div>
 </main>
